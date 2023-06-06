@@ -4,6 +4,7 @@ import { FaGoogle, FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet-async";
 
 
 const SignUp = () => {
@@ -23,6 +24,7 @@ const SignUp = () => {
     }
     return (
         <Container>
+            <Helmet><title>Summer Sports Camp | Sign up</title></Helmet>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className='flex flex-col md:w-1/2'>
                     <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='bg-base-100 p-5 rounded-sm border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >

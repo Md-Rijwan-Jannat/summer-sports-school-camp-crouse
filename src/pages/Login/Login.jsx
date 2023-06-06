@@ -2,6 +2,7 @@ import { useState } from "react";
 import Container from "../../components/Container/Container";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaSpinner } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -18,6 +19,7 @@ const Login = () => {
     }
     return (
         <Container>
+            <Helmet><title>Summer Sports Camp | Login</title></Helmet>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className='flex flex-col md:w-1/3'>
                     <form onSubmit={handleSubmit} noValidate='' action='' className='bg-base-100 p-5 rounded-sm border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
