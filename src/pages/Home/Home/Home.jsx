@@ -1,12 +1,14 @@
 import { Helmet } from "react-helmet-async";
+import Container from "../../../components/Container/Container";
+import SliderBanner from "../SliderBanner/SliderBanner";
 
 
 const Home = () => {
     return (
-        <div>
+        <Container>
             <Helmet><title>Summer Sports Camp | Home</title></Helmet>
-            home
-        </div>
+            <SliderBanner/>
+        </Container>
     );
 };
 

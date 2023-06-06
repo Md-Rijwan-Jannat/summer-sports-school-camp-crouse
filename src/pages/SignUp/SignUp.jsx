@@ -27,7 +27,7 @@ const SignUp = () => {
             <Helmet><title>Summer Sports Camp | Sign up</title></Helmet>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className='flex flex-col md:w-1/2'>
-                    <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='bg-base-100 p-5 rounded-sm border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
+                    <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='bg-base-100 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
                         <div>
                             <h3 className="text-3xl text-center">Register</h3>
                         </div>
@@ -38,34 +38,14 @@ const SignUp = () => {
                                         Name *
                                     </label>
                                     <input {...register("name", { required: true })} type='text' name='name' placeholder='Enter Your Name' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900 ' />
-                                    {errors.name && <span className="text-red-500 mt-2 text-sm">This field is required</span>}
+                                    {errors.name && <span className="text-red-500 mt-2 text-sm">Name field is required</span>}
                                 </div>
                                 <div>
                                     <label htmlFor='email' className='font-semibold block mb-2 text-sm'>
                                         Email address *
                                     </label>
                                     <input {...register("email", { required: true })} type='email' name='email' placeholder='Enter Your Email Here' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900 ' />
-                                    {errors.email && <span className="text-red-500 mt-2 text-sm">This field is required</span>}
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <div>
-                                    <div className='flex justify-between'>
-                                        <label htmlFor='password' className='font-semibold text-sm mb-2'>
-                                            Password *
-                                        </label>
-                                    </div>
-                                    <input {...register("password", { required: true })} type='password' name='password' placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
-                                    {errors.password && <span className="text-red-500 mt-2 text-sm">This field is required</span>}
-                                </div>
-                                <div>
-                                    <div className='flex justify-between'>
-                                        <label htmlFor='confirm' className='font-semibold text-sm mb-2'>
-                                            Confirm Password *
-                                        </label>
-                                    </div>
-                                    <input {...register("confirm", { required: true })} type='password' name='confirm' placeholder='Confirm password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
-                                    {errors.confirm && <span className="text-red-500 mt-2 text-sm">This field is required</span>}
+                                    {errors.email && <span className="text-red-500 mt-2 text-sm">Email field is required</span>}
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -76,25 +56,27 @@ const SignUp = () => {
                                         </label>
                                     </div>
                                     <input {...register("photo", { required: true })} type='url' name='photo' placeholder='Photo URL' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
-                                    {errors.photo && <span className="text-red-500 mt-2 text-sm">This field is required</span>}
+                                    {errors.photo && <span className="text-red-500 mt-2 text-sm">Photo field is required</span>}
                                 </div>
                                 <div>
                                     <div className='flex justify-between'>
-                                        <label htmlFor='Gender' className='font-semibold text-sm mb-2'>
+                                        <label htmlFor='phone' className='font-semibold text-sm mb-2'>
                                             Phone Number *
                                         </label>
                                     </div>
-                                    <input {...register("phone")} type='number' name='phone' placeholder='Phone Number' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    <input {...register("phone",{ required: true })} type='number' name='phone' placeholder='Phone Number' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    {errors.phone && <span className="text-red-500 mt-2 text-sm">Number field is required</span>}
                                 </div>
                             </div>
                             <div className="flex gap-4">
                                 <div>
                                     <div className='flex justify-between'>
-                                        <label htmlFor='Gender' className='font-semibold text-sm mb-2'>
+                                        <label htmlFor='address' className='font-semibold text-sm mb-2'>
                                             Address *
                                         </label>
                                     </div>
-                                    <input {...register("address")} type='text' name='address' placeholder='Address' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    <input {...register("address", { required: true })} type='text' name='address' placeholder='Address' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    {errors.address && <span className="text-red-500 mt-2 text-sm">Address field is required</span>}
                                 </div>
                                 <div>
                                     <div className='flex justify-between'>
@@ -110,7 +92,26 @@ const SignUp = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <div className="flex gap-4">
+                            <div>
+                                <div className='flex justify-between'>
+                                    <label htmlFor='password' className='font-semibold text-sm mb-2'>
+                                        Password *
+                                    </label>
+                                </div>
+                                <input {...register("password", { required: true })} type='password' name='password' placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                {errors.password && <span className="text-red-500 mt-2 text-sm">password field is required</span>}
+                            </div>
+                            <div>
+                                <div className='flex justify-between'>
+                                    <label htmlFor='confirm' className='font-semibold text-sm mb-2'>
+                                        Confirm Password *
+                                    </label>
+                                </div>
+                                <input {...register("confirm", { required: true })} type='password' name='confirm' placeholder='Confirm password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                {errors.confirm && <span className="text-red-500 mt-2 text-sm">Confirm field is required</span>}
+                            </div>
+                        </div>
                         <div>
                             <button type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
                                 {loading ? (<FaSpinner className='m-auto animate-spin' size={24} />) : ('Continue')}

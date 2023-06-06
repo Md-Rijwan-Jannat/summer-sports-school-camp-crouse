@@ -22,7 +22,7 @@ const Login = () => {
             <Helmet><title>Summer Sports Camp | Login</title></Helmet>
             <div className='flex justify-center items-center min-h-screen'>
                 <div className='flex flex-col md:w-1/3'>
-                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-base-100 p-5 rounded-sm border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
+                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-base-100 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
                         <div>
                             <h3 className="text-3xl text-center">Login Now</h3>
                         </div>
@@ -50,13 +50,13 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="mt-5">
-                        <div onClick={handleGoogleSignIn} className='flex justify-center items-center btn btn-outline space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'   >
+                        <div onClick={handleGoogleSignIn} className='flex justify-center items-center btn hover:bg-cyan-500 space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'   >
                             <FaGoogle size={32} />
 
                             <p>Continue with Google</p>
                         </div>
                         <p className='px-6 text-sm text-center'>
-                            Do not have an account yet? <Link to='/signUp' className='hover:underline hover:text-cyan-500 text-gray-600'   >
+                            Do not have an account yet? <Link to='/signUp' className=' hover:text-blue-500 text-gray-600'   >
                                 Sign up
                             </Link>
                         </p>
