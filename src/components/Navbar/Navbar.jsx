@@ -11,9 +11,9 @@ const Navbar = () => {
     </>
     return (
         <Container>
-                <div className="navbar bg-base-100 bg-opacity-40 border shadow-sm">
+                <div className="navbar bg-cyan-100 bg-opacity-40 border shadow-sm">
                     <div className="navbar-start">
-                        <img className="w-28" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
+                        <img className="w-28 rounded-3xl" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
                     </div>
                     <div className="dropdown navbar-start">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

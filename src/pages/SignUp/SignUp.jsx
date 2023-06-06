@@ -64,7 +64,7 @@ const SignUp = () => {
                                             Phone Number *
                                         </label>
                                     </div>
-                                    <input {...register("phone",{ required: true })} type='number' name='phone' placeholder='Phone Number' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    <input {...register("phone", { required: true })} type='number' name='phone' placeholder='Phone Number' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
                                     {errors.phone && <span className="text-red-500 mt-2 text-sm">Number field is required</span>}
                                 </div>
                             </div>
@@ -99,8 +99,9 @@ const SignUp = () => {
                                         Password *
                                     </label>
                                 </div>
-                                <input {...register("password", { required: true })} type='password' name='password' placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                <input {...register("password", { required: true, pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6}$/i , minLength: 6  })} type='password' name='password' placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
                                 {errors.password && <span className="text-red-500 mt-2 text-sm">password field is required</span>}
+                                {errors.password === 'pattern' && <span className="text-red-500 mt-2 text-sm">Please provite a one uppercase or lowercase latter , one number  ,one special character and 6 more than</span>}
                             </div>
                             <div>
                                 <div className='flex justify-between'>
@@ -108,7 +109,7 @@ const SignUp = () => {
                                         Confirm Password *
                                     </label>
                                 </div>
-                                <input {...register("confirm", { required: true })} type='password' name='confirm' placeholder='Confirm password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                <input {...register("confirm", { required: true, pattern: /^[A-Za-z]+$/i , maxLength: 20 })} type='password' name='confirm' placeholder='Confirm password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
                                 {errors.confirm && <span className="text-red-500 mt-2 text-sm">Confirm field is required</span>}
                             </div>
                         </div>
