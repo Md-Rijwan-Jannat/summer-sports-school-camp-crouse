@@ -1,4 +1,4 @@
-import Container from "../Container/Container";
+import Container from "../../Container/Container";
 import { FaFacebook, FaPhone, FaTelegramPlane, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {

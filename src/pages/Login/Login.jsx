@@ -3,6 +3,7 @@ import Container from "../../components/Container/Container";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaSpinner } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../components/Shared/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -50,16 +51,13 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="mt-5">
-                        <div onClick={handleGoogleSignIn} className='flex justify-center items-center btn hover:bg-cyan-500 space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'   >
-                            <FaGoogle size={32} />
-
-                            <p>Continue with Google</p>
-                        </div>
-                        <p className='px-6 text-sm text-center'>
+                    <p className='px-6 mb-5 text-sm text-center'>
                             Do not have an account yet? <Link to='/signUp' className=' hover:text-blue-500 text-gray-600'   >
                                 Sign up
                             </Link>
                         </p>
+                        <SocialLogin></SocialLogin>
+                       
                     </div>
                 </div>
             </div>

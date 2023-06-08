@@ -1,47 +1,35 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import './SliderBanner.css'
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
 
 const SliderBanner = () => {
-    const pagination = {
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-    };
+    const [sliderRef] = useKeenSlider()
     return (
-        <Swiper
-            pagination={pagination}
-            modules={[Pagination]}
-            className="mySwiper"
-        >
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50"  src="https://images.metroparent.com/wp-content/uploads/2023/03/0323-MP-TopCampsRoundup3.jpeg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://www.cityofevanston.org/home/showpublishedimage/17821/638061976594770000" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://wpcdn.us-midwest-1.vip.tn-cloud.net/www.charlotteparent.com/content/uploads/data-import/707c536d/iStock-180732669.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/newscms/2020_28/1587568/virtual-summer-camp-te-main2-200706.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://www.highgateschool.org.uk/wp-content/uploads/2021/06/Summer-Camp-May-21.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://sarvankashvidyamandir.in/wp-content/uploads/2019/02/cam-img.jpg" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://us.123rf.com/450wm/lightfieldstudios/lightfieldstudios1910/lightfieldstudios191010188/131397739-happy-child-holding-chalk-board-with-summer-camp-letters.jpg?ver=6" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img className="w-full md:h-[700px] xl:h-[1000px] brightness-50" src="https://www.amelio.in/img/summer-camp-ready.jpg" alt="" />
-            </SwiperSlide>
-        </Swiper>
+        <div ref={sliderRef} className="keen-slider">
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/873a7094905625.5e8ab41cc80f6.png" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://img.freepik.com/free-vector/gradient-halftone-basketball-twitch-banner_23-2149346315.jpg" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://img.freepik.com/free-psd/rugby-sports-horizontal-banner_23-2149041451.jpg" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://img.freepik.com/premium-vector/man-basketball-banner-red-sports-banner-design-premium-template-vector_356357-71.jpg" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sports-and-tech-banner-design-template-b60eb30e679bdd78cde37d835c83f5c1_screen.jpg?ts=1622169623" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/11702443/original/a69080b5ff09830ad7a89c9a93fb72077bd5dbd1/design-professional-web-banner-header-ad-cover-in-16-hr.jpg" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://www.uksoccershop.com/blog/wp-content/uploads/2016/09/thailand-2016-17-kits-banner.jpg" alt="" />
+            </div>
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://i.pinimg.com/originals/b7/4c/1a/b74c1a5dd2393de5c52d7628b9b4aeda.jpg" alt="" />
+            </div>
+        </div>
     );
 };
 
