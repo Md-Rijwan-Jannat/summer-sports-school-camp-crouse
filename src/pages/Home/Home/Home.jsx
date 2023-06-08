@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import Container from "../../../components/Container/Container";
 import SliderBanner from "../SliderBanner/SliderBanner";
+import PopularClasses from "../PopularClasses/PopularClasses";
+import Instructor from "../Instructor/Instructor";
 
 
 const Home = () => {
@@ -8,6 +10,8 @@ const Home = () => {
         <Container>
             <Helmet><title>Summer Sports Camp | Home</title></Helmet>
             <SliderBanner/>
+            <PopularClasses/>
+            <Instructor/>
         </Container>
     );
 };

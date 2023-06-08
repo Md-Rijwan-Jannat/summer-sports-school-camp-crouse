@@ -49,7 +49,7 @@ const Navbar = () => {
                                 <button onClick={logOutHandler} className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600">LogOut</button>
                             </div> : <div className="flex gap-3">
                                 <FaUser size={30}></FaUser>
-                                 <li className="text-sm font-semibold hover:text-cyan-600"><Link to='/login'>Login</Link></li>
+                                 <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600"><Link to='/login'>Login</Link></button>
                             </div>
                         }
                     </div>

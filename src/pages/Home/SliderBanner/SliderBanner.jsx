@@ -4,7 +4,7 @@ import { useKeenSlider } from 'keen-slider/react'
 const SliderBanner = () => {
     const [sliderRef] = useKeenSlider()
     return (
-        <div ref={sliderRef} className="keen-slider">
+        <div ref={sliderRef} className="keen-slider mb-5 md:mb-16">
             <div className="keen-slider__slide">
                 <img className='w-full md:h-[700px]' src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/873a7094905625.5e8ab41cc80f6.png" alt="" />
             </div>
