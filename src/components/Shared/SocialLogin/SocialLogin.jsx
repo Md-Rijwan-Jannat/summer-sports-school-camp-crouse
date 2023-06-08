@@ -2,6 +2,7 @@ import { FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const SocialLogin = () => {
@@ -13,15 +14,8 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                    // const saveUser = { name: loggedUser.displayName, email: loggedUser.email };
-                    // fetch(`https://bistro-boss-server-rose.vercel.app/users`, {
-                    //     method: "POST",
-                    //     headers: {
-                    //         "content-type": "application/json"
-                    //     },
-                    //     body: JSON.stringify(saveUser)
-                    // })
-                    .then(res => res.json())
+                    const insertUser = { name: loggedUser.displayName, email: loggedUser.email ,photo: loggedUser.photoURL};
+                    axios.patch(`http://localhost:5000/users`, insertUser)
                     .then(() => {
                         // navigate(from, { replace: true });
                         toast.success('login Successfully!')

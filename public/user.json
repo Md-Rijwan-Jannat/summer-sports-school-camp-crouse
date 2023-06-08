@@ -1,0 +1,38 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "role": "instructor",
+        "image": "https://tse4.mm.bing.net/th?id=OIP._VKMsS6iBKur0N57MGGOlwAAAA&pid=Api&P=0&h=180"
+    },
+    {
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "role": "instructor",
+        "image": "https://www.allprodad.com/wp-content/uploads/2021/03/05-12-21-happy-people.jpg"
+    },
+    {
+        "name": "Michael Johnson",
+        "email": "michael.johnson@example.com",
+        "role": "instructor",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.WlUDXSME4D1KBxKlZEtVuwHaKA&pid=Api&P=0&h=180"
+    },
+    {
+        "name": "Emily Davis",
+        "email": "emily.davis@example.com",
+        "role": "instructor",
+        "image": "https://tse2.mm.bing.net/th?id=OIP.UvVU9RQtcmWUTyIAB7pPGAHaLD&pid=Api&P=0&h=180"
+    },
+    {
+        "name": "David Wilson",
+        "email": "david.wilson@example.com",
+        "role": "instructor",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.qIAkOXwo6tsUbycPwAjUAQHaLy&pid=Api&P=0&h=180"
+    },
+    {
+        "name": "Sarah Thompson",
+        "email": "sarah.thompson@example.com",
+        "role": "instructor",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.leRaZskYpTKA55a0St0tZgHaJa&pid=Api&P=0&h=180"
+    }
+]

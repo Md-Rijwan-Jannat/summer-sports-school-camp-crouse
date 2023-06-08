@@ -18,8 +18,8 @@ const Navbar = () => {
     }
     const links = <>
         <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
-        <li><Link to='/' className="font-bold text-cyan-600">Instructors</Link></li>
-        <li><Link to='/' className="font-bold text-cyan-600">Classes</Link></li>
+        <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
+        <li><Link to='/allClasses' className="font-bold text-cyan-600">Classes</Link></li>
         <li><Link to='/' className="font-bold text-cyan-600">Dashboard </Link></li>
     </>
     return (
