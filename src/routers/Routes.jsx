@@ -8,16 +8,17 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/Signup/Signup";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import AllInstructor from "../pages/AllInstructor/AllInstructor";
+import Dashboard from "../layout/Dashboard";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Main></Main>,
+        element: <Main/>,
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home/>
             },
             {
                 path: '/AllInstructor',
@@ -36,11 +37,20 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'login',
-                element: <Login></Login>
+                element: <Login/>
             },
             {
                 path: 'signUp',
-                element: <SignUp></SignUp>
+                element: <SignUp/>
+            }
+        ]
+    },
+    {
+        path: 'dashboard',
+        element: <Dashboard/>,
+        children:[
+            {
+                
             }
         ]
     }

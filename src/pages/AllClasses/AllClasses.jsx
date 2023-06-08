@@ -1,11 +1,17 @@
+import { Helmet } from "react-helmet-async";
+import Container from "../../components/Container/Container";
 import useClasses from "../../components/hooks/useClasses";
 import ClassTabile from "./ClassTabile";
+import SectionTitle from "../../components/Headers/SectionTitle";
 
 
 const AllClasses = () => {
     const [classes] = useClasses();
     return (
-        <div className="my-16">
+     <Container>
+        <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>
+        <SectionTitle title="Our All Classes"/>
+           <div className="my-16">
              <div className="overflow-x-hidden lg:mx-16">
                 <table className="table w-full">
                     {/* head */}
@@ -34,6 +40,7 @@ const AllClasses = () => {
                 </table>
             </div>
         </div>
+     </Container>
     );
 };
 

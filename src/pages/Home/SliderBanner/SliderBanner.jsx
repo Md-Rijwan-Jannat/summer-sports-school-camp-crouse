@@ -5,17 +5,19 @@ const SliderBanner = () => {
     const [sliderRef] = useKeenSlider()
     return (
         <div ref={sliderRef} className="keen-slider mb-5 md:mb-16">
+            
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://img.freepik.com/premium-vector/man-basketball-banner-red-sports-banner-design-premium-template-vector_356357-71.jpg" alt="" />
+            </div>
+            
+            <div className="keen-slider__slide">
+                <img className='w-full md:h-[700px]' src="https://img.freepik.com/free-psd/rugby-sports-horizontal-banner_23-2149041451.jpg" alt="" />
+            </div>
             <div className="keen-slider__slide">
                 <img className='w-full md:h-[700px]' src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/873a7094905625.5e8ab41cc80f6.png" alt="" />
             </div>
             <div className="keen-slider__slide">
                 <img className='w-full md:h-[700px]' src="https://img.freepik.com/free-vector/gradient-halftone-basketball-twitch-banner_23-2149346315.jpg" alt="" />
-            </div>
-            <div className="keen-slider__slide">
-                <img className='w-full md:h-[700px]' src="https://img.freepik.com/free-psd/rugby-sports-horizontal-banner_23-2149041451.jpg" alt="" />
-            </div>
-            <div className="keen-slider__slide">
-                <img className='w-full md:h-[700px]' src="https://img.freepik.com/premium-vector/man-basketball-banner-red-sports-banner-design-premium-template-vector_356357-71.jpg" alt="" />
             </div>
             <div className="keen-slider__slide">
                 <img className='w-full md:h-[700px]' src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sports-and-tech-banner-design-template-b60eb30e679bdd78cde37d835c83f5c1_screen.jpg?ts=1622169623" alt="" />
