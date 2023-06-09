@@ -40,11 +40,11 @@ const Dashboard = () => {
                         </> : <>
                         {
                             isAdmin ? <>
-                              <li><Link to={'/'}><FaHome size={20}/> Admin Home</Link></li>
+                              <li><Link to={'/adminHome'}><FaHome size={20}/> Admin Home</Link></li>
                               <li><Link to={'/dashboard/allUser'}><FaUsers size={20}/>All Users</Link></li>
                               <li><Link to={'/dashboard'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
                             </> : <>
-                            <li><Link to={'/'}><FaHome size={20}/> Instructor Home</Link></li>
+                            <li><Link to={'/dashboard/instructorHome'}><FaHome size={20}/> Instructor Home</Link></li>
                             <li><Link to={'/dashboard/addClass'}><FaHome size={20}/> Add Class</Link></li>
                             <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20}/> My Class </Link></li>
                             </>
