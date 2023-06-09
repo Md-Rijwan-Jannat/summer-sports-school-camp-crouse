@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import Container from "../../components/Container/Container";
-import useClasses from "../../components/hooks/useClasses";
 import ClassTabile from "./ClassTabile";
 import SectionTitle from "../../components/Headers/SectionTitle";
+import useApprovedClass from "../../components/hooks/useApprovedClass";
 
 
 const AllClasses = () => {
-    const [classes] = useClasses();
+    const [approvedClass] = useApprovedClass();
     return (
      <Container>
         <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>
@@ -29,7 +29,7 @@ const AllClasses = () => {
                     </thead>
                     <tbody>
                         {
-                            classes.map((cls, index) => <ClassTabile 
+                            approvedClass.map((cls, index) => <ClassTabile 
                             key={cls._id}
                             cls={cls}
                             index={index}

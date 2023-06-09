@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { FaHome, FaUsers } from "react-icons/fa";
-import {  AiFillContacts } from "react-icons/ai";
+import { BsFillBagPlusFill } from "react-icons/bs";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../components/hooks/useAuth";
 import Container from "../components/Container/Container";
@@ -10,7 +10,7 @@ import { SiGoogleclassroom } from "react-icons/si";
 
 const Dashboard = () => {
     const { user } = useAuth();
-    const isAdmin = true;
+    const isAdmin = false;
     const isStudent = false;
     return (
         <Container>
@@ -42,9 +42,10 @@ const Dashboard = () => {
                             isAdmin ? <>
                               <li><Link to={'/'}><FaHome size={20}/> Admin Home</Link></li>
                               <li><Link to={'/dashboard/allUser'}><FaUsers size={20}/>All Users</Link></li>
-                              <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
+                              <li><Link to={'/dashboard'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
                             </> : <>
                             <li><Link to={'/'}><FaHome size={20}/> Instructor Home</Link></li>
+                            <li><Link to={'/dashboard/addClass'}><FaHome size={20}/> Add Class</Link></li>
                             </>
                         }
                         </>
@@ -52,7 +53,7 @@ const Dashboard = () => {
                        
                         <div className="divider"></div>
                         <li><NavLink to={'/'}><FaHome size={20}></FaHome> Home</NavLink></li>
-                        <li><NavLink to={'/contact'}><AiFillContacts size={20}></AiFillContacts> Contact</NavLink></li>
+                        <li><NavLink to={'/contact'}><BsFillBagPlusFill size={20}></BsFillBagPlusFill> Contact</NavLink></li>
                     </ul>
                 </div>
             </div>

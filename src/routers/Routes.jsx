@@ -12,6 +12,7 @@ import Dashboard from "../layout/Dashboard";
 import ErrorPage from "../components/ErrorPage";
 import ManageUsers from "../pages/Dashboard/AdminPage/AllUsers/ManageUsers";
 import ManageClasses from "../pages/Dashboard/AdminPage/ManageClasses/ManageClasses";
+import AddClass from "../pages/Dashboard/InstructorPage/AddClass/AddClass";
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: 'manageClasses',
                 element: <ManageClasses />
+            },
+            {
+                path: 'addClass',
+                element: <AddClass />
             }
         ]
     }

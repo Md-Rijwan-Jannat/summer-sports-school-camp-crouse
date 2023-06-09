@@ -22,6 +22,7 @@ const ManageClasses = () => {
                                 <th>Instructor Email</th>
                                 <th>Available Seats</th>
                                 <th>Price</th>
+                                <th>Status</th>
                                 <th>Provide Status</th>
                             </tr>
                         </thead>
