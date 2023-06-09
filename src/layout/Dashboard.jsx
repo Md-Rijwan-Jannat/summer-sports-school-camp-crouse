@@ -41,9 +41,9 @@ const Dashboard = () => {
                         {
                             isAdmin ? <>
                               <li><Link to={'/'}><FaHome size={20}/> Admin Home</Link></li>
-                              <li><Link to={'/'}><FaUsers size={20}/>All Users</Link></li>
+                              <li><Link to={'/dashboard/allUser'}><FaUsers size={20}/>All Users</Link></li>
                             </> : <>
-                            <li><Link to={'/dashboard/allUsers'}><FaHome size={20}/> Instructor Home</Link></li>
+                            <li><Link to={'/'}><FaHome size={20}/> Instructor Home</Link></li>
                             </>
                         }
                         </>

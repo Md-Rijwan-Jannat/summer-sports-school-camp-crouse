@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 
-const useUser = () => {
-    const [users, setUsers] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/classes')
-            .then(res => res.json())
-            .then(data => {
-                setUsers(data)
-            })
-    }, [])
-    return [users];
+const useUsers = () => {
+    const {data: users=[], refetch} = useQuery(['users'], async()=>{
+        const res = await axios.get('http://localhost:5000/allUsers')
+        return res.data;
+    })
+    return [users, refetch]
 };
 
-export default useUser;
+export default useUsers;

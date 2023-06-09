@@ -10,17 +10,18 @@ import AllClasses from "../pages/AllClasses/AllClasses";
 import AllInstructor from "../pages/AllInstructor/AllInstructor";
 import Dashboard from "../layout/Dashboard";
 import ErrorPage from "../components/ErrorPage";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Main/>,
-        errorElement: <ErrorPage/>,
+        element: <Main />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: '/AllInstructor',
@@ -36,25 +37,26 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Register />,
-        errorElement: <ErrorPage/>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: 'login',
-                element: <Login/>
+                element: <Login />
             },
             {
                 path: 'signUp',
-                element: <SignUp/>
+                element: <SignUp />
             }
         ]
     },
     {
         path: 'dashboard',
-        element: <Dashboard/>,
-        errorElement: <ErrorPage/>,
-        children:[
+        element: <Dashboard />,
+        errorElement: <ErrorPage />,
+        children: [
             {
-                
+                path: 'allUser',
+                element: <AllUsers />
             }
         ]
     }
