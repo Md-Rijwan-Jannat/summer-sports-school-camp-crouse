@@ -43,7 +43,7 @@ const AddClass = () => {
     }
     return (
         <div className="w-full px-10 mb-24">
-            <Helmet><title>Summer Sports Camp | All Users</title></Helmet>
+            <Helmet><title>Summer Sports Camp | Add Classes</title></Helmet>
             <SectionTitle title={'Add a Class'}></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)} className='bg-slate-100 p-5 rounded-lg border'>
                 <div className='flex gap-5 my-4'>

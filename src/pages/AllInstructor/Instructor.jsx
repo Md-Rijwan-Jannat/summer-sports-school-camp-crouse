@@ -1,9 +1,19 @@
+import axios from "axios";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 const Instructor = ({ instructor }) => {
     const [flow, setFlow] = useState(false)
-    const { name, email, role, image } = instructor;
+    const [feedback, setFeedback]= useState();
+    const { name, email, role, image,_id } = instructor;
+    console.log(feedback);
+  
+    axios.get(`http://localhost:5000/feedback_for_instructor/${_id}`)
+    .then(data =>{
+        setFeedback(data.data);
+    })
+
+
     const flowingHandler = () => {
         setFlow(!flow)
     }

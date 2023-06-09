@@ -26,11 +26,11 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-cyan-100 font-semibold text-base-content">
+                    <ul className="menu p-4 w-80 h-full bg-cyan-100 font-semibold text-base-content pt-10 md:pt-24">
                         {/* Sidebar content here */}
                         {user && <>
                         <div className="flex flex-col items-center justify-center mb-5"> 
-                            <img className="w-16 h-16 rounded-full mb-2" src={user?.PhotoURL} alt="" />
+                            <img className="w-16 h-16 rounded-full mb-2" src={user?.photoURL} alt="" />
                             <span>{user?.displayName}</span>
                         </div>
                         </>}
@@ -46,6 +46,7 @@ const Dashboard = () => {
                             </> : <>
                             <li><Link to={'/'}><FaHome size={20}/> Instructor Home</Link></li>
                             <li><Link to={'/dashboard/addClass'}><FaHome size={20}/> Add Class</Link></li>
+                            <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20}/> My Class </Link></li>
                             </>
                         }
                         </>

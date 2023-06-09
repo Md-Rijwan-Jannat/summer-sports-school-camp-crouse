@@ -13,6 +13,7 @@ import ErrorPage from "../components/ErrorPage";
 import ManageUsers from "../pages/Dashboard/AdminPage/AllUsers/ManageUsers";
 import ManageClasses from "../pages/Dashboard/AdminPage/ManageClasses/ManageClasses";
 import AddClass from "../pages/Dashboard/InstructorPage/AddClass/AddClass";
+import MyClasses from "../pages/Dashboard/InstructorPage/MyClasses/MyClasses";
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/AllInstructor',
+                path: '/allInstructor',
                 element: <AllInstructor />,
                 loader: () => fetch('http://localhost:5000/users/instructor')
             },
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path: 'addClass',
                 element: <AddClass />
+            },
+            {
+                path: 'myClasses',
+                element: <MyClasses />
             }
         ]
     }
