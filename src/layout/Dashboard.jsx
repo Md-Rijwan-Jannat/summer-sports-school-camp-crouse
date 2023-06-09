@@ -11,7 +11,7 @@ import { SiGoogleclassroom } from "react-icons/si";
 const Dashboard = () => {
     const { user } = useAuth();
     const isAdmin = false;
-    const isStudent = false;
+    const isStudent = true;
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
@@ -36,13 +36,14 @@ const Dashboard = () => {
                         </>}
                       {
                         isStudent ? <>
-                        <li><Link to={'/'}><FaHome size={20}/> Student Home</Link></li>
+                        <li><Link to={'/dashboard/studentHome'}><FaHome size={20}/> Student Home</Link></li>
+                        <li><Link to={'/dashboard/myClass'}><SiGoogleclassroom size={20}/> My Classes</Link></li>
                         </> : <>
                         {
                             isAdmin ? <>
-                              <li><Link to={'/adminHome'}><FaHome size={20}/> Admin Home</Link></li>
+                              <li><Link to={'/dashboard/adminHome'}><FaHome size={20}/> Admin Home</Link></li>
                               <li><Link to={'/dashboard/allUser'}><FaUsers size={20}/>All Users</Link></li>
-                              <li><Link to={'/dashboard'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
+                              <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
                             </> : <>
                             <li><Link to={'/dashboard/instructorHome'}><FaHome size={20}/> Instructor Home</Link></li>
                             <li><Link to={'/dashboard/addClass'}><FaHome size={20}/> Add Class</Link></li>

@@ -16,6 +16,7 @@ import AddClass from "../pages/Dashboard/InstructorPage/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/InstructorPage/MyClasses/MyClasses";
 import InstructorHome from "../pages/Dashboard/InstructorPage/InstructorHome/InstructorHome";
 import AdminHome from "../pages/Dashboard/AdminPage/AdminHome/AdminHome";
+import StudentHome from "../pages/Dashboard/StudentsPage/StudentHome";
 
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/allInstructor',
+                path: 'allInstructor',
                 element: <AllInstructor />,
                 loader: () => fetch('http://localhost:5000/users/instructor')
             },
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: 'allUser',
                 element: <ManageUsers />
+            },
+            {
+                path: 'studentHome',
+                element: <StudentHome />
             },
             {
                 path: 'manageClasses',

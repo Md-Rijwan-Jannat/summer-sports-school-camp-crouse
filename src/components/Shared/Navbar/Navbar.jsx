@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
         <li><Link to='/allClasses' className="font-bold text-cyan-600">Classes</Link></li>
-        <li><Link to='/dashboard/allUser' className="font-bold text-cyan-600">Dashboard </Link></li>
+        <li><Link to='/dashboard' className="font-bold text-cyan-600">Dashboard </Link></li>
     </>
     return (
         <Container>
