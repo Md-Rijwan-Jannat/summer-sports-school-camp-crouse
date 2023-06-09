@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Container from "../../../components/Container/Container";
 import SliderBanner from "../SliderBanner/SliderBanner";
 import PopularClasses from "../PopularClasses/PopularClasses";
-import Instructor from "../Instructor/Instructor";
+import Instructor from "../PopularInstructor/PopularInstructors";
 
 
 const Home = () => {

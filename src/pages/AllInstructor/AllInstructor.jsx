@@ -12,7 +12,7 @@ const AllInstructor = () => {
         <Container>
             <Helmet><title>Summer Sports Camp | Home</title></Helmet>
             <SectionTitle title="Our All Instructor" />
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     instructors.map(instructor => <Instructor
                         key={instructor._id}

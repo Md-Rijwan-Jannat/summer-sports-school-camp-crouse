@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
-const Instructor = ({ instructor }) => {
+
+const PopularInstructor = ({ instr }) => {
     const [flow, setFlow] = useState(false)
-    const { name, email, role, image } = instructor;
+    const { name, email, role, image } = instr;
     const flowingHandler = () => {
         setFlow(!flow)
     }
@@ -33,4 +34,4 @@ const Instructor = ({ instructor }) => {
     );
 };
 
-export default Instructor;
+export default PopularInstructor;
