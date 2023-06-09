@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import useUser from "../../../components/hooks/useUsers";
-import AllUser from "./AllUser";
-import SectionTitle from "../../../components/Headers/SectionTitle";
+import useUser from "../../../../components/hooks/useUsers";
+import SectionTitle from "../../../../components/Headers/SectionTitle";
+import ManageUser from "./ManageUser";
 
 
-const AllUsers = () => {
+const ManageUsers = () => {
     const [users, refetch] = useUser();
     return (
         <div>
@@ -28,12 +28,12 @@ const AllUsers = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map((user, index) => <AllUser
+                                users.map((user, index) => <ManageUser
                                     key={user._id}
                                     user={user}
                                     index={index}
                                     refetch={refetch}
-                                ></AllUser>)
+                                ></ManageUser>)
                             }
 
                         </tbody>
@@ -45,4 +45,4 @@ const AllUsers = () => {
     );
 };
 
-export default AllUsers;
+export default ManageUsers;

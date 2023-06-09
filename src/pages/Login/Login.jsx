@@ -1,22 +1,19 @@
 import { useState } from "react";
 import Container from "../../components/Container/Container";
 import { Link } from "react-router-dom";
-import { FaGoogle, FaSpinner } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import SocialLogin from "../../components/Shared/SocialLogin/SocialLogin";
+import { FaSpinner, FaEyeSlash, FaEye } from "react-icons/fa";
 
 
 const Login = () => {
-    const { loading, setLoading } = useState(false)
+    const { loading, setLoading } = useState(false);
+    const { showPass, setShowPass } = useState(true);
+
     // login submit handler
     const handleSubmit = (event) => {
         event.preventDefault();
         setLoading(true);
-    }
-
-    // google handler
-    const handleGoogleSignIn = () => {
-
     }
     return (
         <Container>
@@ -40,24 +37,27 @@ const Login = () => {
                                         Password *
                                     </label>
                                 </div>
-                                <input type='password' name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                <div className="flex items-center">
+                                    <input type={showPass ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    <span onClick={() => setShowPass(!showPass)} className="text-gray-600 text-center btn btn-sm">{showPass ? <FaEyeSlash /> : <FaEye />}</span>
+                                </div>
                             </div>
                         </div>
 
                         <div>
                             <button type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
-                                {loading ? ( <FaSpinner className='m-auto animate-spin' size={24} /> ) : ( 'Continue')}
+                                {loading ? (<FaSpinner className='m-auto animate-spin' size={24} />) : ('Continue')}
                             </button>
                         </div>
                     </form>
                     <div className="mt-5">
-                    <p className='px-6 mb-5 text-sm text-center'>
+                        <p className='px-6 mb-5 text-sm text-center'>
                             Do not have an account yet? <Link to='/signUp' className=' hover:text-blue-500 text-gray-600'   >
                                 Sign up
                             </Link>
                         </p>
                         <SocialLogin></SocialLogin>
-                       
+
                     </div>
                 </div>
             </div>

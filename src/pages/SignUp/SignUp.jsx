@@ -13,15 +13,9 @@ import axios from "axios";
 
 const SignUp = () => {
     const { loading, setLoading } = useState(false);
-    const { ShowPass, setShowPass } = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signUpUser, updateUserProfile } = useAuth();
     const navigate = useNavigate()
-
-
-    const showPassHandler = () => {
-        setShowPass(!ShowPass)
-    }
 
     // login submit handler
     const onSubmit = data => {
@@ -33,7 +27,7 @@ const SignUp = () => {
                 // setLoading(true);
                 updateUserProfile(data.name, data.photo)
                     .then(result => {
-                        const insertUser = { name: data.name, email: data.email, photo: data.photo };
+                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number,gender: data.gander, address: data.address };
                         axios.post(`http://localhost:5000/users`, insertUser)
                             .then(data => {
                                 console.log(data.data);
@@ -121,7 +115,7 @@ const SignUp = () => {
                                             Gender *
                                         </label>
                                     </div>
-                                    <select {...register("gender")}>
+                                    <select {...register("gander")}>
                                         <option value="female">female</option>
                                         <option value="male">male</option>
                                         <option value="other">other</option>
@@ -136,7 +130,7 @@ const SignUp = () => {
                                         Password *
                                     </label>
                                 </div>
-                                <input {...register("password", { required: true, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/, minLength: 6 })} type={ShowPass ? 'text' : 'password'} name='password' placeholder='password' className='px-3 w-full py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                <input {...register("password", { required: true, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/, minLength: 6 })} type="password" name='password' placeholder='password' className='px-3 w-full py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
                                 <br /> {errors.password && <span className="text-red-500 mt-2 text-sm">password field is required</span>}
                                 <br /> {errors.password?.type === 'pattern' && <span className="text-red-500 mt-2 text-sm">Password must have one Uppercase one lower case, one number and one special character.</span>}
                             </div>
@@ -149,9 +143,6 @@ const SignUp = () => {
                                 <input {...register("confirm", { required: true })} type='password' name='confirm' placeholder='Confirm password' className='px-3 w-full py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
                                 <br /> {errors.confirm && <span className="text-red-500 mt-2 text-sm">Confirm field is required</span>}
                             </div>
-                        </div>
-                        <div className="flex items-center justify-center">
-                            <span onClick={showPassHandler} className="text-blue-600 text-center btn btn-sm">{ShowPass ? 'Hide Password' : 'Show password'}</span>
                         </div>
                         <div>
                             <button onClick={() => setLoading(!loading)} type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >

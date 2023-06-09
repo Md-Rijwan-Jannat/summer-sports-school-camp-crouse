@@ -10,7 +10,8 @@ import AllClasses from "../pages/AllClasses/AllClasses";
 import AllInstructor from "../pages/AllInstructor/AllInstructor";
 import Dashboard from "../layout/Dashboard";
 import ErrorPage from "../components/ErrorPage";
-import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import ManageUsers from "../pages/Dashboard/AdminPage/AllUsers/ManageUsers";
+import ManageClasses from "../pages/Dashboard/AdminPage/ManageClasses/ManageClasses";
 
 
 const router = createBrowserRouter([
@@ -56,7 +57,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'allUser',
-                element: <AllUsers />
+                element: <ManageUsers />
+            },
+            {
+                path: 'manageClasses',
+                element: <ManageClasses />
             }
         ]
     }

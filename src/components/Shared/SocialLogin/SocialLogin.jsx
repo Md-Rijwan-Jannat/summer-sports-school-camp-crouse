@@ -14,8 +14,8 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                    const insertUser = { name: loggedUser.displayName, email: loggedUser.email ,photo: loggedUser.photoURL};
-                    axios.patch(`http://localhost:5000/users`, insertUser)
+                    const insertUser = { name: loggedUser.displayName, email: loggedUser.email ,image: loggedUser.photoURL};
+                    axios.post(`http://localhost:5000/users`, insertUser)
                     .then(() => {
                         // navigate(from, { replace: true });
                         toast.success('login Successfully!')
