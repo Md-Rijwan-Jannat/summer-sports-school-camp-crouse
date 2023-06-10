@@ -61,16 +61,16 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: 'allUser',
-                element: <ManageUsers />
-            },
-            {
                 path: 'studentHome',
                 element: <StudentHome />
             },
             {
                 path: 'manageClasses',
                 element: <ManageClasses />
+            },
+            {
+                path: 'manageUsers',
+                element: <ManageUsers />
             },
             {
                 path: 'addClass',

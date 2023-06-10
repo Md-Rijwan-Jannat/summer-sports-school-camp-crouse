@@ -15,7 +15,7 @@ const MyClasses = () => {
         .then(data=>{
             setMyClasses(data)
         })
-    },[])
+    },[user])
     return (
         <div>
              <Helmet><title>Summer Sports Camp | My ash</title></Helmet>
