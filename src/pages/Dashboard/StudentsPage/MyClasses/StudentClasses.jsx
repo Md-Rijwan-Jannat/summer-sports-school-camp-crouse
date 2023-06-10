@@ -1,16 +1,16 @@
 import { Helmet } from "react-helmet-async";
-import Container from "../../components/Container/Container";
-import ClassTabile from "./ClassTabile";
-import SectionTitle from "../../components/Headers/SectionTitle";
-import useApprovedClass from "../../components/hooks/useApprovedClass";
-import useAuth from "../../components/hooks/useAuth";
-import NotFoundMessage from "../../components/NotFoundMesage/NotFoundMessage";
+import Container from "../../../../components/Container/Container";
+import useAddClass from "../../../../components/hooks/useAddClass";
+import SectionTitle from "../../../../components/Headers/SectionTitle";
+import useAuth from "../../../../components/hooks/useAuth";
+import NotFoundMessage from "../../../../components/NotFoundMesage/NotFoundMessage";
+import StudentClassTable from "./StudentClassTable";
 
 
-const AllClasses = () => {
-    const { user } = useAuth();
-    const [approvedClass, isLoading] = useApprovedClass();
-    console.log(approvedClass)
+const StudentClasses = () => {
+    const {user} = useAuth();
+    const [addedClass,,isLoading] = useAddClass();
+    console.log(addedClass)
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>
@@ -20,7 +20,7 @@ const AllClasses = () => {
                     <progress className="progress w-56"></progress>
                 </div> : <>
                     {
-                        !user ?<NotFoundMessage message={'Please login and select your favorite crouse'}/> : ''
+                        !user ? <NotFoundMessage message={'Please login and select your favorite crouse'} /> : ''
                     }
                     <div className="my-16">
                         <div className="overflow-x-hidden lg:mx-16">
@@ -35,16 +35,16 @@ const AllClasses = () => {
                                         <th>Students</th>
                                         <th>Available Seats</th>
                                         <th>Price</th>
-                                        <th>Details</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
-                                        approvedClass.map((cls, index) => <ClassTabile
+                                        addedClass.map((cls, index) => <StudentClassTable
                                             key={cls._id}
                                             cls={cls}
                                             index={index}
-                                        ></ClassTabile>)
+                                        ></StudentClassTable>)
                                     }
 
                                 </tbody>
@@ -57,4 +57,4 @@ const AllClasses = () => {
     );
 };
 
-export default AllClasses;
+export default StudentClasses;

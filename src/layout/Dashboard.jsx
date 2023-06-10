@@ -12,8 +12,8 @@ import useInstructor from "../components/hooks/useInstructor";
 
 const Dashboard = () => {
     const { user } = useAuth();
-    const [isAdmin, isAdminLoading] = useAdmin();
-    const [isInstructor, isInstructorLoading] = useInstructor();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
@@ -37,33 +37,25 @@ const Dashboard = () => {
                             </div>
                         </>}
                         {
-                            isAdmin && <>
-                                {
-                                    isAdminLoading ? 'loading...' : <>
-                                        <li><Link to={'/dashboard/adminHome'}><FaHome size={20} /> Admin Home</Link></li>
-                                        <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
-                                        <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
-                                    </>
-                                }
+                            isAdmin ? <>
+                                <li><Link to={'/dashboard/adminHome'}><FaHome size={20} /> Admin Home</Link></li>
+                                <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
+                                <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
+
+                            </> : <>
+                                <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
+                                <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
+                                <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
+
                             </>
                         }
                         {
-                            isInstructorLoading ? 'loading...' : <>
-                                {
-                                    isInstructor && <>
-                                        <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
-                                        <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
-                                        <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
-                                    </>
-                                }
-                            </>
-                        }
-                        {
-                            !isAdmin && <>
+                           ! isInstructor ? <>
                                 <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
-                                <li><Link to={'/dashboard/myClass'}><SiGoogleclassroom size={20} /> My Classes</Link></li>
-                            </>
+                                <li><Link to={'/dashboard/studentClasses'}><SiGoogleclassroom size={20} /> My Classes</Link></li>
+                            </> : ''
                         }
+
 
 
 

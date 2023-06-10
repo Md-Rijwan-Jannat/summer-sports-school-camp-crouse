@@ -18,7 +18,6 @@ const SocialLogin = () => {
                 const insertUser = { name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL };
                 axiosSecure.post('/users', insertUser)
                     .then(() => {
-                        // navigate(from, { replace: true });
                         toast.success('login Successfully!')
                         navigate('/')
                     })

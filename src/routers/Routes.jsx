@@ -18,6 +18,7 @@ import InstructorHome from "../pages/Dashboard/InstructorPage/InstructorHome/Ins
 import AdminHome from "../pages/Dashboard/AdminPage/AdminHome/AdminHome";
 import StudentHome from "../pages/Dashboard/StudentsPage/StudentHome";
 import PrivateRoute from "./PrivateRoute";
+import StudentClasses from "../pages/Dashboard/StudentsPage/MyClasses/StudentClasses";
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
             {
                 path: 'studentHome',
                 element: <StudentHome />
+            },
+            {
+                path: 'studentClasses',
+                element: <StudentClasses />
             },
             {
                 path: 'manageClasses',

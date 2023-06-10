@@ -1,12 +1,22 @@
-import { useLoaderData } from "react-router-dom";
+
 import Instructor from "./Instructor";
 import Container from "../../components/Container/Container";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../components/Headers/SectionTitle";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 
 const AllInstructor = () => {
-    const instructors = useLoaderData();
+    const [instructors, setInstructors] = useState([]);
+    console.log(instructors)
+    useEffect(() => {
+        axios.get('http://localhost:5000/users/instructor')
+            .then(data => {
+                setInstructors(data.data)
+            })
+    }, [])
 
     return (
         <Container>

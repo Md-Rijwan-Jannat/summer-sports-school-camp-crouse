@@ -1,5 +1,3 @@
-
-import { useState } from "react";
 import Container from "../../components/Container/Container";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
@@ -7,12 +5,9 @@ import useAuth from "../../components/hooks/useAuth";
 import SocialLogin from "../../components/Shared/SocialLogin/SocialLogin";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { MoonLoader } from "react-spinners";
-import axios from "axios";
 
 
 const SignUp = () => {
-    const { loading, setLoading } = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signUpUser, updateUserProfile } = useAuth();
     const navigate = useNavigate()
@@ -26,23 +21,27 @@ const SignUp = () => {
                 console.log(signedUser)
                 // setLoading(true);
                 updateUserProfile(data.name, data.photo)
-                    .then(result => {
-                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number,gender: data.gander, address: data.address };
-                        axios.post(`http://localhost:5000/users`, insertUser)
-                            .then(data => {
-                                console.log(data.data);
-                                if (data.data.insertedId) {
+                    .then(() => {
+                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number, gender: data.gander, address: data.address };
 
-                                    toast.success('Login successfully')
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(insertUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
                                     reset();
-                                    console.log(result);
-                                    navigate('/')
+                                    toast.success('Login successfully')
+                                    navigate('/');
                                 }
                             })
                     })
                     .catch(error => {
                         console.log(error)
-                        setLoading(false)
                     })
             })
             .catch(error => {
@@ -145,8 +144,8 @@ const SignUp = () => {
                             </div>
                         </div>
                         <div>
-                            <button onClick={() => setLoading(!loading)} type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
-                                {loading ? (<MoonLoader className='m-auto animate-spin' size={24} />) : ('Continue')}
+                            <button type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
+                                Continue
                             </button>
                         </div>
                         <p className="text-center">You have an account? Please <Link to='/login' className="text-blue-600">Login</Link></p>

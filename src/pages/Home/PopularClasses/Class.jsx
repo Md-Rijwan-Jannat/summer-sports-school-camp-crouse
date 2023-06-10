@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Class = ({ cls }) => {
@@ -11,7 +12,7 @@ const Class = ({ cls }) => {
                 <h2 className="text-sm text-gray-800">Students: <span className="text-blue-500">{students}</span></h2>
                 <h2 className="text-sm text-gray-800">Available Seats: <span className="text-blue-500">{availableSeats}</span></h2>
                 <p className="text-sm text-gray-800">Price: <span className="text-red-500">{price}</span></p>
-                <a href="#" className="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600">Read More</a>
+                <Link to={'/allClasses'} className="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600">Read More</Link>
             </div>
         </div >
     );

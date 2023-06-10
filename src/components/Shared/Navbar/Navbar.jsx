@@ -24,9 +24,21 @@ const Navbar = () => {
         <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
         <li><Link to='/allClasses' className="font-bold text-cyan-600">Classes</Link></li>
-        <li><Link to={
-           isAdmin || isInstructor ?  isAdmin ? '/dashboard/adminHome' : '/dashboard/instructorHome' : '/dashboard/studentHome'
-        } className="font-bold text-cyan-600">Dashboard </Link></li>
+        {
+            user && <>
+                {
+                    !isAdmin ? <li><Link to={'/dashboard/studentHome'} className="font-bold text-cyan-600">Dashboard </Link></li> : <>
+                        {
+                            isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                        }
+                        {
+                            isInstructor && <li><Link to={'/dashboard/instructorHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                        }
+                    </>
+                }
+            </>
+        }
+
     </>
     return (
         <Container>

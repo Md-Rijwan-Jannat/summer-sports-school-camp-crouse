@@ -1,20 +1,30 @@
 import { toast } from "react-hot-toast";
 import useAuth from "../../components/hooks/useAuth";
+import useAddClass from "../../components/hooks/useAddClass";
 
 
 const ClassTabile = ({ cls, index }) => {
     const { user } = useAuth();
     // console.log(user)
+    const [addedClass] = useAddClass();
     const { className, instructorName, image, price, students, availableSeats, _id } = cls;
 
-    const studentAddedClass = { studentEmail: user?.email, class_id: _id, className, instructorName, image, price, students, availableSeats };
-    console.log(studentAddedClass)
+    const studentAddedClass = {
+        studentEmail: user?.email,
+        class_id: _id,
+        className,
+        instructorName,
+        image,
+        price,
+        newStudent: students + addedClass.length,
+        newAvailableSeats: availableSeats - addedClass.length
+    };
 
     const addToClassHandler = () => {
         if (user && user?.email) {
 
             fetch("http://localhost:5000/student/addToClass", {
-                method: 'POST',
+                method: 'PATCH',
                 headers: {
                     "content-type": "application/json"
                 },
