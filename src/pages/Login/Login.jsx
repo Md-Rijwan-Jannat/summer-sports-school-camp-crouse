@@ -1,19 +1,34 @@
 import { useState } from "react";
 import Container from "../../components/Container/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import SocialLogin from "../../components/Shared/SocialLogin/SocialLogin";
-import { FaSpinner, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import useAuth from "../../components/hooks/useAuth";
+import { toast } from "react-hot-toast";
 
 
 const Login = () => {
-    const { loading, setLoading } = useState(false);
-    const { showPass, setShowPass } = useState(true);
+    const { signIn } = useAuth();
+    const { showPass, setShowPass } = useState(false);
+    const navigate = useNavigate();
 
     // login submit handler
     const handleSubmit = (event) => {
         event.preventDefault();
-        setLoading(true);
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                if (loggedUser) {
+                    toast.success('successfully login')
+                    navigate('/')
+                }
+            })
+            .catch(error => console.log(error));
     }
     return (
         <Container>
@@ -46,7 +61,7 @@ const Login = () => {
 
                         <div>
                             <button type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
-                                {loading ? (<FaSpinner className='m-auto animate-spin' size={24} />) : ('Continue')}
+                                Continue
                             </button>
                         </div>
                     </form>

@@ -7,6 +7,7 @@ import useApprovedClass from "../../components/hooks/useApprovedClass";
 
 const AllClasses = () => {
     const [approvedClass, isLoading] = useApprovedClass();
+    console.log(approvedClass)
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>

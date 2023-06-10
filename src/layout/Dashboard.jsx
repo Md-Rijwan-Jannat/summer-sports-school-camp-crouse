@@ -6,12 +6,14 @@ import useAuth from "../components/hooks/useAuth";
 import Container from "../components/Container/Container";
 import { ImMenu } from "react-icons/im";
 import { SiGoogleclassroom } from "react-icons/si";
+import useAdmin from "../components/hooks/useAdmin";
+import useInstructor from "../components/hooks/useInstructor";
 
 
 const Dashboard = () => {
     const { user } = useAuth();
-    const isAdmin = false;
-    const isStudent = true;
+    const [isAdmin, isAdminLoading] = useAdmin();
+    const [isInstructor, isInstructorLoading] = useInstructor();
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
@@ -29,30 +31,43 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-cyan-100 font-semibold text-base-content pt-10 md:pt-24">
                         {/* Sidebar content here */}
                         {user && <>
-                        <div className="flex flex-col items-center justify-center mb-5"> 
-                            <img className="w-16 h-16 rounded-full mb-2" src={user?.photoURL} alt="" />
-                            <span>{user?.displayName}</span>
-                        </div>
+                            <div className="flex flex-col items-center justify-center mb-5">
+                                <img className="w-16 h-16 rounded-full mb-2" src={user?.photoURL} alt="" />
+                                <span>{user?.displayName}</span>
+                            </div>
                         </>}
-                      {
-                        isStudent ? <>
-                        <li><Link to={'/dashboard/studentHome'}><FaHome size={20}/> Student Home</Link></li>
-                        <li><Link to={'/dashboard/myClass'}><SiGoogleclassroom size={20}/> My Classes</Link></li>
-                        </> : <>
                         {
-                            isAdmin ? <>
-                              <li><Link to={'/dashboard/adminHome'}><FaHome size={20}/> Admin Home</Link></li>
-                              <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20}/>manage Users</Link></li>
-                              <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20}/>Manage Classes</Link></li>
-                            </> : <>
-                            <li><Link to={'/dashboard/instructorHome'}><FaHome size={20}/> Instructor Home</Link></li>
-                            <li><Link to={'/dashboard/addClass'}><FaHome size={20}/> Add Class</Link></li>
-                            <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20}/> My Class </Link></li>
+                            isAdmin && <>
+                                {
+                                    isAdminLoading ? 'loading...' : <>
+                                        <li><Link to={'/dashboard/adminHome'}><FaHome size={20} /> Admin Home</Link></li>
+                                        <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
+                                        <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
+                                    </>
+                                }
                             </>
                         }
-                        </>
-                      }
-                       
+                        {
+                            isInstructorLoading ? 'loading...' : <>
+                                {
+                                    isInstructor && <>
+                                        <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
+                                        <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
+                                        <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
+                                    </>
+                                }
+                            </>
+                        }
+                        {
+                            !isAdmin && <>
+                                <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
+                                <li><Link to={'/dashboard/myClass'}><SiGoogleclassroom size={20} /> My Classes</Link></li>
+                            </>
+                        }
+
+
+
+
                         <div className="divider"></div>
                         <li><NavLink to={'/'}><FaHome size={20}></FaHome> Home</NavLink></li>
                         <li><NavLink to={'/contact'}><BsFillBagPlusFill size={20}></BsFillBagPlusFill> Contact</NavLink></li>

@@ -2,20 +2,21 @@ import { FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth();
     const navigate = useNavigate();
+    const [axiosSecure] = useAxiosSecure();
 
     const googleHandler = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                    const insertUser = { name: loggedUser.displayName, email: loggedUser.email ,image: loggedUser.photoURL};
-                    axios.post(`http://localhost:5000/users`, insertUser)
+                const insertUser = { name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL };
+                axiosSecure.post('/users', insertUser)
                     .then(() => {
                         // navigate(from, { replace: true });
                         toast.success('login Successfully!')

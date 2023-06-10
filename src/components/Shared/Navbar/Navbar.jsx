@@ -3,6 +3,8 @@ import Container from "../../Container/Container";
 import useAuth from "../../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 
 const Navbar = () => {
@@ -16,11 +18,15 @@ const Navbar = () => {
                 console.log(error)
             })
     }
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const links = <>
         <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
         <li><Link to='/allClasses' className="font-bold text-cyan-600">Classes</Link></li>
-        <li><Link to='/dashboard' className="font-bold text-cyan-600">Dashboard </Link></li>
+        <li><Link to={
+           isAdmin || isInstructor ?  isAdmin ? '/dashboard/adminHome' : '/dashboard/instructorHome' : '/dashboard/studentHome'
+        } className="font-bold text-cyan-600">Dashboard </Link></li>
     </>
     return (
         <Container>
@@ -49,7 +55,7 @@ const Navbar = () => {
                                 <button onClick={logOutHandler} className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600">LogOut</button>
                             </div> : <div className="flex gap-3">
                                 <FaUser size={30}></FaUser>
-                                 <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600"><Link to='/login'>Login</Link></button>
+                                <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600"><Link to='/login'>Login</Link></button>
                             </div>
                         }
                     </div>

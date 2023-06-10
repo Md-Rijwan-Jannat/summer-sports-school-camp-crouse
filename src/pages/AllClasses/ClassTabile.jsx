@@ -7,7 +7,7 @@ const ClassTabile = ({ cls, index }) => {
     // console.log(user)
     const { className, instructorName, image, price, students, availableSeats, _id } = cls;
 
-    const studentAddedClass = { studentEmail: user.email, class_id: _id, className, instructorName, image, price, students, availableSeats };
+    const studentAddedClass = { studentEmail: user?.email, class_id: _id, className, instructorName, image, price, students, availableSeats };
     console.log(studentAddedClass)
 
     const addToClassHandler = () => {

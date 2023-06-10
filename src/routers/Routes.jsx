@@ -17,6 +17,7 @@ import MyClasses from "../pages/Dashboard/InstructorPage/MyClasses/MyClasses";
 import InstructorHome from "../pages/Dashboard/InstructorPage/InstructorHome/InstructorHome";
 import AdminHome from "../pages/Dashboard/AdminPage/AdminHome/AdminHome";
 import StudentHome from "../pages/Dashboard/StudentsPage/StudentHome";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard />,
+        element: <PrivateRoute><Dashboard /></PrivateRoute>,
         errorElement: <ErrorPage />,
         children: [
             {
