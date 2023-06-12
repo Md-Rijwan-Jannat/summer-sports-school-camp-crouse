@@ -57,7 +57,7 @@ const StudentClassTable = ({ cls, index, }) => {
                         <td>{instructorName}</td>
                         <td className="text-green-600">{newStudent}</td>
                         <td className="text-red-600">{newAvailableSeats}</td>
-                        <td className="text-blue-600">{price}</td>
+                        <td className="text-blue-600">{"$"+ price}</td>
                         <th> <button onClick={() => deleteHandler(_id)} className="btn px-2 bg-red-500 hover:bg-red-600 border-0 text-white"><FaTrash size={20} /></button>
                         </th>
                     </tr>

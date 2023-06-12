@@ -4,11 +4,12 @@ import useAuth from "../../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import useAdmin from "../../hooks/useAdmin";
-import useInstructor from "../../hooks/useInstructor";
+import useUsers from "../../hooks/useUsers";
 
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
+    const [users] = useUsers();
     const logOutHandler = () => {
         logOut()
             .then(() => {
@@ -18,8 +19,13 @@ const Navbar = () => {
                 console.log(error)
             })
     }
+    const currentUser = users.filter(u => u?.email === user?.email)
+    const loginUser = currentUser[0]
+    console.log(currentUser)
+    const userIs = loginUser?.role === "student"
+    const instructorIs = loginUser?.role === "instructor"
+
     const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
     const links = <>
         <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
@@ -27,14 +33,14 @@ const Navbar = () => {
         {
             user && <>
                 {
-                    !isAdmin ? <li><Link to={'/dashboard/studentHome'} className="font-bold text-cyan-600">Dashboard </Link></li> : <>
-                        {
-                            isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
-                        }
-                        {
-                            isInstructor && <li><Link to={'/dashboard/instructorHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
-                        }
-                    </>
+                    isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                }
+                {
+                    instructorIs && <li><Link to={'/dashboard/instructorHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                }
+
+                {
+                    userIs && <li><Link to={'/dashboard/studentHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
                 }
             </>
         }

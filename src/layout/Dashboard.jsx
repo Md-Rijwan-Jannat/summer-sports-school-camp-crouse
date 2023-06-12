@@ -1,19 +1,27 @@
 import { Helmet } from "react-helmet-async";
 import { FaHome, FaUsers } from "react-icons/fa";
-import { BsFillBagPlusFill } from "react-icons/bs";
+import { BsBookmarkCheckFill, BsFillBagPlusFill } from "react-icons/bs";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../components/hooks/useAuth";
 import Container from "../components/Container/Container";
 import { ImMenu } from "react-icons/im";
 import { SiGoogleclassroom } from "react-icons/si";
+import { HiTemplate } from "react-icons/hi";
 import useAdmin from "../components/hooks/useAdmin";
-import useInstructor from "../components/hooks/useInstructor";
+import useUsers from "../components/hooks/useUsers";
 
 
 const Dashboard = () => {
     const { user } = useAuth();
     const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
+    const [users] = useUsers();
+const currentUser = users.filter(u => u?.email === user?.email)
+    const loginUser = currentUser[0]
+    console.log(currentUser)
+    const userIs = loginUser?.role === "student"
+    const instructorIs = loginUser?.role === "instructor"
+
+    console.log(instructorIs)
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
@@ -41,20 +49,28 @@ const Dashboard = () => {
                                 <li><Link to={'/dashboard/adminHome'}><FaHome size={20} /> Admin Home</Link></li>
                                 <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
                                 <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
-
                             </> : <>
-                                <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
-                                <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
-                                <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
+                                {
+                                    instructorIs ? <>
+                                        <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
+                                        <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
+                                        <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
+                                    </> : <>
+                                        {
+                                            userIs ? <>
+                                                <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
+                                                <li><Link to={'/dashboard/studentClasses'}><HiTemplate size={20} /> My selected Classes</Link></li>
+                                                <li><Link to={'/dashboard/enrolledClass'}><BsBookmarkCheckFill size={20} /> Enrolled Classes</Link></li>
+                                            </> : ''
+                                        }
+                                    </>
+                                }
+
 
                             </>
                         }
-                        {
-                           ! isInstructor ? <>
-                                <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
-                                <li><Link to={'/dashboard/studentClasses'}><SiGoogleclassroom size={20} /> My Classes</Link></li>
-                            </> : ''
-                        }
+
+
 
 
 

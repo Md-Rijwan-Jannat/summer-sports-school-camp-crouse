@@ -22,7 +22,7 @@ const SignUp = () => {
                 // setLoading(true);
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
-                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number, gender: data.gander, address: data.address };
+                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number, gender: data.gander, address: data.address, role: 'student' };
 
                         fetch('http://localhost:5000/users', {
                             method: 'POST',

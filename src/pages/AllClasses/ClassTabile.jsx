@@ -1,10 +1,15 @@
 import { toast } from "react-hot-toast";
 import useAuth from "../../components/hooks/useAuth";
 import useAddClass from "../../components/hooks/useAddClass";
+import useAdmin from "../../components/hooks/useAdmin";
+import useUsers from "../../components/hooks/useUsers";
 
 
 const ClassTabile = ({ cls, index }) => {
     const { user } = useAuth();
+    const [isAdmin] = useAdmin()
+    const [users] = useUsers();
+    const isInstructor = users.map(user => user.role === 'instructor');
     // console.log(user)
     const [addedClass] = useAddClass();
     const { className, instructorName, image, price, students, availableSeats, _id } = cls;
@@ -59,10 +64,18 @@ const ClassTabile = ({ cls, index }) => {
 
                 <th>
                     {
-                        availableSeats === 0 ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
+                        !isInstructor ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
                             {
-                                user ? <button onClick={addToClassHandler} className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> :
-                                    <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
+                                !isAdmin ? <>
+                                    {
+                                        availableSeats === 0 ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
+                                            {
+                                                user ? <button onClick={addToClassHandler} className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> :
+                                                    <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
+                                            }
+                                        </>
+                                    }
+                                </> : <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
                             }
                         </>
                     }
