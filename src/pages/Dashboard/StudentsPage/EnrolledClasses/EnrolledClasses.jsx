@@ -13,7 +13,7 @@ const EnrolledClasses = () => {
     console.log(enrolledClass)
 
     useEffect(() => {
-        axiosSecure.get(`/enrolled/class/${user?.email}`)
+        axiosSecure.get(`/enrolled/${user?.email}`)
             .then(res => {
                 setEnrolledClass(res.data)
             })
@@ -27,20 +27,27 @@ const EnrolledClasses = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>#</th>
+                            <th>Photo</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Price</th>
+                            <th>status</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {
+                            enrolledClass.map(cls=>  <tr key={cls?._id}>
+                                <th>{"<"}</th>
+                                <td>{cls?.image}</td>
+                                <td>{cls?.name}</td>
+                                <td>$ {cls?.price}</td>
+                                <td><div className="bg-green-50 px-2 rounded-lg">
+                                Enrolled</div>
+                                </td>
+                            </tr>)
+                        }
                         {/* row 1 */}
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
+                      
                     </tbody>
                 </table>
             </div>
