@@ -9,6 +9,7 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { HiTemplate } from "react-icons/hi";
 import useAdmin from "../components/hooks/useAdmin";
 import useUsers from "../components/hooks/useUsers";
+import DarkTheme from "../components/DarkTheme";
 
 
 const Dashboard = () => {
@@ -33,6 +34,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
                     </div>
                     {/* Page content here */}
                     <Outlet></Outlet>
+                    <DarkTheme/>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
@@ -46,7 +48,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
                         </>}
                         {
                             isAdmin ? <>
-                                <li><Link to={'/dashboard/adminHome'}><FaHome size={20} /> Admin Home</Link></li>
+                                <li><Link to={'/dashboard/adminHome'}><FaHome size={20} />  Admin Home</Link></li>
                                 <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
                                 <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
                             </> : <>
