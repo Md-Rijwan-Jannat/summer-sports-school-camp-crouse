@@ -85,7 +85,7 @@ const CheckoutHook = ({ price, addedClass }) => {
                 price,
                 paymentId: paymentIntent.id,
                 date: new Date(),
-                status: "service pending"
+                status: "Enrolled"
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {

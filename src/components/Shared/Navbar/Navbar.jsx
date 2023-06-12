@@ -27,20 +27,20 @@ const Navbar = () => {
 
     const [isAdmin] = useAdmin();
     const links = <>
-        <li><Link to='/' className="font-bold text-cyan-600">Home</Link></li>
-        <li><Link to='/allInstructor' className="font-bold text-cyan-600">Instructors</Link></li>
-        <li><Link to='/allClasses' className="font-bold text-cyan-600">Classes</Link></li>
+        <li><Link to='/' className="font-bold text-blue-400">Home</Link></li>
+        <li><Link to='/allInstructor' className="font-bold text-blue-400">Instructors</Link></li>
+        <li><Link to='/allClasses' className="font-bold text-blue-400">Classes</Link></li>
         {
             user && <>
                 {
-                    isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                    isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-blue-400">Dashboard </Link></li>
                 }
                 {
-                    instructorIs && <li><Link to={'/dashboard/instructorHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                    instructorIs && <li><Link to={'/dashboard/instructorHome'} className="font-bold text-blue-400">Dashboard </Link></li>
                 }
 
                 {
-                    userIs && <li><Link to={'/dashboard/studentHome'} className="font-bold text-cyan-600">Dashboard </Link></li>
+                    userIs && <li><Link to={'/dashboard/studentHome'} className="font-bold text-blue-400">Dashboard </Link></li>
                 }
             </>
         }
@@ -48,7 +48,7 @@ const Navbar = () => {
     </>
     return (
         <Container>
-            <div className="navbar bg-cyan-100 bg-opacity-40 border shadow-sm">
+            <div className="navbar bg-blue-100 bg-opacity-40 border shadow-sm">
                 <div className="navbar-start">
                     <img className="w-28 rounded-3xl" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
                 </div>
@@ -70,10 +70,10 @@ const Navbar = () => {
                         {
                             user ? <div className="flex gap-3">
                                 <img className="w-10 rounded-full" src={user.photoURL} />
-                                <button onClick={logOutHandler} className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600">LogOut</button>
+                                <button onClick={logOutHandler} className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-blue-600">LogOut</button>
                             </div> : <div className="flex gap-3">
                                 <FaUser size={30}></FaUser>
-                                <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-cyan-600"><Link to='/login'>Login</Link></button>
+                                <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-blue-600"><Link to='/login'>Login</Link></button>
                             </div>
                         }
                     </div>

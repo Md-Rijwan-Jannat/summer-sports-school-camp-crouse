@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { FaHome, FaUsers } from "react-icons/fa";
+import { FaHistory, FaHome, FaUsers } from "react-icons/fa";
 import { BsBookmarkCheckFill, BsFillBagPlusFill } from "react-icons/bs";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../components/hooks/useAuth";
@@ -61,6 +61,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
                                                 <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
                                                 <li><Link to={'/dashboard/studentClasses'}><HiTemplate size={20} /> My selected Classes</Link></li>
                                                 <li><Link to={'/dashboard/enrolledClass'}><BsBookmarkCheckFill size={20} /> Enrolled Classes</Link></li>
+                                                <li><Link to={'/dashboard/paymentHistory'}><FaHistory size={20} /> Payment History</Link></li>
                                             </> : ''
                                         }
                                     </>
@@ -69,12 +70,6 @@ const currentUser = users.filter(u => u?.email === user?.email)
 
                             </>
                         }
-
-
-
-
-
-
 
                         <div className="divider"></div>
                         <li><NavLink to={'/'}><FaHome size={20}></FaHome> Home</NavLink></li>

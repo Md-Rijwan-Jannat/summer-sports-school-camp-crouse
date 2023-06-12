@@ -23,7 +23,7 @@ const AllClasses = () => {
                         !user ?<NotFoundMessage message={'Please login and select your favorite crouse'}/> : ''
                     }
                     <div className="my-16">
-                        <div className="overflow-x-hidden lg:mx-16">
+                        <div className="overflow-x-auto lg:mx-16">
                             <table className="table w-full">
                                 {/* head */}
                                 <thead>
