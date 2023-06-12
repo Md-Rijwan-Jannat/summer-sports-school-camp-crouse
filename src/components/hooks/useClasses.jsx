@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useClasses = () => {
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-        const res = await axios.get('http://localhost:5000/allClasses')
+        const res = await axios.get('https://summer-sports-scholl-camp-server.vercel.app/allClasses')
         return res.data;
     })
     return [classes, refetch]

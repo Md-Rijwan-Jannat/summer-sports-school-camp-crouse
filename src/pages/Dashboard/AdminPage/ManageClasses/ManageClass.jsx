@@ -9,7 +9,7 @@ const ManageClass = ({ cls, index, refetch }) => {
 
     // class approved
     const approvedHandler = (_id) => {
-        fetch(`http://localhost:5000/classApprove/${_id}`, {
+        fetch(`https://summer-sports-scholl-camp-server.vercel.app/classApprove/${_id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -25,7 +25,7 @@ const ManageClass = ({ cls, index, refetch }) => {
 
     // class approved
     const deniedHandler = (_id) => {
-        fetch(`http://localhost:5000/classDenied/${_id}`, {
+        fetch(`https://summer-sports-scholl-camp-server.vercel.app/classDenied/${_id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -55,7 +55,7 @@ const ManageClass = ({ cls, index, refetch }) => {
         const feedback = form.feedback.value;
         const adminFeedback = { feedback ,class_id: _id};
         console.log(adminFeedback);
-        axios.post('http://localhost:5000/feedback', adminFeedback)
+        axios.post('https://summer-sports-scholl-camp-server.vercel.app/feedback', adminFeedback)
             .then(data => {
                 console.log(data.data);
                 if(data.data.insertedId){

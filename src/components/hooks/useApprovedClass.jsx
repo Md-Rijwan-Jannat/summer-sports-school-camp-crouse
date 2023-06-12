@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useApprovedClass = () => {
     const { data: approvedClasses = [], isLoading, refetch } = useQuery(['classes'], async () => {
-        const res = await axios.get('http://localhost:5000/allClasses/approved')
+        const res = await axios.get('https://summer-sports-scholl-camp-server.vercel.app/allClasses/approved')
         return res.data;
     })
     return [approvedClasses,isLoading, refetch]

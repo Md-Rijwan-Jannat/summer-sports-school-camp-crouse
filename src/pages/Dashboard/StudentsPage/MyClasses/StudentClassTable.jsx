@@ -19,7 +19,7 @@ const StudentClassTable = ({ cls, index, }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addedClass/delete/${_id}`, {
+                fetch(`https://summer-sports-scholl-camp-server.vercel.app/addedClass/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -58,7 +58,7 @@ const StudentClassTable = ({ cls, index, }) => {
                         <td className="text-green-600">{newStudent}</td>
                         <td className="text-red-600">{newAvailableSeats}</td>
                         <td className="text-blue-600">{"$"+ price}</td>
-                        <th> <button onClick={() => deleteHandler(_id)} className="btn px-2 bg-red-500 hover:bg-red-600 border-0 text-white"><FaTrash size={20} /></button>
+                        <th> <button onClick={() => deleteHandler(_id)} className="btn px-2 bg-red-500 hover:bg-red-600 border-0 text-white">remove<FaTrash size={20} /></button>
                         </th>
                     </tr>
                 </>

@@ -28,7 +28,7 @@ const ClassTabile = ({ cls, index }) => {
     const addToClassHandler = () => {
         if (user && user?.email) {
 
-            fetch("http://localhost:5000/student/addToClass", {
+            fetch("https://summer-sports-scholl-camp-server.vercel.app/student/addToClass", {
                 method: 'PATCH',
                 headers: {
                     "content-type": "application/json"

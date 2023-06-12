@@ -8,7 +8,7 @@ const MyClass = ({ cls }) => {
     const { className, instructorName, image, price, status, students, availableSeats, _id } = cls;
     console.log(cls)
     // feedback
-    axios.get(`http://localhost:5000/feedback_for_instructor/${_id}`)
+    axios.get(`https://summer-sports-scholl-camp-server.vercel.app/feedback_for_instructor/${_id}`)
         .then(data => {
             setFeedback(data.data[0])
         })

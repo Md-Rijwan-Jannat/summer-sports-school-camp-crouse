@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000/', 
+  baseURL: 'https://summer-sports-scholl-camp-server.vercel.app/', 
 });
 
 const useAxiosSecure = () => {

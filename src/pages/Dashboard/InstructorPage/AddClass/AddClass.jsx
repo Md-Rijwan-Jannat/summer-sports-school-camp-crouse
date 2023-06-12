@@ -29,7 +29,7 @@ const AddClass = () => {
                     const { className, availableSeats, instructorEmail, instructorName, price, status } = data;
                     const classData = { className, availableSeats, instructorEmail, instructorName, price, status, image: imgUrl }
                     console.log(classData);
-                    axios.post('http://localhost:5000/addClass', classData)
+                    axios.post('https://summer-sports-scholl-camp-server.vercel.app/addClass', classData)
                         .then(data => {
                             console.log(data.data);
                             if (data.data.insertedId){

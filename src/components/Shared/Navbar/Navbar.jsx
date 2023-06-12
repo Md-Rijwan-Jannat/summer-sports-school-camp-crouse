@@ -48,11 +48,12 @@ const Navbar = () => {
     </>
     return (
         <Container>
-            <div className="navbar bg-blue-100 bg-opacity-40 border shadow-sm">
-                <div className="navbar-start">
+            <div className="md:navbar p-5 md:p-2 pb-16 relative bg-blue-100 bg-opacity-40 shadow-sm">
+                <div className="navbar-start flex flex-col my-5 mb-3 lg:flex-row  gap-1 w-full">
                     <img className="w-28 rounded-3xl" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
+                    <h3 className="pl-5 text-2xl font-bold text-blue-400">Summer sports school camp</h3>
                 </div>
-                <div className="dropdown  navbar-start">
+                <div className="dropdown  navbar-end">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
@@ -65,13 +66,13 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end flex-none gap-2">
+                <div className="navbar-end flex-none w-1/3  gap-2">
                     <div className="bg-white p-4 rounded-xl">
                         {
-                            user ? <div className="flex gap-3">
+                            user ? <div className="flex flex-col lg:flex-row items-center justify-center gap-3">
                                 <img className="w-10 rounded-full" src={user.photoURL} />
                                 <button onClick={logOutHandler} className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-blue-600">LogOut</button>
-                            </div> : <div className="flex gap-3">
+                            </div> : <div className="flex flex-col lg:flex-row items-center justify-center gap-3">
                                 <FaUser size={30}></FaUser>
                                 <button className="bg-slate-200 px-4 py-1 rounded-xl text-sm font-semibold hover:text-blue-600"><Link to='/login'>Login</Link></button>
                             </div>

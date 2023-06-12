@@ -8,7 +8,7 @@ const ManageUser = ({ user, index, refetch }) => {
 
     // make admin handler
     const makeAdmin = (_id) => {
-        fetch(`http://localhost:5000/user/admin/${_id}`, {
+        fetch(`https://summer-sports-scholl-camp-server.vercel.app/user/admin/${_id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const ManageUser = ({ user, index, refetch }) => {
 
     // make admin handler
     const makeInstructor = (_id) => {
-        fetch(`http://localhost:5000/user/instructor/${_id}`, {
+        fetch(`https://summer-sports-scholl-camp-server.vercel.app/user/instructor/${_id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -49,7 +49,7 @@ const ManageUser = ({ user, index, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/delete/${_id}`, {
+                fetch(`https://summer-sports-scholl-camp-server.vercel.app/users/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
