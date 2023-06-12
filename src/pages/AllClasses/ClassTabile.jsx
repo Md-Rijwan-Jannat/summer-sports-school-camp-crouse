@@ -62,23 +62,22 @@ const ClassTabile = ({ cls, index }) => {
                 <td className="text-green-600">{availableSeats}</td>
                 <td className="text-cyan-600">{'$' + price}</td>
 
-                <th>
-                    {
-                        !isInstructor ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
-                            {
-                                !isAdmin ? <>
-                                    {
-                                        availableSeats === 0 ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
-                                            {
-                                                user ? <button onClick={addToClassHandler} className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> :
-                                                    <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
-                                            }
-                                        </>
-                                    }
-                                </> : <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
-                            }
-                        </>
-                    }
+                <th> {
+                    !isAdmin ? <>
+                        {
+                            availableSeats === 0 ? <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> : <>
+                                {
+                                    isInstructor ? <>
+                                        {
+                                            user ? <button onClick={addToClassHandler} className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button> :
+                                                <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
+                                        }
+                                    </> : <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
+                                }
+                            </>
+                        }
+                    </> : <button disabled className="btn px-2 bg-cyan-400 hover:bg-cyan-500 border-0 text-white">Select</button>
+                }
                 </th>
             </tr>
         </>
