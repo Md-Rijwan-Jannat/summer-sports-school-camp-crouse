@@ -20,11 +20,10 @@ const Instructor = ({ instructor }) => {
     }
     return (
         <motion.div
-            className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg p-4"
-            whileHover={{ scale: 1.05 }}
+            className="flex flex-col items-center justify-center "whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >
-            <div className="max-w-sm bg-white opacity-75 p-5 rounded overflow-hidden shadow-lg flex flex-col items-center mb-2 mb:mb-5 py:my-10">
+            <div className="max-w-sm bg-white p-5 rounded overflow-hidden shadow-lg flex flex-col items-center mb-2 mb:mb-5 py:my-10">
                 <img className="w-32 h-32 rounded-full" src={image} alt={name} />
                 <div className="px-6 py-4 flex flex-col items-center">
                     <div className="font-bold text-xl mb-2 flex items-center gap-2">{name} <span className="text-blue-600"><FaCheckCircle /></span></div>

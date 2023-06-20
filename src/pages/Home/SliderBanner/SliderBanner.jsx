@@ -7,8 +7,8 @@ const SliderBanner = () => {
     return (
         <div ref={sliderRef} className="keen-slider mb-5 md:mb-16">
 
-            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] b-0">
-                <img src="https://media.istockphoto.com/id/1355687160/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=SXCgXww7veX8n9fwf_fqEu18ZmdrNG3dPNrfbZFOnns=" alt="Banner Image" className="w-full h-auto" />
+            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] xl:h-[1200px] b-0">
+                <img src="https://media.istockphoto.com/id/1355687160/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=SXCgXww7veX8n9fwf_fqEu18ZmdrNG3dPNrfbZFOnns=" alt="Banner Image" className="w-full lg:h-[700px] xl:h-[1200px]" />
                 <div className="absolute inset-0 bg-gradient-to-l from-black to-blue-200 opacity-50"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-start ml-5 md:ml-16 md:w-4/5 text-white">
                     <h1 className="text-2xl md:text-7xl font-bold mb-4">Welcome to our Summer School Sports Camp</h1>
@@ -18,8 +18,8 @@ const SliderBanner = () => {
                     </button>
                 </div>
             </div>
-            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] b-0">
-                <img src="https://img.freepik.com/premium-photo/international-sports-day-6-april_10221-18936.jpg" className="w-full h-auto" />
+            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] xl:h-[1200px] b-0">
+                <img src="https://img.freepik.com/premium-photo/international-sports-day-6-april_10221-18936.jpg" className="w-full lg:h-[700px] xl:h-[1200px]" />
                 <div className="absolute inset-0 bg-gradient-to-l from-black to-blue-200 opacity-50"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-start ml-5 md:ml-16 md:w-4/5 text-white">
                     <h1 className="text-2xl md:text-7xl font-bold mb-4">All-Star Summer Sports Academy</h1>
@@ -29,8 +29,8 @@ const SliderBanner = () => {
                     </button>
                 </div>
             </div>
-            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] b-0">
-                <img src="https://media.istockphoto.com/id/186157161/photo/sports-equipment-detail.jpg?s=612x612&w=0&k=20&c=uSQZzgmlRFm4kD6Ufl1Y5dDrHqffeR_UWMDLoHssYp4=" className="w-full h-auto" />
+            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] xl:h-[1200px] b-0">
+                <img src="https://media.istockphoto.com/id/186157161/photo/sports-equipment-detail.jpg?s=612x612&w=0&k=20&c=uSQZzgmlRFm4kD6Ufl1Y5dDrHqffeR_UWMDLoHssYp4=" className="w-full lg:h-[700px] xl:h-[1200px]" />
                 <div className="absolute inset-0 bg-gradient-to-l from-black to-blue-200 opacity-50"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-start ml-5 md:ml-16 md:w-4/5 text-white">
                     <h1 className="text-2xl md:text-7xl font-bold mb-4">Sizzling Summer Sports School</h1>
@@ -40,8 +40,8 @@ const SliderBanner = () => {
                     </button>
                 </div>
             </div>
-            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] b-0">
-                <img src="https://media.istockphoto.com/id/511438257/photo/assorted-sports-equipment.jpg?s=170667a&w=0&k=20&c=7yNxLhWIIl6yH4X6Fx81-Yt4Wv1XleCqx69thJ8RWT8=" className="w-full h-auto" />
+            <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] xl:h-[1200px] b-0">
+                <img src="https://media.istockphoto.com/id/511438257/photo/assorted-sports-equipment.jpg?s=170667a&w=0&k=20&c=7yNxLhWIIl6yH4X6Fx81-Yt4Wv1XleCqx69thJ8RWT8=" className="w-full lg:h-[700px] xl:h-[1200px]" />
                 <div className="absolute inset-0 bg-gradient-to-l from-black to-blue-200 opacity-50"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-start ml-5 md:ml-16 md:w-4/5 text-white">
                     <h1 className="text-2xl md:text-7xl font-bold mb-4">Play, Learn, and grow Summer Sports Camp</h1>
@@ -65,7 +65,7 @@ export default SliderBanner;
 // const Banner = () => {
 //     return (
 //         <div className="relative">
-//             <img src="banner-image.jpg" alt="Banner Image" className="w-full h-auto" />
+//             <img src="banner-image.jpg" alt="Banner Image" className="w-full lg:h-[700px] xl:h-[1200px]" />
 //             <div className="absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-50"></div>
 //             <div className="absolute inset-0 flex flex-col justify-center items-cenmd:ter text-white">
 //                 <h1 className="text-2xl font-bold mb-4">Welcome to our Sports Camp</h1>

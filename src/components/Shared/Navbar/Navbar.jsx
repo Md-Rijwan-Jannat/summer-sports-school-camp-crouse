@@ -5,6 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import useAdmin from "../../hooks/useAdmin";
 import useUsers from "../../hooks/useUsers";
+import DarkTheme from "../../DarkTheme";
 
 
 const Navbar = () => {
@@ -30,8 +31,9 @@ const Navbar = () => {
         <li><Link to='/' className="font-bold text-blue-400">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold text-blue-400">Instructors</Link></li>
         <li><Link to='/allClasses' className="font-bold text-blue-400">Classes</Link></li>
+        <li><Link to='/signUp' className="font-bold text-blue-400">Register</Link></li>
         {
-            user && <>
+            user?.email && <>
                 {
                     isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold text-blue-400">Dashboard </Link></li>
                 }
@@ -67,6 +69,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex-none w-1/3  gap-2">
+                <DarkTheme/>
                     <div className="bg-white p-4 rounded-xl">
                         {
                             user ? <div className="flex flex-col lg:flex-row items-center justify-center gap-3">

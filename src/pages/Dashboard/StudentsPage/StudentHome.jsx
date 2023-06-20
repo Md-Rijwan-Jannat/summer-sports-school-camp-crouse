@@ -15,7 +15,7 @@ const StudentHome = () => {
                     <div className="font-bold text-xl mb-2 flex items-center gap-2">{user?.displayName} </div>
                     <span className="text-blue-600"> Student</span>
                 </div>
-                <p className="bg-blue-50 p-5 rounded-xl m-5"><span className="font-bold text-gray-700 text-xl" > </span>Throughout our training sessions, I have noticed a significant improvement in your skills and overall understanding of the game.</p>
+                <p className="bg-blue-50 p-5 text-[10px] rounded-xl m-5"><span className="font-bold text-gray-700 text-xl" > </span>Throughout our training sessions, I have noticed a significant improvement in your skills and overall understanding of the game.</p>
                 <div className="flex items-center justify-center gap-5">
                   
                 </div>

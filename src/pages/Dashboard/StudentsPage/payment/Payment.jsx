@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51NEqinCzuPCgzXt0fCmTm4Ov7YUqDHa9s2x4b
 const Payment = () => {
     const [addedClass] = useAddClass();
     const amount = addedClass.reduce((sum, item) => item.price + sum, 0)
-    const price = parseFloat(amount.toFixed(2))
+    const price = parseFloat(amount).toFixed(2);
     return (
         <div>
             <Helmet ><title>Summer Sports Camp || Payment Fast</title></Helmet>

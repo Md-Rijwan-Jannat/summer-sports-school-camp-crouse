@@ -42,8 +42,8 @@ const currentUser = users.filter(u => u?.email === user?.email)
                         {/* Sidebar content here */}
                         {user && <>
                             <div className="flex flex-col items-center justify-center mb-5">
-                                <img className="w-16 h-16 rounded-full mb-2" src={user?.photoURL} alt="" />
-                                <span>{user?.displayName}</span>
+                                <img className="w-16 h-16 border-blue-600 border-4 rounded-full mb-2" src={user?.photoURL} alt="" />
+                                <span className="bg-white px-3 p-1 rounded-lg shadow-lg">{user?.displayName}</span>
                             </div>
                         </>}
                         {

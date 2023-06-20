@@ -10,8 +10,11 @@ import { toast } from "react-hot-toast";
 
 const Login = () => {
     const { signIn } = useAuth();
-    const { showPass, setShowPass } = useState(false);
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     // login submit handler
     const handleSubmit = (event) => {
@@ -19,11 +22,13 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        toast.loading('Loading...')
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 if (loggedUser) {
+                    toast.dismiss()
                     toast.success('successfully login')
                     navigate('/')
                 }
@@ -52,9 +57,9 @@ const Login = () => {
                                         Password *
                                     </label>
                                 </div>
-                                <div className="flex items-center">
-                                    <input type={showPass ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
-                                    <span onClick={() => setShowPass(!showPass)} className="text-gray-600 text-center btn btn-sm">{showPass ? <FaEyeSlash /> : <FaEye />}</span>
+                                <div className="flex items-center relative">
+                                    <input  type={showPassword ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
+                                    <span onClick={togglePasswordVisibility}className="absolute right-4 text-gray-600 bg-opacity-0 text-center btn btn-sm">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                                 </div>
                             </div>
                         </div>
@@ -66,8 +71,8 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="mt-5">
-                        <p className='px-6 mb-5 text-sm text-center'>
-                            Do not have an account yet? <Link to='/signUp' className=' hover:text-blue-500 text-gray-600'   >
+                        <p className='px-6 mb-5 text-gray-700 text-sm text-center'>
+                            Do not have an account yet? <Link to='/signUp' className=' text-blue-700'   >
                                 Sign up
                             </Link>
                         </p>
@@ -81,3 +86,4 @@ const Login = () => {
 };
 
 export default Login;
+

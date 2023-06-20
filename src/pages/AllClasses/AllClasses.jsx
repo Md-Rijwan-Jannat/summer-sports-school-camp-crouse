@@ -22,7 +22,7 @@ const AllClasses = () => {
                     {
                         !user ?<NotFoundMessage message={'Please login and select your favorite crouse'}/> : ''
                     }
-                    <div className="my-16">
+                    <div className="py-16 bg-slate-50 bg-opacity-90">
                         <div className="overflow-x-auto lg:mx-16">
                             <table className="table w-full">
                                 {/* head */}

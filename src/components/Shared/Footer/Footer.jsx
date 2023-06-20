@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <Container>
             <>
-                <footer className="footer p-10 bg-cyan-500 text-base-content bg-opacity-50">
+                <footer className="footer p-10 bg-blue-500 text-base-content bg-opacity-50">
                     <div>
                         <img className="w-28 rounded-2xl shadow-cyan-50" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
                         <p className="text-sm font-sans">Thrilling Upsets and <br /> Record-Breaking  Performances <br /> Dominate the Sports World</p>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
 
                 </footer>
-                <footer className="footer footer-center p-4 bg-cyan-600 text-base-content bg-opacity-50">
+                <footer className="footer footer-center p-4 bg-blue-600 text-base-content bg-opacity-50">
                     <div>
                         <p>Copyright © 2023 - All right reserved by Sports complete summer crouse Pd.</p>
                     </div>
