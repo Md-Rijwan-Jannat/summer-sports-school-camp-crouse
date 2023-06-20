@@ -5,7 +5,6 @@ import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import useAdmin from "../../hooks/useAdmin";
 import useUsers from "../../hooks/useUsers";
-import DarkTheme from "../../DarkTheme";
 
 
 const Navbar = () => {
@@ -69,7 +68,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex-none w-1/3  gap-2">
-                <DarkTheme/>
                     <div className="bg-white p-4 rounded-xl">
                         {
                             user ? <div className="flex flex-col lg:flex-row items-center justify-center gap-3">

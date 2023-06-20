@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import Container from "./Container/Container";
 
 
 const DarkTheme = () => {
@@ -20,15 +21,17 @@ const DarkTheme = () => {
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
     return (
+        <Container>
 
-        <button
-            className={`fixed bottom-4 bg-blue-800 opacity-50 text-white right-4 ${location.pathname === '/' ? 'z-10' : 'z-20'
-                } bg-slate-400 text-gray-700 rounded p-2`}
-            style={{ opacity: theme === 'light' ? 0.5 : 1 }}
-            onClick={toggleTheme}
-        >
-            <FaMoon color="black" size={20}/>
-        </button>
+            <button
+                className={`fixed top-1/2 right-6 bg-blue-800  text-white right-4 ${location.pathname === '/' ? 'z-10' : 'z-20'
+                    } bg-slate-400 text-gray-700 rounded p-2`}
+                style={{ opacity: theme === 'light' ? 0.5 : 1 }}
+                onClick={toggleTheme}
+            >
+                <FaMoon color="black" size={20} />
+            </button>
+        </Container>
     );
 };
 
