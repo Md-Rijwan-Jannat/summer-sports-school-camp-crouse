@@ -11,6 +11,7 @@ const SocialLogin = () => {
     const [axiosSecure] = useAxiosSecure();
 
     const googleHandler = () => {
+        toast.loading('Loading...')
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
@@ -18,16 +19,22 @@ const SocialLogin = () => {
                 const insertUser = { name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL };
                 axiosSecure.post('/users', insertUser)
                     .then(() => {
+                        toast.dismiss();
                         toast.success('login Successfully!')
                         navigate('/')
                     })
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error)
+                toast.dismiss()
+            })
     }
     return (
-        <button onClick={googleHandler} className=" btn border-cyan-400 rounded-lg px-8 w-full bg-slate-200 mt-5 hover:bg-cyan-500 hover:text-white flex items-center justify-center gap-3 py-3">
+      <div>
+          <button onClick={googleHandler} className=" btn border-blue-400 rounded-lg px-8 w-full bg-slate-200 mt-5 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-3 py-3">
             <FaGoogle size={26} /> continue with google
         </button>
+      </div>
     );
 };
 

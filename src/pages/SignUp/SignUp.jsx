@@ -9,6 +9,7 @@ import { FaEye, FaEyeSlash, FaImage } from "react-icons/fa";
 import { useState } from "react";
 
 
+const img_token = import.meta.env.VITE_image_hosting_token;
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { signUpUser, updateUserProfile } = useAuth();
@@ -23,45 +24,62 @@ const SignUp = () => {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+    // image
+    const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_token}`
 
     // login submit handler
     const onSubmit = data => {
-        console.log(data)
         toast.loading('Loading..')
-        signUpUser(data.email, data.password)
-            .then(result => {
-                const signedUser = result.user;
-                console.log(signedUser)
-                // setLoading(true);
-                updateUserProfile(data.name, data.photo)
-                    .then(() => {
-                        const insertUser = { name: data.name, email: data.email, image: data.photo, phone: data.number, gender: data.gander, address: data.address, role: 'student' };
 
-                        fetch('https://summer-sports-scholl-camp-server.vercel.app/users', {
-                            method: 'POST',
-                            headers: {
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify(insertUser)
+        const formData = new FormData();
+        formData.append('image', data.image[0])
+        fetch(img_hosting_url, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imageRes => {
+                if (imageRes.success) {
+                    const imgUrl = imageRes.data.display_url;
+                    console.log(imgUrl)
+                    signUpUser(data.email, data.password)
+                        .then(result => {
+                            const signedUser = result.user;
+                            console.log(signedUser)
+                            // setLoading(true);
+                            updateUserProfile(data.name, imgUrl)
+                                .then(() => {
+                                    const insertUser = { name: data.name, email: data.email, image: imageRes.data.display_url, phone: data.number, gender: data.gander, address: data.address, role: 'student' };
+
+                                    console.log(insertUser)
+                                    fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/users', {
+                                        method: 'POST',
+                                        headers: {
+                                            'content-type': 'application/json'
+                                        },
+                                        body: JSON.stringify(insertUser)
+                                    })
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            if (data.insertedId) {
+                                                reset();
+                                                toast.dismiss()
+                                                toast.success('Login successfully')
+                                                navigate('/');
+                                            }
+                                        })
+                                })
+                                .catch(error => {
+                                    console.log(error)
+                                    toast.dismiss();
+                                })
                         })
-                            .then(res => res.json())
-                            .then(data => {
-                                if (data.insertedId) {
-                                    reset();
-                                    toast.dismiss()
-                                    toast.success('Login successfully')
-                                    navigate('/');
-                                }
-                            })
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
-            })
-            .catch(error => {
-                console.log(error)
-                // setLoading(false);
-                toast.error(error.message);
+                        .catch(error => {
+                            console.log(error);
+                            toast.dismiss();
+                            toast.error(error.message);
+                        })
+                }
             })
     };
 
@@ -71,8 +89,8 @@ const SignUp = () => {
             <div className='flex justify-center items-center min-h-screen py-5 lg:py-2'>
                 <div className='flex flex-col md:w-1/2'>
                     <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='lg:p-5 rounded-2xl border p-5 bg-slate-100 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
-                        <div>
-                            <h3 className="text-3xl text-center">Register</h3>
+                        <div className="pb-10 flex flex-col items-center justify-center text-center">
+                            <h3 className="text-3xl text-red-500 border-b-2 border-gray-300 pb-4">Create an <span className="text-blue-500">account</span></h3>
                         </div>
                         <div className='space-y-4'>
                             <div className=" lg:flex gap-4 w-full">
@@ -146,6 +164,7 @@ const SignUp = () => {
                                             type="file"
                                             className="hidden"
                                             onChange={handleFileChange}
+                                            {...register("image", { required: true })}
                                         />
                                         <FaImage color="blue"
                                             className="text-gray-500 mr-2"

@@ -33,7 +33,10 @@ const Login = () => {
                     navigate('/')
                 }
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error)
+                toast.dismiss()
+            });
     }
     return (
         <Container>
@@ -41,15 +44,15 @@ const Login = () => {
             <div className='flex justify-center items-center min-h-screen'>
                 <div className='flex flex-col md:w-1/3'>
                     <form onSubmit={handleSubmit} noValidate='' action='' className='bg-base-100 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
-                        <div>
-                            <h3 className="text-3xl text-center">Login Now</h3>
+                        <div className="pb-5">
+                            <h3 className="text-3xl text-center text-red-500  border-b-2 border-gray-300 pb-4">Login <span className="text-blue-500">Now</span></h3>
                         </div>
                         <div className='space-y-4'>
                             <div>
                                 <label htmlFor='email' className='font-semibold block mb-2 text-sm'>
                                     Email address *
                                 </label>
-                                <input type='email' name='email' required placeholder='Enter Your Email Here' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900 ' />
+                                <input type='email' name='email' required placeholder='Enter Your Email Here' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-blue-500 bg-gray-200 text-gray-900 ' />
                             </div>
                             <div>
                                 <div className='flex justify-between'>
@@ -58,14 +61,14 @@ const Login = () => {
                                     </label>
                                 </div>
                                 <div className="flex items-center relative">
-                                    <input  type={showPassword ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-cyan-500 bg-gray-200 text-gray-900' />
-                                    <span onClick={togglePasswordVisibility}className="absolute right-4 text-gray-600 bg-opacity-0 text-center btn btn-sm">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
+                                    <input type={showPassword ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-blue-500 bg-gray-200 text-gray-900' />
+                                    <span onClick={togglePasswordVisibility} className="absolute right-4 text-gray-600 bg-opacity-0 text-center btn btn-sm">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <button type='submit' className='bg-cyan-500 btn w-full hover:bg-cyan-400 rounded-md py-3 text-white' >
+                            <button type='submit' className='bg-blue-500 btn w-full hover:bg-blue-400 rounded-md py-3 text-white' >
                                 Continue
                             </button>
                         </div>
