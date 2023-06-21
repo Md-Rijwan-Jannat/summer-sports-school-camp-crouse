@@ -41,9 +41,9 @@ const Login = () => {
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | Login</title></Helmet>
-            <div className='flex justify-center items-center min-h-screen'>
+            <div className='md:flex justify-center items-center pt-20 min-h-screen'>
                 <div className='flex flex-col md:w-1/3'>
-                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-base-100 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
+                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-blue-50 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
                         <div className="pb-5">
                             <h3 className="text-3xl text-center text-red-500  border-b-2 border-gray-300 pb-4">Login <span className="text-blue-500">Now</span></h3>
                         </div>

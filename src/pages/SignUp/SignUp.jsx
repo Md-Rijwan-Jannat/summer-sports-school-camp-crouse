@@ -86,9 +86,9 @@ const SignUp = () => {
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | Sign up</title></Helmet>
-            <div className='flex justify-center items-center min-h-screen py-5 lg:py-2'>
+            <div className='md:flex justify-center items-center min-h-screen py-5 lg:py-2'>
                 <div className='flex flex-col md:w-1/2'>
-                    <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='lg:p-5 rounded-2xl border p-5 bg-slate-100 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
+                    <form onSubmit={handleSubmit(onSubmit)} noValidate='' action='' className='lg:p-5 rounded-2xl border p-5 bg-blue-50 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
                         <div className="pb-10 flex flex-col items-center justify-center text-center">
                             <h3 className="text-3xl text-red-500 border-b-2 border-gray-300 pb-4">Create an <span className="text-blue-500">account</span></h3>
                         </div>

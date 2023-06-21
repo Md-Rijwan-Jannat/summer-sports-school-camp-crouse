@@ -68,7 +68,7 @@ const UserReviews = () => {
         <Container>
 
             <div className="max-w-3xl mx-auto">
-                <Swiper spaceBetween={16} slidesPerView={1} navigation pagination>
+                <Swiper className='rounded-lg border shadow' autoplay spaceBetween={16} slidesPerView={1}>
                     {userFeedback.map((feedback) => (
                         <SwiperSlide key={feedback.id}>
                             <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center justify-center">

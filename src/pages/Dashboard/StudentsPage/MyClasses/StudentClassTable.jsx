@@ -19,7 +19,7 @@ const StudentClassTable = ({ cls, index, }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://summer-sports-scholl-camp-server.vercel.app/addedClass/delete/${_id}`, {
+                fetch(`https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/addedClass/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

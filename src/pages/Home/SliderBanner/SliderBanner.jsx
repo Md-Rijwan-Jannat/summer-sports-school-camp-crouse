@@ -5,7 +5,7 @@ import { useKeenSlider } from 'keen-slider/react'
 const SliderBanner = () => {
     const [sliderRef] = useKeenSlider()
     return (
-        <div ref={sliderRef} className="keen-slider mb-5 md:mb-16">
+        <div ref={sliderRef} className="keen-slider scroll-auto mb-5 md:mb-16">
 
             <div className="relative keen-slider__slide h-[250px] md:h-[500px] lg:h-[700px] xl:h-[1200px] b-0">
                 <img src="https://media.istockphoto.com/id/1355687160/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=SXCgXww7veX8n9fwf_fqEu18ZmdrNG3dPNrfbZFOnns=" alt="Banner Image" className="w-full lg:h-[700px] xl:h-[1200px]" />

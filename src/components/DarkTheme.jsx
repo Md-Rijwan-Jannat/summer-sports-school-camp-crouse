@@ -24,7 +24,7 @@ const DarkTheme = () => {
         <Container>
 
             <button
-                className={`fixed top-1/2 right-6 bg-blue-800  text-white right-4 ${location.pathname === '/' ? 'z-10' : 'z-20'
+                className={`fixed top-1/2 right-4 lg:right-12 bg-blue-800  text-white ${location.pathname === '/' ? 'z-10' : 'z-20'
                     } bg-slate-400 text-gray-700 rounded p-2`}
                 style={{ opacity: theme === 'light' ? 0.5 : 1 }}
                 onClick={toggleTheme}

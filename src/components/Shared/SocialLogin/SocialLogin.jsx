@@ -32,7 +32,7 @@ const SocialLogin = () => {
     return (
       <div>
           <button onClick={googleHandler} className=" btn border-blue-400 rounded-lg px-8 w-full bg-slate-200 mt-5 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-3 py-3">
-            <FaGoogle size={26} /> continue with google
+            <FaGoogle  size={26} /> continue with google
         </button>
       </div>
     );

@@ -12,7 +12,7 @@ const AllInstructor = () => {
     const [instructors, setInstructors] = useState([]);
     console.log(instructors)
     useEffect(() => {
-        axios.get('https://summer-sports-scholl-camp-server.vercel.app/users/instructor')
+        axios.get('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/users/instructor')
             .then(data => {
                 setInstructors(data.data)
             })

@@ -10,7 +10,7 @@ const MyClasses = () => {
     const [myClasses, setMyClasses] = useState([]);
     console.log(myClasses)
     useEffect(()=>{
-        fetch(`https://summer-sports-scholl-camp-server.vercel.app/my_classes/${user?.email}`)
+        fetch(`https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/my_classes/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setMyClasses(data)

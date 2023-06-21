@@ -8,7 +8,7 @@ import Class from "./Class";
 const PopularClasses = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('https://summer-sports-scholl-camp-server.vercel.app/classes')
+        fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setClasses(data)

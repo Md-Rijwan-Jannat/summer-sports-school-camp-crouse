@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path: 'allInstructor',
                 element: <AllInstructor />,
-                loader: () => fetch('https://summer-sports-scholl-camp-server.vercel.app/users/instructor')
+                loader: () => fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/users/instructor')
             },
             {
                 path: 'allClasses',
