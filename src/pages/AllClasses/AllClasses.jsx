@@ -5,6 +5,7 @@ import SectionTitle from "../../components/Headers/SectionTitle";
 import useApprovedClass from "../../components/hooks/useApprovedClass";
 import useAuth from "../../components/hooks/useAuth";
 import NotFoundMessage from "../../components/NotFoundMesage/NotFoundMessage";
+import { CircularProgress } from "@mui/material";
 
 
 const AllClasses = () => {
@@ -16,11 +17,9 @@ const AllClasses = () => {
             <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>
             <SectionTitle title="Our All Classes" />
             {
-                isLoading ? <div className="h-[500px] flex items-center justify-center">
-                    <progress className="progress w-56"></progress>
-                </div> : <>
+                isLoading ? <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></> : <>
                     {
-                        !user ?<NotFoundMessage message={'Please login and select your favorite crouse'}/> : ''
+                        !user ? <NotFoundMessage message={'Please login and select your favorite crouse'} /> : ''
                     }
                     <div className="py-16 bg-slate-50 bg-opacity-90">
                         <div className="overflow-x-auto lg:mx-16">

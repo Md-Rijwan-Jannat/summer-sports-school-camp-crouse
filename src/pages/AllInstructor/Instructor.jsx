@@ -1,26 +1,22 @@
-import axios from "axios";
+
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
-const Instructor = ({ instructor }) => {
+const Instructor = ({ instructor, role }) => {
     const [flow, setFlow] = useState(false)
-    const [feedback, setFeedback] = useState();
-    const { name, email, role, image, _id } = instructor;
-    console.log(feedback);
-
-    axios.get(`https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/feedback_for_instructor/${_id}`)
-        .then(data => {
-            setFeedback(data.data);
-        })
+    const { name, email, image, } = instructor;
 
 
     const flowingHandler = () => {
         setFlow(!flow)
     }
     return (
-        <motion.div
-            className="flex flex-col items-center justify-center bg-white p-5 rounded md:gap-10 shadow-lg "whileHover={{ scale: 1.05 }}
+      <div>
+        {
+            role == 'instructor' && <>
+             <motion.div
+            className="flex flex-col items-center justify-center bg-white p-5 rounded md:gap-10 shadow-lg " whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >
             <div className="max-w-sm flex flex-col items-center mb-2 mb:mb-5 py:my-10">
@@ -46,6 +42,9 @@ const Instructor = ({ instructor }) => {
                 </div>
             </div>
         </motion.div>
+            </>
+        }
+      </div>
     );
 };
 

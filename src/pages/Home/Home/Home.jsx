@@ -3,7 +3,9 @@ import Container from "../../../components/Container/Container";
 import SliderBanner from "../SliderBanner/SliderBanner";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import Instructor from "../PopularInstructor/PopularInstructors";
-import UserFeedback from "../UserFeedback/UserFeedback";
+import UserReviews from "../UserReviews/UserReviews";
+import Gallery from "../Gallery/Gallery";
+import Camping from "../Camping/Camping";
 
 
 const Home = () => {
@@ -12,9 +14,11 @@ const Home = () => {
         <Container>
             <Helmet><title>Summer Sports Camp | Home</title></Helmet>
             <SliderBanner />
+            <Gallery />
+            <Camping />
             <PopularClasses />
             <Instructor />
-            <UserFeedback />
+            <UserReviews />
         </Container>
     );
 };

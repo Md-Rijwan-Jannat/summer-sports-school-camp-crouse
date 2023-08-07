@@ -55,7 +55,7 @@ const AddClass = () => {
             <Helmet><title>Summer Sports Camp | Add Classes</title></Helmet>
             <SectionTitle title={'Add a Class'}></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)} className='bg-slate-100 p-5 rounded-lg border'>
-                <div className='flex gap-5 my-4'>
+                <div className='md:flex gap-5 my-4'>
                     <div className="form-control w-full mb-4">
                         <label className="label">
                             <span className="label-text font-semibold">Class Name*</span>
@@ -73,7 +73,7 @@ const AddClass = () => {
                             className="input input-bordered w-full " />
                     </div>
                 </div>
-                <div className='flex gap-5 my-4'>
+                <div className='md:flex gap-5 my-4'>
                     <div className="form-control w-full mb-4">
                         <label className="label">
                             <span className="label-text font-semibold">Instructor Email*</span>
@@ -91,13 +91,12 @@ const AddClass = () => {
                             className="input input-bordered w-full " />
                     </div>
                 </div>
-                <div className="flex gap-5 my-4">
+                <div className="md:flex gap-5 my-4">
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text font-semibold">Status</span>
                         </label>
                         <select defaultValue="Pick One" {...register("status", { required: true })} className="select select-bordered">
-                            <option disabled>Pick One</option>
                             <option>pending</option>
                         </select>
                     </div>
@@ -112,7 +111,7 @@ const AddClass = () => {
                     <label className="label">
                         <span className="label-text font-semibold">Class Image*</span>
                     </label>
-                    <label className="relative bg-blue-200 flex items-center px-4 py-2 rounded-lg border border-gray-300 cursor-pointer w-1/3">
+                    <label className="relative bg-blue-200 flex items-center px-4 py-2 rounded-lg border border-gray-300 cursor-pointer md:w-1/3">
                         <input
                             type="file"
                             className="hidden"

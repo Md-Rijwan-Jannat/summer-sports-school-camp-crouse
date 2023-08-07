@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+import PrimaryButton from "../../../components/PrimaryButton";
 
 
 const PopularInstructor = ({ instr }) => {
@@ -15,26 +16,24 @@ const PopularInstructor = ({ instr }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >
-            <div className="max-w-sm rounded overflow-hidden shadow-lg flex flex-col items-center mb-2 md:mb-5">
+            <div className="max-w-sm rounded overflow-hidden flex flex-col items-center mb-2 md:mb-5">
                 <img className="w-32 h-32 rounded-full" src={image} alt={name} />
                 <div className="px-6 py-4 flex flex-col items-center">
                     <div className="font-bold text-xl mb-2 flex items-center gap-2">{name} <span className="text-blue-600"><FaCheckCircle /></span></div>
-                    <button onClick={flowingHandler} className="bg-blue-500 btn btn-sm hover:bg-blue-600 text-white font-bold text-[13] mb-5 py-2 px-4 rounded">{flow ? 'Flowing' : 'Flow'} </button>
+                    <button onClick={flowingHandler} className="bg-blue-500 hover:bg-blue-600 text-white text-[10px] mb-5 px-2 rounded">{flow ? 'Flowing' : 'Flow'} </button>
                     <p className="text-gray-700 text-base">
                         <span className="font-semibold"> Class:</span> 2
                     </p>
-                    <p className="text-gray-700 text-base">
-                        <span className="font-semibold"> Contact:</span> {email}
+                    <p className="text-gray-700 font-normal texy">
+                        <span className="font-semibold"> Contact: </span>{email}
                     </p>
                     <p className="text-red-400 text-base">
-                        <span className="font-semibold text-gray-700"> Role:</span> {role}
+                        <span className="font-semibold text-gray-700"> Role: </span>{role} 
                     </p>
 
                 </div>
                 <div className="px-6 pt-4 pb-2">
-                    <button className="bg-cyan-500 bg-opacity-70 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded">
-                        View Details
-                    </button>
+                   <PrimaryButton text={'View Details'}></PrimaryButton>
                 </div>
             </div>
         </motion.div>

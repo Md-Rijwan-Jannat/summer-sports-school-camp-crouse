@@ -52,7 +52,7 @@ const Navbar = () => {
             <div className="md:navbar p-5 md:p-2 pb-16 relative bg-blue-100 bg-opacity-40 shadow-sm">
                 <div className="navbar-start flex flex-col my-5 mb-3 lg:flex-row  gap-1 w-full">
                     <img className="w-28 rounded-3xl" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
-                    <h3 className="pl-5 text-2xl font-bold text-blue-400">Summer sports school camp</h3>
+                    <h3 className="pl-5 text-2xl font-bold text-blue-400">Summer camp</h3>
                 </div>
                 <div className="dropdown  navbar-end">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

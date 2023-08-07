@@ -29,7 +29,7 @@ const EnrolledClasses = () => {
                         {
                             enrolledClass.map(cls => <tr key={cls?._id}>
                                 <th>{"<"}</th>
-                                <th>
+                                <th className="pl-5">
                                     <div className="flex gap-3">
                                         <img className="w-16 h-16 rounded-full" src={user?.photoURL} alt="" />
                                         <div className="flex flex-col space-y-2">

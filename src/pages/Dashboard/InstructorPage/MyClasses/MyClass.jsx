@@ -3,7 +3,7 @@ import { useState } from "react";
 import NotFoundMessage from "../../../../components/NotFoundMesage/NotFoundMessage";
 
 
-const MyClass = ({ cls }) => {
+const MyClass = ({ cls, myClasses }) => {
     const [feedback, setFeedback] = useState([])
     const { className, instructorName, image, price, status, students, availableSeats, _id } = cls;
     console.log(cls)
@@ -15,7 +15,7 @@ const MyClass = ({ cls }) => {
     return (
         <>
             {
-                cls ? <>
+                !myClasses.length == 0 ? <>
                     <div className="bg-white rounded-lg shadow-lg">
                         <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
                         <div className="p-6">
@@ -32,7 +32,7 @@ const MyClass = ({ cls }) => {
                             </div> : ''
                         }
                     </div >
-                </> : <NotFoundMessage message={'Add Yoy won classes'} />
+                </> : <NotFoundMessage message={'Add your won classes'} />
             }
         </>
     );

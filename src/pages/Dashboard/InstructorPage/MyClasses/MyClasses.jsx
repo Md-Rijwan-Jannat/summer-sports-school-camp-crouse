@@ -25,6 +25,7 @@ const MyClasses = () => {
                     myClasses.map(cls => <MyClass
                         key={cls._id}
                         cls={cls}
+                        myClasses={myClasses}
                     ></MyClass>)
                 }
             </div>

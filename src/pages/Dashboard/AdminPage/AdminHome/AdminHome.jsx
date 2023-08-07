@@ -14,7 +14,7 @@ const AdminHome = () => {
         <>
 
             <Helmet><title>Summer Sports Camp | Admin Home</title></Helmet>
-            <div className="flex flex-col items-center justify-center bg-slate-50 p-10 rounded-3xl shadow-2xl mt-5 md:mt-32">
+            <div className="flex flex-col items-center justify-center bg-slate-50 p-10 rounded-3xl shadow-2xl pt-5 md:pt-32">
                 <img className="w-32 h-32 mb-2 rounded-full border-blue-600" src={user?.photoURL} alt="" />
                 <div className="flex flex-col items-center justify-center">
                     <div className="font-bold text-xl mb-2 flex items-center gap-2">{user?.displayName} <span className="text-blue-600"><FaCheckCircle /></span></div>
