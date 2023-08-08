@@ -38,7 +38,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-cyan-100 font-semibold text-base-content pt-10 md:pt-24">
+                    <ul className="menu p-4 w-80 h-full bg-blue-200 font-semibold text-base-content pt-10 md:pt-24">
                         {/* Sidebar content here */}
                         {user && <>
                             <div className="flex flex-col items-center justify-center mb-5">

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 
 const StudentClassTable = ({ cls, index, }) => {
-    const { image, className, instructorName, newStudent, newAvailableSeats, price, _id } = cls;
+    const { image, className, instructorName, students, availableSeats, price, _id } = cls;
     const [addedClass, refetch] = useAddClass();
 
     const deleteHandler = (_id) => {
@@ -55,8 +55,8 @@ const StudentClassTable = ({ cls, index, }) => {
                         </td>
                         <td>{className}</td>
                         <td>{instructorName}</td>
-                        <td className="text-green-600">{newStudent}</td>
-                        <td className="text-red-600">{newAvailableSeats}</td>
+                        <td className="text-green-600">{students}</td>
+                        <td className="text-red-600">{availableSeats}</td>
                         <td className="text-blue-600">{"$"+ price}</td>
                         <th> <button onClick={() => deleteHandler(_id)} className="btn px-2 bg-red-500 hover:bg-red-600 border-0 text-white">remove<FaTrash size={20} /></button>
                         </th>

@@ -15,7 +15,7 @@ const StudentClasses = () => {
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | My selected Classes</title></Helmet>
-            <SectionTitle title="Our All Classes" />
+            <SectionTitle title="My Added Classes" />
             {
                ! addedClass ? <div className="h-[500px] flex items-center justify-center">
                     <progress className="progress w-56"></progress>

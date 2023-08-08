@@ -125,7 +125,9 @@ const CheckoutHook = ({ price, addedClass }) => {
                 error && <p className="text-red-500 mt-5">{error}</p>
             }
             {
-                transactionId && <p className="mt-3 text-green-500">Transaction is complete with id:{transactionId}</p>
+                transactionId && <div className="w-full flex justify-center items-center h-[100px]">
+                    <p className="mt-3 text-green-500 bg-green-100 px-4 py-2 rounded-lg w-1/2">Successfully payment.Transaction id - {transactionId}</p>
+                </div>
             }
         </>
     );
