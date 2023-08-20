@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Container from "../../components/Container/Container";
-import ClassTabile from "./ClassTabile";
+import ClassTabile from "./Classes";
 import SectionTitle from "../../components/Headers/SectionTitle";
 import useApprovedClass from "../../components/hooks/useApprovedClass";
 import useAuth from "../../components/hooks/useAuth";
@@ -21,23 +21,8 @@ const AllClasses = () => {
                     {
                         !user ? <NotFoundMessage message={'Please login and select your favorite crouse'} /> : ''
                     }
-                    <div className="py-16 bg-slate-50 bg-opacity-90">
-                        <div className="overflow-x-auto lg:mx-16">
-                            <table className="table w-full">
-                                {/* head */}
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>image</th>
-                                        <th>Class Name</th>
-                                        <th>Instructor</th>
-                                        <th>Students</th>
-                                        <th>Available Seats</th>
-                                        <th>Price</th>
-                                        <th>Details</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    <div className="pb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                                     {
                                         approvedClass.map((cls, index) => <ClassTabile
                                             key={cls._id}
@@ -45,9 +30,6 @@ const AllClasses = () => {
                                             index={index}
                                         ></ClassTabile>)
                                     }
-
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </>

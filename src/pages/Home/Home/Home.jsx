@@ -15,9 +15,9 @@ const Home = () => {
             <Helmet><title>Summer Sports Camp | Home</title></Helmet>
             <SliderBanner />
             <Gallery />
-            <Camping />
             <PopularClasses />
             <Instructor />
+            <Camping />
             <UserReviews />
         </Container>
     );

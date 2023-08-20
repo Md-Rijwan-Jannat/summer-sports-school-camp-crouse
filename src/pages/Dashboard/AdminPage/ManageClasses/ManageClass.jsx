@@ -93,16 +93,16 @@ const ManageClass = ({ cls, index, refetch }) => {
 
                 <th className="flex flex-col gap-2">
                     {
-                        status === 'approved' ? <button onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-green-400 hover:bg-green-500 border-0 text-white">Approved</button> : <>
+                        status === 'approved' ? <button onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-green-600 hover:bg-green-700 border-0 text-white">Approved</button> : <>
                             {
-                                status === 'denied' ? <button disabled onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-blue-400 hover:bg-blue-500 border-0 text-white">Approve</button> : <button onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-blue-400 hover:bg-blue-500 border-0 text-white">Approve</button>
+                                status === 'denied' ? <button disabled onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-blue-600 hover:bg-blue-700 border-0 text-white">Approve</button> : <button onClick={() => approvedHandler(_id)} className="btn btn-sm px-2 bg-blue-600 hover:bg-blue-700 border-0 text-white">Approve</button>
                             }
                         </>
                     }
                     {
-                        status === 'denied' ? <button onClick={openModal} className="btn btn-sm px-2 bg-blue-400 hover:bg-blue-500 border-0 text-white">Denied</button> : <>
+                        status === 'denied' ? <button onClick={openModal} className="btn btn-sm px-2 bg-blue-400 hover:bg-blue-700 border-0 text-white">Denied</button> : <>
                             {
-                                status === 'approved' ? <button disabled className="btn btn-sm px-2 bg-red-400 hover:bg-red-500 border-0 text-white">Deny</button> : <button onClick={() => deniedHandler(_id)} className="btn btn-sm px-2 bg-red-400 hover:bg-red-500 border-0 text-white">Deny</button>
+                                status === 'approved' ? <button disabled className="btn btn-sm px-2 bg-red-600 hover:bg-red-500 border-0 text-white">Deny</button> : <button onClick={() => deniedHandler(_id)} className="btn btn-sm px-2 bg-red-600 hover:bg-red-700 border-0 text-white">Deny</button>
                             }
                         </>
                     }
@@ -111,18 +111,18 @@ const ManageClass = ({ cls, index, refetch }) => {
             {isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
                     <form onSubmit={feedbackHandler} className="bg-base-100 shadow-xl w-1/2 rounded-xl p-6">
-                        <h2 className="text-lg font-bold mb-4 text-blue-500">Feedback</h2>
+                        <h2 className="text-lg font-bold mb-4 text-blue-700">Feedback</h2>
                         <p className="mb-4">Please provide your feedback below:</p>
                         <input type="text" name="feedback" className="w-full h-16 border rounded px-3 py-2 mb-4" />
 
                         <div className="flex justify-end">
                             <button
                                 onClick={closeModal}
-                                className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2"
+                                className="bg-gray-600 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2"
                             >
                                 Close
                             </button>
-                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                            <button className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                 Submit
                             </button>
                         </div>
@@ -153,7 +153,7 @@ export default ManageClass;
 //             {/* Button to open the modal */}
 //             <button
 //                 onClick={openModal}
-//                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+//                 className="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 //             >
 //                 Give Feedback
 //             </button>
@@ -169,12 +169,12 @@ export default ManageClass;
 //                         <div className="flex justify-end">
 //                             <button
 //                                 onClick={closeModal}
-//                                 className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2"
+//                                 className="bg-gray-600 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2"
 //                             >
 //                                 Close
 //                             </button>
 //                             <button
-//                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+//                                 className="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 //                             >
 //                                 Submit
 //                             </button>

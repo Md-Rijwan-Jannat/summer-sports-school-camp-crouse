@@ -1,50 +1,62 @@
 
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
-import { motion } from 'framer-motion';
+import PrimaryButton from "../../components/PrimaryButton";
+import useClasses from "../../components/hooks/useClasses";
 
 const Instructor = ({ instructor, role }) => {
     const [flow, setFlow] = useState(false)
     const { name, email, image, } = instructor;
 
+    const [classes] = useClasses();
+    const totalClass = classes?.filter(cls => cls?.instructorEmail === email)
+    console.log(totalClass)
+    const total = classes?.find(cls => cls?.instructorEmail === email)
+    console.log(total)
 
     const flowingHandler = () => {
         setFlow(!flow)
     }
     return (
-      <div>
-        {
-            role == 'instructor' && <>
-             <motion.div
-            className="flex flex-col items-center justify-center bg-white p-5 rounded md:gap-10 shadow-lg " whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-        >
-            <div className="max-w-sm flex flex-col items-center mb-2 mb:mb-5 py:my-10">
-                <img className="w-32 h-32 rounded-full" src={image} alt={name} />
-                <div className="px-6 py-4 flex flex-col items-center">
-                    <div className="font-bold text-xl mb-2 flex items-center gap-2">{name} <span className="text-blue-600"><FaCheckCircle /></span></div>
-                    <button onClick={flowingHandler} className="bg-blue-500 btn btn-sm hover:bg-blue-600 text-white font-bold text-[13] mb-5 py-2 px-4 rounded">{flow ? 'Flowing' : 'Flow'} </button>
-                    <p className="text-gray-700 text-base">
-                        <span className="font-semibold"> Class:</span> 2
-                    </p>
-                    <p className="text-gray-700 text-base">
-                        <span className="font-semibold"> Contact:</span> {email}
-                    </p>
-                    <p className="text-red-400 text-base">
-                        <span className="font-semibold text-gray-700"> Role:</span> {role}
-                    </p>
-
-                </div>
-                <div className="px-6 pt-4 pb-2">
-                    <button className="bg-cyan-500 bg-opacity-70 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded">
-                        View Details
-                    </button>
-                </div>
-            </div>
-        </motion.div>
-            </>
-        }
-      </div>
+        <div>
+            {
+                role == 'instructor' && <>
+                    <div className="bg-blue-300 rounded-lg shadow-lg pb-5 p-5">
+                        <div className="px-6 py-4 flex flex-col">
+                            <div className="flex gap-4">
+                                <img className="w-20 h-20 rounded-full border-[#8A63AC] border-2" src={image} alt={image} />
+                                <div className="flex flex-col items-start ">
+                                    <div className="font-bold text-base mb-2 flex flex-wrap items-center gap-2">{name} <span className="text-blue-600"><FaCheckCircle /></span></div>
+                                    <div className="flex flex-row gap-3 items-center mb-3">
+                                        <p className="text-xs text-blue-600">flowers- 1k</p>
+                                        <p className="text-xs text-blue-600">Connection- 500+</p>
+                                    </div>
+                                    <button onClick={flowingHandler} className="bg-[#1b92c4] hover:bg-blue-600 text-white text-[10px] mb-5 px-2 rounded">{flow ? 'Flowing' : 'Flow'} </button>
+                                </div>
+                            </div>
+                            <div className="text-start">
+                                <div className=" mb-5">
+                                    <p className="text-[#8A63AC] text-2xl ml-1">i<span className="text-[#1b92c4] text-lg"> nstructor</span></p>
+                                    <hr className="border-[2px] border-[#8A63AC] w-[30px]" />
+                                </div>
+                                <p className="text-blue-600 ">
+                                    <span className="text-sm font-semibold text-gray-500"> Class:</span> {totalClass.length}
+                                </p>
+                                <p className="text-blue-600 ">
+                                    <span className="text-sm font-semibold text-gray-500"> Students:</span> {total?.students ? total?.students : 0 }
+                                </p>
+                                <p className=" text-green-600">
+                                    <span className="text-sm font-semibold text-gray-500"> Email:</span> {email}
+                                </p>
+                            </div>
+                            <div className="w-[80px] mt-3">
+                                <PrimaryButton text={'View Details'}></PrimaryButton>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            }
+        </div>
     );
 };
 

@@ -50,7 +50,7 @@ const UserReviews = () => {
                         newFeedbackAdded ? <>
                             {
                                 newFeedbackAdded?.map(item => <SwiperSlide key={item._id}>
-                                    <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center justify-center">
+                                    <div className="bg-[#93C5FD] shadow-lg rounded-lg p-6 flex flex-col items-center justify-center">
                                         <div className="flex items-center mb-4">
                                             <img
                                                 src={item?.image}
@@ -59,8 +59,8 @@ const UserReviews = () => {
                                             />
                                             <h3 className="text-xl font-semibold">{item.name}</h3>
                                         </div>
-                                        <p className="text-gray-700 mb-4">{item?.feedback}</p>
-                                        <p className="text-gray-500 text-sm">{item?.description}</p>
+                                        <p className="text-gray-600 mb-4">{item?.feedback}</p>
+                                        <p className="text-[#8863AC] text-sm">{item?.description}</p>
                                     </div>
                                 </SwiperSlide>)
                             }
@@ -72,7 +72,7 @@ const UserReviews = () => {
                         <div className='flex items-center p-5'>
                             <label className='input-group' htmlFor="">
                                 <input
-                                    className='input input-bordered border w-full'
+                                    className='input input-bordered bg-opacity-50 w-full bg-[#8863AC] border-0 text-gray-600'
                                     type="text"
                                     placeholder='Send your feedback'
                                     value={feedbackAdd}

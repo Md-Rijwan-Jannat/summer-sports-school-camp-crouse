@@ -1,14 +1,15 @@
 import Container from "../../Container/Container";
 import { FaFacebook, FaPhone, FaTelegramPlane, FaTwitter, FaYoutube } from "react-icons/fa";
+import summer_camp from '../../../assets/summer-camp-removebg-preview.png'
 
 const Footer = () => {
     return (
         <Container>
             <>
-                <footer className="footer p-10 bg-blue-500 text-base-content bg-opacity-50">
-                    <div>
-                        <img className="w-28 rounded-2xl shadow-cyan-50" src="https://t3.ftcdn.net/jpg/01/48/33/22/360_F_148332274_gev1hgVEk1uOyiEMAvaNH31oJy6FSyYz.jpg" alt="" />
-                        <p className="text-sm font-sans">Thrilling Upsets and <br /> Record-Breaking  Performances <br /> Dominate the Sports World</p>
+                <footer className="footer footer1 px-10 pt-20 pb-10 bg-blue-500 text-base-content bg-opacity-50">
+                    <div className="ml-16 md:ml-0">
+                        <img className="w-28 rounded-2xl shadow-cyan-50" src={summer_camp} alt="" />
+                        <p className="text-sm font-bold">Thrilling Upsets and <br /> Record-Breaking  Performances <br /> Dominate the Sports World</p>
                     </div>
                     <div>
                         <span className="footer-title">Services</span>

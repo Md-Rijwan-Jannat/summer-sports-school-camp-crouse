@@ -43,32 +43,32 @@ const Login = () => {
             <Helmet><title>Summer Sports Camp | Login</title></Helmet>
             <div className='md:flex justify-center items-center pt-20 min-h-screen'>
                 <div className='flex flex-col md:w-1/3'>
-                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-blue-50 p-5 rounded-2xl border sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
+                    <form onSubmit={handleSubmit} noValidate='' action='' className='bg-blue-300 p-5 rounded-2xl sm:p-10 text-gray-900 space-y-6 ng-untouched ng-pristine ng-valid' >
                         <div className="pb-5">
-                            <h3 className="text-3xl text-center text-red-500  border-b-2 border-gray-300 pb-4">Login <span className="text-blue-500">Now</span></h3>
+                            <h3 className="text-3xl text-center text-[#7E3E97] border-b-2 border-gray-300 pb-4">Login <span className="text-blue-500">Now</span></h3>
                         </div>
                         <div className='space-y-4'>
                             <div>
-                                <label htmlFor='email' className='font-semibold block mb-2 text-sm'>
+                                <label htmlFor='email' className='font-semibold text-[#A373B5] block mb-2 text-sm'>
                                     Email address *
                                 </label>
-                                <input type='email' name='email' required placeholder='Enter Your Email Here' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-blue-500 bg-gray-200 text-gray-900 ' />
+                                <input type='email' name='email' required placeholder='Enter Your Email Here' className='w-full px-3 py-2 rounded-md focus:outline-blue-500 bg-[#8863ac8c] text-gray-900 ' />
                             </div>
                             <div>
                                 <div className='flex justify-between'>
-                                    <label htmlFor='password' className='font-semibold text-sm mb-2'>
+                                    <label htmlFor='password' className='font-semibold text-[#A373B5] text-sm mb-2'>
                                         Password *
                                     </label>
                                 </div>
                                 <div className="flex items-center relative">
-                                    <input type={showPassword ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-blue-500 bg-gray-200 text-gray-900' />
-                                    <span onClick={togglePasswordVisibility} className="absolute right-4 text-gray-600 bg-opacity-0 text-center btn btn-sm">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
+                                    <input type={showPassword ? 'text' : 'password'} name='password' required placeholder='password' className='w-full px-3 py-2 rounded-md  focus:outline-blue-500 bg-[#8863ac8c] text-gray-900' />
+                                    <span onClick={togglePasswordVisibility} className="absolute right-4 text-gray-600 bg-opacity-0 text-center border-0 btn btn-sm">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <button type='submit' className='bg-blue-500 btn w-full hover:bg-blue-400 rounded-md py-3 text-white' >
+                            <button type='submit' className='bg-[#7E3E97] btn w-full hover:bg-[#A373B5] rounded-md py-3 text-blue-500 hover:text-white border-0' >
                                 Continue
                             </button>
                         </div>

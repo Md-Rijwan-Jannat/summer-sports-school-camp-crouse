@@ -72,7 +72,7 @@ const InstructorHome = () => {
                             </Tabs>
                         </Box>
                         <CustomTabPanel value={value} index={0}>
-                            <div className="flex flex-col items-start justify-start">
+                            <div className="text-gray-400 text-start">
                                 <p className="text-sm font-medium flex items-start justify-start">
                                     Hello everyone,<br />
 
@@ -95,7 +95,7 @@ const InstructorHome = () => {
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                            <div className="text-gray-600 flex flex-col items-start justify-start">
+                            <div className="text-gray-400 text-start">
                                 <h1 className="tex text-2xl font-semibold">Academic qualification</h1>
                                 <div className="ml-6">
                                     <p className="text-lg font-semibold">Bachelor of Science in Educational Leadership</p>
@@ -105,7 +105,9 @@ const InstructorHome = () => {
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={2}>
-                            Item Three
+                            <div className="text-gray-400 text-start">
+                                <span className="text-sm">The Bachelor of Science in Educational Leadership is an academic degree program designed to prepare individuals for leadership roles in educational settings. Here are some academic short details about this degree program:</span>
+                            </div>
                         </CustomTabPanel>
                     </Box>
                 </div>

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.banner {
+  border: 4px #8A63AC solid;
+  border-top-left-radius: 60% 50%;
+  border-bottom-left-radius: 60% 50%;
+  border-top-right-radius: 50% 20%;
+  border-bottom-right-radius:50% 20%;
+}
+.footer1 {
+  border-top-left-radius: 60% 50%;
+  border-top-right-radius: 50% 20%;
+}
 .linksColor a.active {
   color: red;
 }

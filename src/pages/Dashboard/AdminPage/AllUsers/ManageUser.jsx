@@ -84,7 +84,7 @@ const ManageUser = ({ user, index, refetch }) => {
             </td>
             <td>{name}</td>
             <td className="text-cyan-600">{email}</td>
-            <td className="text-green-600">{role}</td>
+            <td className="text-green-700">{role}</td>
             <td>
                 {
                     role === 'instructor' ? <button disabled className="btn btn-sm text-sm lowercase h-[40px] font-semibold px-2 bg-cyan-500 hover:bg-cyan-600 border-0 text-white">Make Instructor</button> : <button

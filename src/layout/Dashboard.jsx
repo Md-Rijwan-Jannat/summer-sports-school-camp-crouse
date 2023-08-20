@@ -38,12 +38,12 @@ const currentUser = users.filter(u => u?.email === user?.email)
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-blue-200 font-semibold text-base-content pt-10 md:pt-24">
+                    <ul className="menu p-4 w-80 min-h-screen bg-[#72c8ea] font-bold text-gray-800 pt-10 md:pt-24">
                         {/* Sidebar content here */}
                         {user && <>
                             <div className="flex flex-col items-center justify-center mb-5">
                                 <img className="w-16 h-16 border-blue-600 border-4 rounded-full mb-2" src={user?.photoURL} alt="" />
-                                <span className="bg-white px-3 p-1 rounded-lg shadow-lg">{user?.displayName}</span>
+                                <span className="bg-blue-400 px-3 p-1 rounded-lg shadow-lg">{user?.displayName}</span>
                             </div>
                         </>}
                         {

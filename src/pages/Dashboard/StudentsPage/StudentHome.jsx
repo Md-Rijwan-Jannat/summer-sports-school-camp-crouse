@@ -71,7 +71,7 @@ const StudentHome = () => {
                             </Tabs>
                         </Box>
                         <CustomTabPanel value={value} index={0}>
-                            <div className="flex flex-col items-start justify-start">
+                            <div className="text-gray-800 text-start">
                                 <p className="text-sm font-medium flex items-start justify-start">
                                     Participating in the summer camp has been an incredible journey filled with fun, learning, and unforgettable memories. From exciting outdoor adventures to engaging workshops and team activities, every day brought a new opportunity to explore, grow, and make friends. Whether it was conquering new challenges, discovering hidden talents, or simply enjoying the beauty of nature, the summer camp experience has left a lasting impact on me. I am grateful for the friendships formed, the skills gained, and the sense of achievement that I will carry with me long after the camp has ended. Thank you for an amazing summer filled with laughter, learning, and endless possibilities
                                 </p>
@@ -84,13 +84,15 @@ const StudentHome = () => {
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                            <div className="text-gray-600 flex flex-col items-start justify-start">
+                            <div className="text-gray-800 text-start">
                                 <h1 className="tex text-2xl font-semibold">Summer Sports School Camp</h1>
 
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={2}>
-                            Bangladesh
+                            <div className="text-gray-800 text-start">
+                                   Bangladesh
+                            </div>
                         </CustomTabPanel>
                     </Box>
                 </div>
@@ -111,10 +113,10 @@ const StudentHome = () => {
                 <h2 className="text-3xl text-gray-500 font-semibold mt-10 mb-5 text-left">Summer Camp Crouse Videos</h2>
                 <div className="divider border-4 border-gray-500"></div>
                 <div className="flex flex-col space-y-10">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cycQCK8w1-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WkhbInv1MeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NIk1-ck4c6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3yc5Nr2X4uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/cycQCK8w1-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/WkhbInv1MeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/NIk1-ck4c6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/3yc5Nr2X4uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </Container>

@@ -2,9 +2,11 @@
 
 const SectionTitle = ({ title }) => {
     return (
-        <div className="flex flex-col items-center justify-center md:py-10 ">
-            <h2 className="text-xl md:text-4xl text-center my-5 text-gray-600 bg-blue-50 border rounded-xl shadow-xl p-3 w-1/2">{title}</h2>
-            
+        <div className="my-16">
+            <div className="flex flex-col justify-start mb-2">
+                <h2 className="text-2xl md:text-4xl text-[#8A63AC]">{title}</h2>
+            </div>
+                <hr className="w-24 border-[3px] border-[#1b92c4]" />
         </div>
     );
 };
