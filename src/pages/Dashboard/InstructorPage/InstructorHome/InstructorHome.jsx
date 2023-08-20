@@ -1,4 +1,4 @@
-import { FaCheckCircle, FaCreditCard, FaFacebook, FaInfo, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaCheckCircle, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../../../components/hooks/useAuth";
@@ -8,7 +8,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { Button, Card, CardActions, CardContent, Checkbox, Divider, FormControl, FormLabel, Input } from "@mui/material";
 
 
 
@@ -72,7 +71,7 @@ const InstructorHome = () => {
                             </Tabs>
                         </Box>
                         <CustomTabPanel value={value} index={0}>
-                            <div className="text-gray-400 text-start">
+                            <div className="text-gray-800 text-start">
                                 <p className="text-sm font-medium flex items-start justify-start">
                                     Hello everyone,<br />
 
@@ -95,7 +94,7 @@ const InstructorHome = () => {
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
-                            <div className="text-gray-400 text-start">
+                            <div className="text-gray-800 text-start">
                                 <h1 className="tex text-2xl font-semibold">Academic qualification</h1>
                                 <div className="ml-6">
                                     <p className="text-lg font-semibold">Bachelor of Science in Educational Leadership</p>
@@ -105,7 +104,7 @@ const InstructorHome = () => {
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={2}>
-                            <div className="text-gray-400 text-start">
+                            <div className="text-gray-800 text-start">
                                 <span className="text-sm">The Bachelor of Science in Educational Leadership is an academic degree program designed to prepare individuals for leadership roles in educational settings. Here are some academic short details about this degree program:</span>
                             </div>
                         </CustomTabPanel>
@@ -120,69 +119,13 @@ const InstructorHome = () => {
                         <span className="text-sm text-blue-600 font-semibold">500+ connections</span>
                     </div>
                     <button onClick={flowingHandler} className="bg-blue-500  w-[100px] hover:bg-blue-600 text-white font-bold text-[13] mb-5 py-2 px-4 rounded-2xl">{flow ? 'Flowing' : 'Flow'} </button>
-                    <div className="my-5">
-                        <Card
-                            variant="outlined"
-                            sx={{
-                                // maxHeight: 'max-content',
-                                // maxWidth: '100%',
-                                // mx: 'auto',
-                                // overflow: 'auto',
-                                // resize: 'horizontal',
-                                width: '100%', // Full width on mobile
-                                '@media (min-width: 768px)': {
-                                    width: '80%', // 80% width on medium screens
-                                },
-                                '@media (min-width: 1280px)': {
-                                    width: '60%', // 60% width on large screens
-                                },
-                            }}
-                        >
-                            <Typography level="title-lg" startDecorator={<FaInfo />}>
-                                Add new card
-                            </Typography>
-                            <Divider inset="none" />
-                            <CardContent
-                                sx={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(1, minmax(80px, 1fr))', // Single column on mobile
-                                    gap: 1.5,
-                                    '@media (min-width: 768px)': {
-                                        gridTemplateColumns: 'repeat(2, minmax(80px, 1fr))', // Two columns on medium screens
-                                    },
-                                }}
-                            >
-                                <FormControl sx={{ gridColumn: '1/-1' }}>
-                                    <FormLabel>Card number</FormLabel>
-                                    <Input endDecorator={<FaCreditCard />} />
-                                </FormControl>
-                                <FormControl>
-                                    <FormLabel>Expiry date</FormLabel>
-                                    <Input endDecorator={<FaCreditCard />} />
-                                </FormControl>
-                                <FormControl>
-                                    <FormLabel>CVC/CVV</FormLabel>
-                                    <Input endDecorator={<FaInfo />} />
-                                </FormControl>
-                                <FormControl sx={{ gridColumn: '1/-1' }}>
-                                    <FormLabel>Card holder name</FormLabel>
-                                    <Input placeholder="Enter cardholder's full name" />
-                                </FormControl>
-                                <Checkbox label="Save card" sx={{ gridColumn: '1/-1', my: 1 }} />
-                                <CardActions sx={{ gridColumn: '1/-1' }}>
-                                    <Button variant="solid" color="primary">
-                                        Add card
-                                    </Button>
-                                </CardActions>
-                            </CardContent>
-                        </Card>
-                    </div>
+
                     <div>
                         <h3 className="text-3xl text-gray-500 mt-10 mb-4">Our Summer sports video</h3>
-                        <div className="divider border-4 border-gray-500"></div>
-                        <div className="flex flex-col gap-10 space-y-5 ld:space-y-0">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/2vIuqpisUDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl"></iframe>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/QaaXjHDOjuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl"></iframe>
+                        <div className="divider border-4 border-gray-500 mb-5"></div>
+                        <div className="flex flex-col justify-center items-center gap-10 space-y-5 ld:space-y-0">
+                            <iframe src="https://www.youtube.com/embed/2vIuqpisUDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl md:w-[560px] md:h-[360px]"></iframe>
+                            <iframe src="https://www.youtube.com/embed/QaaXjHDOjuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl md:w-[560px] md:h-[360px]"></iframe>
                         </div>
                     </div>
                 </div>

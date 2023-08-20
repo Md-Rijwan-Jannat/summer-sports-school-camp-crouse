@@ -16,7 +16,7 @@ const MyClass = ({ cls, myClasses }) => {
         <>
             {
                 !myClasses.length == 0 ? <>
-                    <div className="bg-white rounded-lg shadow-lg">
+                    <div className="bg-blue-300 rounded-lg shadow-lg">
                         <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
                         <div className="p-6">
                             <h2 className="text-2xl font-bold text-gray-800 mb-5">{className}</h2>
@@ -27,7 +27,7 @@ const MyClass = ({ cls, myClasses }) => {
                             <a href="#" className="inline-block mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600">{status}</a>
                         </div>
                         {
-                            feedback?.feedback ? <div className="bg-red-50 p-2 rounded-xl m-3">
+                            feedback?.feedback ? <div className="bg-red-400 p-2 rounded-xl m-3">
                                 <p className="text-blue-600 font-bold">Admin Feedback: <span className="font-normal text-black">{feedback?.feedback}</span></p>
                             </div> : ''
                         }

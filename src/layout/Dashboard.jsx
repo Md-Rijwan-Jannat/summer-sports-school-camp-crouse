@@ -26,7 +26,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
-            <div className="drawer drawer-mobile ">
+            <div className="drawer drawer-mobile">
                 <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content text-center mt-5">
                     <div className="flex justify-end top-4">

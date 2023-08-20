@@ -112,13 +112,21 @@ const StudentHome = () => {
             <div>
                 <h2 className="text-3xl text-gray-500 font-semibold mt-10 mb-5 text-left">Summer Camp Crouse Videos</h2>
                 <div className="divider border-4 border-gray-500"></div>
-                <div className="flex flex-col space-y-10">
-                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/cycQCK8w1-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/WkhbInv1MeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/NIk1-ck4c6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe className="rounded-2xl" width="560" height="315" src="https://www.youtube.com/embed/3yc5Nr2X4uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div className="flex flex-col justify-center items-center gap-10 space-y-5 ld:space-y-0">
+                    <iframe className="rounded-2xl md:w-[560px] md:h-[360px]" src="https://www.youtube.com/embed/cycQCK8w1-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl md:w-[560px] md:h-[360px]" src="https://www.youtube.com/embed/WkhbInv1MeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl md:w-[560px] md:h-[360px]" src="https://www.youtube.com/embed/NIk1-ck4c6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className="rounded-2xl md:w-[560px] md:h-[360px]" src="https://www.youtube.com/embed/3yc5Nr2X4uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
+            <div>
+                        <h3 className="text-3xl text-gray-500 mt-10 mb-4">Our Summer sports video</h3>
+                        <div className="divider border-4 border-gray-500 mb-5"></div>
+                        <div className="flex flex-col justify-center items-center gap-10 space-y-5 ld:space-y-0">
+                            <iframe src="https://www.youtube.com/embed/2vIuqpisUDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl md:w-[560px] md:h-[360px]"></iframe>
+                            <iframe src="https://www.youtube.com/embed/QaaXjHDOjuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="rounded-2xl md:w-[560px] md:h-[360px]"></iframe>
+                        </div>
+                    </div>
         </Container>
     );
 };

@@ -11,8 +11,8 @@ const ManageUsers = () => {
             <Helmet><title>Summer Sports Camp | All Users</title></Helmet>
             <SectionTitle title={'Our All Users'}/>
             <div className="my-16">
-                <div className="overflow-x-hidden lg:mx-16">
-                    <table className="table w-full">
+                <div className=" w-full lg:mx-16">
+                    <table className="table w-full overflow-x-auto md:overflow-hidden">
                         {/* head */}
                         <thead>
                             <tr>
