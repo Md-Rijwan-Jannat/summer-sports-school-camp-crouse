@@ -17,7 +17,9 @@ const Payment = () => {
             <SectionTitle title={"Payment Fast"}></SectionTitle>
 
             <Elements stripe={stripePromise}>
+                <div className="pb-20">
                 <CheckoutHook price={price} addedClass={addedClass}></CheckoutHook>
+                </div>
             </Elements>
         </div>
     );

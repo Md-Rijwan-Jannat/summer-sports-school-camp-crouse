@@ -10,8 +10,7 @@ const useEnrolledClasses = () => {
     useEffect(() => {
         axiosSecure.get(`/enrolled/${user?.email}`)
             .then(res => {
-                setEnrolledClass(res.data)
-                console.log(res.data)
+                setEnrolledClass(res?.data)
             })
     }, [user, axiosSecure])
     return [enrolledClass]

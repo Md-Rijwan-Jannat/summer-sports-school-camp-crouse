@@ -7,7 +7,6 @@ import useAdmin from "../../hooks/useAdmin";
 import useUsers from "../../hooks/useUsers";
 import summer_camp from '../../../assets/summer-camp-removebg-preview.png'
 
-
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const [users] = useUsers();
@@ -45,15 +44,14 @@ const Navbar = () => {
                 }
             </>
         }
-
     </>
     return (
-        <div className="shadow-md rounded-b-md fixed bg-[#72c8ea] z-50 w-full">
+        <div className="shadow-md rounded-b-md fixed bg-[#80bbfd] z-50 w-full">
             <Container>
-                <div className="navbar p-3 md:p-2 relative">
+                <div className="navbar py-2 md:p-2 relative">
                     <div className="navbar-start">
                         <div className="text-start">
-                            <img className=" w-16 md:w-36 xl:w-36 rounded-3xl" src={summer_camp} alt="" />
+                            <img className=" w-16 md:w-24 xl:w-28 rounded-3xl" src={summer_camp} alt="" />
                         </div>
                     </div>
                     <div className="dropdown  lg:navbar-center">
@@ -61,7 +59,7 @@ const Navbar = () => {
                         {/* You can open the modal using ID.showModal() method */}
 
                         <dialog id="my_modal_3" className="modal">
-                            <form method="dialog" className="modal-box w-full bg-[#72c8ea]">
+                            <form method="dialog" className="modal-box w-full bg-[#85bcfc]">
                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                 <ul className="text-center space-y-5">
                                     {links}
@@ -77,10 +75,10 @@ const Navbar = () => {
                     <div className="navbar-end ">
                         <div className="p-4 rounded-xl">
                             {
-                                user ? <div className="flex flex-col lg:flex-row items-center justify-center gap-3">
-                                    <img  onClick={() => window.my_modal_3.showModal()} className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full border-2 md:border-4 border-[#8A63AC]" src={user.photoURL} />
-                                    <button onClick={logOutHandler} className="bg-[#2ca8dd] text-gray-600 shadow-md shadow-[#8A63AC] px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC]">LogOut</button>
-                                </div> : <div className="flex flex-col lg:flex-row items-center justify-center gap-3">
+                                user ? <div className="flex flex-row items-center justify-center gap-3">
+                                    <img  onClick={() => window.my_modal_3.showModal()} className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full" src={user.photoURL} />
+                                    <button onClick={logOutHandler} className="text-[#1b92c4] hover:shadow-[#8A63AC] font-sans shadow-md shadow-[#2ca8dd] border border-blue-300 px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC]">Log out</button>
+                                </div> : <div className="flex flex-row items-center justify-center gap-3">
                                     <FaUser  onClick={() => window.my_modal_3.showModal()} className="text-[#8A63AC]" size={30}></FaUser>
                                     <button className="bg-[#2ca8dd] text-gray-600 sha px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC] shadow-md shadow-[#8A63AC] "><Link to='/login'>Login</Link></button>
                                 </div>

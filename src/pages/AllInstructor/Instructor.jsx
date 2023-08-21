@@ -23,7 +23,7 @@ const Instructor = ({ instructor, role }) => {
             {
                 role == 'instructor' && <>
                 <Helmet title="Summer Sports camp | Instructor"></Helmet>
-                    <div className="bg-blue-300 w-full h-full rounded-lg shadow-lg shadow-blue-400 pb-5 p-5">
+                    <div className="bg-blue-300 w-full h-full rounded-xl shadow-lg shadow-blue-400 pb-5 p-5">
                         <div className="px-3 py-4 pb-[60px] flex flex-col">
                             <div className="flex gap-4">
                                 <img className="w-20 h-20 rounded-full border-[#8A63AC] border-2" src={image} alt={image} />

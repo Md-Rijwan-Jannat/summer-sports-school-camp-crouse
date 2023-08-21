@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+}
+
+.radious {
+  border-radius: 15px 150px 15px;
 }
 
 .banner {
@@ -16,8 +19,40 @@
   border-bottom-right-radius:50% 20%;
 }
 .footer1 {
-  border-top-left-radius: 60% 50%;
+  border-top-left-radius: 70% 60%;
   border-top-right-radius: 50% 20%;
+}
+.allClass {
+  border-top-left-radius: 70% 60%;
+  border-top-right-radius: 50% 30%;
+  border-bottom-left-radius: 60% 50%;
+  border-bottom-right-radius:50% 20%;
+}
+.allClass2 {
+  border-top-left-radius:  50% 30%;
+  border-top-right-radius: 70% 60%;
+  border-bottom-left-radius: 60% 50%;
+  border-bottom-right-radius:50% 20%;
+}
+.baby {
+  background-color: #53ade9; /* Set your desired background color */
+  border-radius: 0px 20px 20px 20px; /* Top-left and top-right radius is 20px, bottom-left and bottom-right radius is 0 */
+  padding: 20px;
+  color: #fff; /* Text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.baby::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0px; /* Extend beyond the left side by the same amount as the top-left radius */
+  width: 0;
+  height: 0;
+  border-width:  200px 30px 0px 0px;
+  border-style: solid;
+  border-color: #54b7f8 transparent transparent transparent;
 }
 .linksColor a.active {
   color: red;

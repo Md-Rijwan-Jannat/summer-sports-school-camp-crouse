@@ -11,8 +11,8 @@ const Class = ({ cls }) => {
     const instructor = instructors?.filter(ins => ins?.email === instructorEmail)
     console.log(instructor[0]?.image);
     return (
-        <div className="bg-blue-300 rounded-lg shadow-lg shadow-blue-400 pb-5">
-            <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
+        <div className="bg-blue-300 rounded-xl shadow-lg shadow-blue-400 pb-5">
+            <img className="h-48 w-full object-cover rounded-t-xl" src={image} alt="Card Image" />
             <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-600 mb-5 flex gap-2 items-center"> <span className="text-[#8A63AC]"><SiEpicgames></SiEpicgames></span> {className}</h2>
                 <div className="flex gap-2 items-center">

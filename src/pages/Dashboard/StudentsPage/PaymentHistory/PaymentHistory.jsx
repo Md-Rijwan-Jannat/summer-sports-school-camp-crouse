@@ -49,7 +49,7 @@ const PaymentHistory = () => {
                                 <td>$ {info.price}</td>
                                 <td>{info.date}</td>
                                 <td>
-                                    <div className="bg-green-400 px-2 rounded-lg w-1/2 text-sm text-gray-600">
+                                    <div className="px-2 bg-green-600  rounded-lg w-full md:w-1/2 text-sm text-gray-600">
                                         {info.status}
                                     </div>
                                 </td>

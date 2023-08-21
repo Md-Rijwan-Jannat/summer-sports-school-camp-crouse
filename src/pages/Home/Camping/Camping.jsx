@@ -7,7 +7,7 @@ const Camping = () => {
         <div>
             <SectionTitle title={'Camping'}></SectionTitle>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3  gap-10">
                 <CampingGroup
                     image={'https://demo.ovatheme.com/vedhak/wp-content/uploads/2023/04/product-07.jpg'}
                     title={'Classic Tent'}

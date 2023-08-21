@@ -36,7 +36,7 @@ const currentUser = users.filter(u => u?.email === user?.email)
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-screen bg-[#72c8ea] font-bold text-gray-800 pt-10 md:pt-24">
+                    <ul className="menu p-4 w-80 min-h-screen bg-[#7ab6fa] font-bold text-gray-800 pt-10 md:pt-24">
                         {/* Sidebar content here */}
                         {user && <>
                             <div className="flex flex-col items-center justify-center mb-5">
@@ -46,22 +46,22 @@ const currentUser = users.filter(u => u?.email === user?.email)
                         </>}
                         {
                             isAdmin ? <>
-                                <li><Link to={'/dashboard/adminHome'}><FaHome size={20} />  Admin Home</Link></li>
-                                <li><Link to={'/dashboard/manageUsers'}><FaUsers size={20} />manage Users</Link></li>
-                                <li><Link to={'/dashboard/manageClasses'}><SiGoogleclassroom size={20} />Manage Classes</Link></li>
+                                <li><Link className="text-[#1a7ced]" to={'/dashboard/adminHome'}><FaHome color="#140f28" size={20} />  Admin Home</Link></li>
+                                <li><Link className="text-[#1a7ced]" to={'/dashboard/manageUsers'}><FaUsers color="#140f28" size={20} />manage Users</Link></li>
+                                <li><Link className="text-[#1a7ced]" to={'/dashboard/manageClasses'}><SiGoogleclassroom color="#140f28" size={20} />Manage Classes</Link></li>
                             </> : <>
                                 {
                                     instructorIs ? <>
-                                        <li><Link to={'/dashboard/instructorHome'}><FaHome size={20} /> Instructor Home</Link></li>
-                                        <li><Link to={'/dashboard/addClass'}><FaHome size={20} /> Add Class</Link></li>
-                                        <li><Link to={'/dashboard/myClasses'}><SiGoogleclassroom size={20} /> My Class </Link></li>
+                                        <li><Link className="text-[#1a7ced]" to={'/dashboard/instructorHome'}><FaHome color="#140f28" size={20} /> Instructor Home</Link></li>
+                                        <li><Link className="text-[#1a7ced]" to={'/dashboard/addClass'}><FaHome color="#140f28" size={20} /> Add Class</Link></li>
+                                        <li><Link className="text-[#1a7ced]" to={'/dashboard/myClasses'}><SiGoogleclassroom color="#140f28" size={20} /> My Class </Link></li>
                                     </> : <>
                                         {
                                             userIs ? <>
-                                                <li><Link to={'/dashboard/studentHome'}><FaHome size={20} /> Student Home</Link></li>
-                                                <li><Link to={'/dashboard/studentClasses'}><HiTemplate size={20} /> My selected Classes</Link></li>
-                                                <li><Link to={'/dashboard/enrolledClass'}><BsBookmarkCheckFill size={20} /> Enrolled Classes</Link></li>
-                                                <li><Link to={'/dashboard/paymentHistory'}><FaHistory size={20} /> Payment History</Link></li>
+                                                <li><Link className="text-[#1a7ced]" to={'/dashboard/studentHome'}><FaHome color="#140f28" size={20} /> Student Home</Link></li>
+                                                <li><Link className="text-[#1a7ced]" to={'/dashboard/studentClasses'}><HiTemplate color="#140f28" size={20} /> My selected Classes</Link></li>
+                                                <li><Link className="text-[#1a7ced]" to={'/dashboard/enrolledClass'}><BsBookmarkCheckFill color="#140f28" size={20} /> Enrolled Classes</Link></li>
+                                                <li><Link className="text-[#1a7ced]" to={'/dashboard/paymentHistory'}><FaHistory color="#140f28" size={20} /> Payment History</Link></li>
                                             </> : ''
                                         }
                                     </>
@@ -72,8 +72,8 @@ const currentUser = users.filter(u => u?.email === user?.email)
                         }
 
                         <div className="divider"></div>
-                        <li><NavLink to={'/'}><FaHome size={20}></FaHome> Home</NavLink></li>
-                        <li><NavLink to={'/contact'}><BsFillBagPlusFill size={20}></BsFillBagPlusFill> Contact</NavLink></li>
+                        <li><NavLink className="text-[#1a7ced]"  to={'/'}><FaHome color="#140f28" size={20}></FaHome> Home</NavLink></li>
+                        <li><NavLink className="text-[#1a7ced]"  to={'/contact'}><BsFillBagPlusFill color="#140f28" size={20}></BsFillBagPlusFill> Contact</NavLink></li>
                     </ul>
                 </div>
             </div>

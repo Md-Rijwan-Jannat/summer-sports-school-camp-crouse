@@ -17,7 +17,7 @@ const PopularClasses = () => {
             })
     }, [])
     return (
-        <div>
+        <div className="bg-[#77b6fd] allClass mt-5 pb-10">
             <SectionTitle title='Popular Classes'></SectionTitle>
            {
             !isLoading ? <>
@@ -29,7 +29,7 @@ const PopularClasses = () => {
                     ></Class>)
                 }
             </div>
-            </> :  <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
+            </> :  <> <div className="flex justify-center py-20"><CircularProgress></CircularProgress></div></>
            }
         </div>
     );

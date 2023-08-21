@@ -17,7 +17,7 @@ const PopularInstructors = () => {
             })
     }, [])
     return (
-        <div>
+        <div className="bg-[#77b6fd] allClass2 mt-5 pb-10">
             <SectionTitle title="Our Best Instructor"></SectionTitle>
             {
                 !isLoading ? <>

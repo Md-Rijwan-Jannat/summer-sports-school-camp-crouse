@@ -8,7 +8,7 @@ const EnrolledClasses = () => {
     const [enrolledClass] = useEnrolledClasses();
     const { user } = useAuth();
     return (
-        <div>
+        <div className="h-full">
             <Helmet> <title>Summer School Camp | My Enrolled Classes</title></Helmet>
             <SectionTitle title={'My Enrolled Classes'} />
             <div className="w-full">
@@ -28,20 +28,19 @@ const EnrolledClasses = () => {
                         </thead>
                         <tbody>
                             {
-                                enrolledClass.map(cls => <tr key={cls?._id}>
+                                enrolledClass?.map(cls => <tr key={cls?._id}>
                                     <th className="border-blue-700">{"<"}</th>
                                     <th className="pl-5">
-                                        <div className="flex gap-3">
-                                            <img className="w-16 h-16 rounded-full" src={user?.photoURL} alt="" />
+                                        <div className="md:flex gap-3">
+                                            <img className=" w-12 h-12 md:w-16 md:h-16 rounded-full" src={user?.photoURL} alt="" />
                                             <div className="flex flex-col space-y-2">
                                                 <h4>{user?.displayName}</h4>
-                                                <p className="text-white bg bg-red-300 p-2 rounded-lg">Lucky student</p>
                                             </div>
                                         </div>
                                     </th>
                                     <td>
                                         <div className="avatar">
-                                            <div className="rounded-lg w-20 h-20">
+                                            <div className="rounded-lg w-16 md:w-20 h-16 md:h-20">
                                                 <img src={cls?.image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>

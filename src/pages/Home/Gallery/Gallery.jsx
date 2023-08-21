@@ -51,7 +51,7 @@ const Gallery = () => {
                                         <img
                                             src={item?.image}
                                             alt={`Nature ${index + 1}`}
-                                            className=" w-full lg:w-10/12 h-[200px]  md:h-[300px] rounded-lg"
+                                            className=" w-full  h-[250px]  md:h-[320px] rounded-lg"
                                         />
                                         <SecondaryButton title={item.className} />
                                     </SwiperSlide>
@@ -67,9 +67,9 @@ const Gallery = () => {
                                 backgroundPosition: `${isMediumScreen ? "center right" : "right top"
                                     }`,
                             }}
-                            className="py-10 relative lg:mx-4 md:mx-0 md:px-2 text-start"
+                            className="py-10 baby relative mt-10 lg:mt-0 lg:mx-4 md:pl-5 text-start w-full"
                         >
-                            <h2 className="text-xl bg-transparent md:text-2xl mb-4 opacity-75">
+                            <h2 className="text-xl bg-transparent md:text-2xl pl-2 mb-4 opacity-75">
                                 Summer Sports at Our Enriching School Camp.
                             </h2>
                             <p className="text-sm md:text-md bg-transparent md:text-lg text-gray-600 mx-auto max-w-xl">

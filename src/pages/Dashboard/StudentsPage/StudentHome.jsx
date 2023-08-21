@@ -61,7 +61,7 @@ const StudentHome = () => {
             <Helmet><title>Summer Sports Camp | Student Home</title></Helmet>
             <div className="lg:flex flex-col lg:flex-row gap-10 w-full">
                 <div className="w-full lg:w-1/3  mb-5">
-                    <img className="w-48 h-48 mb-2 rounded-full border-4 border-green-400" src={user?.photoURL} alt="" />
+                    <img className="w-48 h-48 mb-2 rounded-full border-4 border-blue-500" src={user?.photoURL} alt="" />
                     <Box sx={{ width: '100%' }}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">

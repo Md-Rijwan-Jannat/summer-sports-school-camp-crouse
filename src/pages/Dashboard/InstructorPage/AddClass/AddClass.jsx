@@ -36,7 +36,7 @@ const AddClass = () => {
                     const { className, availableSeats, instructorEmail, instructorName, price, status } = data;
                     const priceNumber = parseFloat(price);
                     const availableSeatsNumber = parseFloat(availableSeats);
-                    const classData = { className, availableSeats: availableSeatsNumber, instructorEmail, instructorName, price: priceNumber, status, image: imgUrl }
+                    const classData = { className, availableSeats: availableSeatsNumber, instructorEmail, instructorName, price: priceNumber, status, image: imgUrl}
                     console.log(classData);
                     axios.post('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/addClass', classData)
                         .then(data => {

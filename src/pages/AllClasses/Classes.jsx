@@ -46,8 +46,8 @@ const Classes = ({ cls }) => {
         }
     }
     return (
-            <div  className={availableSeats === 0 ? 'bg-[#d8a6a6] rounded-lg shadow-xl shadow-blue-400 pb-5' : 'bg-blue-300 rounded-lg shadow-xl shadow-blue-400 pb-5'}>
-                <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
+            <div  className={availableSeats === 0 ? 'bg-[#d8a6a6] rounded-xl shadow-xl shadow-blue-400 pb-5' : 'bg-blue-300 rounded-xl shadow-xl shadow-blue-400 pb-5'}>
+                <img className="h-48 w-full object-cover rounded-t-xl" src={image} alt="Card Image" />
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-blue-600 mb-5 flex gap-2 items-center"> <span className="text-[#8A63AC]"><SiEpicgames></SiEpicgames></span> {className}</h2>
                     <div className="flex gap-2 items-center">
@@ -74,7 +74,7 @@ const Classes = ({ cls }) => {
 
                         <div className="flex items-center">
                             <h2 className="text-sm pr-2 text-gray-600">Seats: <span className="text-red-500 font-bold">{availableSeats}</span></h2>
-                            <h2 className="text-sm border-l-2 border-gray-600 pl-2 text-gray-800 flex items-center gap-1"><FaUsers color="gray" size={26} />: <span className="text-green-700 font-bold">{students}</span></h2>
+                            <h2 className="text-sm border-l-2 border-gray-600 pl-2 text-gray-800 flex items-center gap-1"><FaUsers color="gray" size={26} />: <span className="text-green-700 font-bold">{students ? students : 0}</span></h2>
                         </div>
                     </div>
                 </div>

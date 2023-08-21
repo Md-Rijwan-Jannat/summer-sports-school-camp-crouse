@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import useAxiosSecure from "../../../../../components/hooks/useAxiosSecure";
 import useAuth from "../../../../../components/hooks/useAuth";
 import { toast } from "react-hot-toast";
+import Container from "../../../../../components/Container/Container";
 
 
 const CheckoutHook = ({ price, addedClass }) => {
@@ -99,8 +100,8 @@ const CheckoutHook = ({ price, addedClass }) => {
 
     }
     return (
-        <>
-            <form className="mx-2 md:mx-10 bg-blue-100 p-5 rounded-lg lg:mx-16" onSubmit={handleSubmit}>
+        <Container>
+            <form className="mx-2 md:mx-10 bg-[#1B92C4] text-white p-5 rounded-lg lg:mx-16 pb-10" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -129,7 +130,7 @@ const CheckoutHook = ({ price, addedClass }) => {
                     <p className="mt-3 text-green-500 bg-green-100 px-4 py-2 rounded-lg w-1/2">Successfully payment.Transaction id - {transactionId}</p>
                 </div>
             }
-        </>
+        </Container>
     );
 };
 
