@@ -71,7 +71,7 @@ const ManageUser = ({ user, index, refetch }) => {
 
     }
     return (
-        <tr>
+        <tr className="border-blue-700">
             <th>
                 {index + 1}
             </th>

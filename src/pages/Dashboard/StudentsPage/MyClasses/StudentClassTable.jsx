@@ -42,7 +42,7 @@ const StudentClassTable = ({ cls, index, }) => {
         <>
             {
                 addedClass.length == 0 ? <NotFoundMessage message={"added a new class"} /> : <>
-                    <tr>
+                    <tr className="border-blue-700">
                         <th>
                             {index + 1}
                         </th>

@@ -22,7 +22,7 @@ const SliderBanner = () => {
         };
     }, [slider]);
     return (
-        <div ref={sliderRef} className="keen-slider scroll-auto mb-5 md:mb-16 mt-5">
+        <div ref={sliderRef} className="keen-slider scroll-auto mb-5 md:mb-16 pt-[200px]">
 
             <div className="relative keen-slider__slide h-[250px] md:h-[500px] b-0 banner">
                 <img src="https://img.freepik.com/premium-photo/international-sports-day-6-april_10221-18936.jpg" className="w-full bg-cover" />

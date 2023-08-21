@@ -23,11 +23,12 @@ const PaymentHistory = () => {
         <div>
             <Helmet> <title>Summer School Camp | Payment History</title></Helmet>
             <SectionTitle title={'Payment History'} />
-            <div className="overflow-x-auto">
-                <table className="table">
+            <div className="w-full">
+            <div className="table-responsive">
+                <table className="table w-full">
                     {/* head */}
                     <thead className="bg-gray-200">
-                        <tr>
+                        <tr className="border-[#8A63AC] border-b-[3px]">
                             <th>No:</th>
                             <th>Student Name</th>
                             <th>Total Enrolled</th>
@@ -40,9 +41,9 @@ const PaymentHistory = () => {
                         {
                             paymentInfo.map((info, index) => <tr
                                 key={info._id}
-                                className="bg-blue-100 text-blue-500"
+                                className=" border-blue-500"
                             >
-                                <th  className="text-black">{index + 1}</th>
+                                <th  className="">{index + 1}</th>
                                 <td>{info.user}</td>
                                 <td>{info.quantity} Item</td>
                                 <td>$ {info.price}</td>
@@ -58,6 +59,7 @@ const PaymentHistory = () => {
 
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     );

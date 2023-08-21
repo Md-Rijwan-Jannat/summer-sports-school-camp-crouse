@@ -9,7 +9,6 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { HiTemplate } from "react-icons/hi";
 import useAdmin from "../components/hooks/useAdmin";
 import useUsers from "../components/hooks/useUsers";
-import DarkTheme from "../components/DarkTheme";
 
 
 const Dashboard = () => {
@@ -26,15 +25,14 @@ const currentUser = users.filter(u => u?.email === user?.email)
     return (
         <Container>
             <Helmet><title>Bistro boss | Dashboard</title></Helmet>
-            <div className="drawer drawer-mobile">
+            <div className="drawer-mobile">
                 <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content text-center mt-5">
+                <div className="drawer-content text-center t-5">
                     <div className="flex justify-end top-4">
                         <label htmlFor="my-drawer-4" className="drawer-button btn  btn-ghost"><ImMenu /></label>
                     </div>
                     {/* Page content here */}
                     <Outlet></Outlet>
-                    <DarkTheme/>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>

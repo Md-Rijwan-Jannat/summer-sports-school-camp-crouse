@@ -9,13 +9,13 @@ const ManageUsers = () => {
     return (
         <div>
             <Helmet><title>Summer Sports Camp | All Users</title></Helmet>
-            <SectionTitle title={'Our All Users'}/>
-            <div className="my-16">
-                <div className=" w-full lg:mx-16">
-                    <table className="table w-full overflow-x-auto md:overflow-hidden">
+            <SectionTitle title={'Our All Users'} />
+            <div className="w-full">
+                <div className="table-responsive">
+                    <table className="table w-full">
                         {/* head */}
                         <thead>
-                            <tr>
+                            <tr className="border-[#8A63AC] border-b-[3px]">
                                 <th>{'<'}</th>
                                 <th>Photo</th>
                                 <th>Name</th>
@@ -35,7 +35,6 @@ const ManageUsers = () => {
                                     refetch={refetch}
                                 ></ManageUser>)
                             }
-
                         </tbody>
                     </table>
                 </div>

@@ -6,7 +6,7 @@ import { FaUsers } from "react-icons/fa";
 import useAdmin from "../../components/hooks/useAdmin";
 
 
-const ClassTabile = ({ cls }) => {
+const Classes = ({ cls }) => {
     const { user } = useAuth();
     const [isAdmin] = useAdmin();
     const [instructors] = useInstructors();
@@ -46,7 +46,7 @@ const ClassTabile = ({ cls }) => {
         }
     }
     return (
-            <div  className={availableSeats === 0 ? 'bg-[#F87272] rounded-lg shadow-lg pb-5' : 'bg-blue-300 rounded-lg shadow-lg pb-5'}>
+            <div  className={availableSeats === 0 ? 'bg-[#d8a6a6] rounded-lg shadow-xl shadow-blue-400 pb-5' : 'bg-blue-300 rounded-lg shadow-xl shadow-blue-400 pb-5'}>
                 <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-blue-600 mb-5 flex gap-2 items-center"> <span className="text-[#8A63AC]"><SiEpicgames></SiEpicgames></span> {className}</h2>
@@ -82,7 +82,7 @@ const ClassTabile = ({ cls }) => {
     );
 };
 
-export default ClassTabile;
+export default Classes;
 
 // <th>
 // {index + 1}

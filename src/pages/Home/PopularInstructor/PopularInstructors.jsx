@@ -1,5 +1,3 @@
-
-import Container from "../../../components/Container/Container";
 import SectionTitle from "../../../components/Headers/SectionTitle";
 import { useEffect, useState } from "react";
 import PopularInstructor from "./PopularInstructor";
@@ -19,11 +17,11 @@ const PopularInstructors = () => {
             })
     }, [])
     return (
-        <Container>
+        <div>
             <SectionTitle title="Our Best Instructor"></SectionTitle>
             {
                 !isLoading ? <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {
                             instructors.map(instr => <PopularInstructor
                                 key={instr._id}
@@ -33,7 +31,7 @@ const PopularInstructors = () => {
                     </div>
                 </> : <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
             }
-        </Container>
+        </div>
     );
 };
 

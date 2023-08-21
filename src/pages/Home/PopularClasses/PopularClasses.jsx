@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react";
-import Container from "../../../components/Container/Container";
 import SectionTitle from "../../../components/Headers/SectionTitle";
 import Class from "./Class";
 import { CircularProgress } from "@mui/material";
@@ -18,11 +17,11 @@ const PopularClasses = () => {
             })
     }, [])
     return (
-        <Container>
+        <div>
             <SectionTitle title='Popular Classes'></SectionTitle>
            {
             !isLoading ? <>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {
                     classes.map(cls => <Class
                         key={cls._id}
@@ -32,7 +31,7 @@ const PopularClasses = () => {
             </div>
             </> :  <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
            }
-        </Container>
+        </div>
     );
 };
 

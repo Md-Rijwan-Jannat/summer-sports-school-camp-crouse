@@ -11,7 +11,7 @@ const Class = ({ cls }) => {
     const instructor = instructors?.filter(ins => ins?.email === instructorEmail)
     console.log(instructor[0]?.image);
     return (
-        <div className="bg-blue-300 rounded-lg shadow-lg pb-5">
+        <div className="bg-blue-300 rounded-lg shadow-lg shadow-blue-400 pb-5">
             <img className="h-48 w-full object-cover rounded-t-lg" src={image} alt="Card Image" />
             <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-600 mb-5 flex gap-2 items-center"> <span className="text-[#8A63AC]"><SiEpicgames></SiEpicgames></span> {className}</h2>
@@ -19,7 +19,7 @@ const Class = ({ cls }) => {
                     <img className="w-8 h-8 rounded-full border-2 border-[#8A63AC]" src={`${instructor[0]?.image}`} alt="" />
                    <div className="flex flex-col items-start">
                    <h2 className="text-base font-semibold"> {instructorName}</h2>
-                    <p className="text-sm text-[#2a6c99]" ><span className="text-gray-600">Price:</span>  {price}</p>
+                    <p className="text-sm text-[#2a6c99]" ><span className="text-gray-600">Price: </span>  {'$'+price}</p>
                    </div>
                 </div>
                 

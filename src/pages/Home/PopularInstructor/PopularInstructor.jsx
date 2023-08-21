@@ -17,8 +17,8 @@ const PopularInstructor = ({ instr }) => {
         setFlow(!flow)
     }
     return (
-        <div className="bg-blue-300 rounded-lg shadow-lg pb-5 p-5">
-            <div className="px-6 py-4 flex flex-col">
+        <div className="bg-blue-300 w-full h-full rounded-lg shadow-lg shadow-blue-400 pb-5 p-5">
+            <div className="px-3 py-4 pb-[60px] flex flex-col">
                 <div className="flex gap-4">
                     <img className="w-20 h-20 rounded-full border-[#8A63AC] border-2" src={image} alt={image} />
                     <div className="flex flex-col items-start ">
@@ -27,12 +27,12 @@ const PopularInstructor = ({ instr }) => {
                             <p className="text-xs text-blue-600">flowers- 1k</p>
                             <p className="text-xs text-blue-600">Connection- 500+</p>
                         </div>
-                        <button onClick={flowingHandler} className="bg-blue-500 hover:bg-blue-600 text-white text-[10px] mb-5 px-2 rounded">{flow ? 'Flowing' : 'Flow'} </button>
+                        <button onClick={flowingHandler} className="bg-[#1b92c4] hover:bg-blue-600 text-white text-[10px] mb-5 px-2 rounded">{flow ? 'Flowing' : 'Flow'} </button>
                     </div>
                 </div>
                 <div className="text-start">
                     <div className=" mb-5">
-                        <p className="text-[#8A63AC] text-2xl ml-1">i<span className="text-blue-500 text-lg"> nstructor</span></p>
+                        <p className="text-[#8A63AC] text-2xl ml-1">i<span className="text-[#1b92c4] text-lg"> nstructor</span></p>
                         <hr className="border-[2px] border-[#8A63AC] w-[30px]" />
                     </div>
                     <p className="text-blue-600 ">
@@ -41,11 +41,12 @@ const PopularInstructor = ({ instr }) => {
                     <p className="text-blue-600 ">
                         <span className="text-sm font-semibold text-gray-500"> Students:</span> {total?.students ? total?.students : 0}
                     </p>
-                    <p className=" text-green-600">
-                        <span className="text-sm font-semibold text-gray-500"> Email:</span> {email}
-                    </p>
+                    <div className=" text-green-600 flex gap-2 items-center">
+                        <span className="text-sm font-semibold text-gray-500"> Email:</span>
+                        <span>{email}</span>
+                    </div>
                 </div>
-                <div className="w-[80px] mt-3">
+                <div className="mt-5 w-20">
                     <PrimaryButton text={'View Details'}></PrimaryButton>
                 </div>
             </div>

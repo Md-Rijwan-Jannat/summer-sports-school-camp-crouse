@@ -1,4 +1,3 @@
-import Container from "../../../components/Container/Container";
 import SectionTitle from "../../../components/Headers/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,7 +13,7 @@ const Gallery = () => {
     const [approvedClasses] = useApprovedClass();
     console.log(approvedClasses)
     return (
-        <Container>
+        <div>
             <SectionTitle title={'Our Gallery'}></SectionTitle>
             {
                 approvedClasses ? <>
@@ -52,7 +51,7 @@ const Gallery = () => {
                                         <img
                                             src={item?.image}
                                             alt={`Nature ${index + 1}`}
-                                            className=" lg:w-10/12 h-[200px]  md:h-[300px] rounded-lg"
+                                            className=" w-full lg:w-10/12 h-[200px]  md:h-[300px] rounded-lg"
                                         />
                                         <SecondaryButton title={item.className} />
                                     </SwiperSlide>
@@ -68,7 +67,7 @@ const Gallery = () => {
                                 backgroundPosition: `${isMediumScreen ? "center right" : "right top"
                                     }`,
                             }}
-                            className="py-10 relative mx-4 md:mx-0 md:px-2 text-start"
+                            className="py-10 relative lg:mx-4 md:mx-0 md:px-2 text-start"
                         >
                             <h2 className="text-xl bg-transparent md:text-2xl mb-4 opacity-75">
                                 Summer Sports at Our Enriching School Camp.
@@ -87,7 +86,7 @@ const Gallery = () => {
                 </> : <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
             }
 
-        </Container>
+        </div>
     );
 };
 

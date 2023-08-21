@@ -1,7 +1,6 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import Container from '../../../components/Container/Container';
 import SectionTitle from '../../../components/Headers/SectionTitle';
 import { useState } from 'react';
 import useAuth from '../../../components/hooks/useAuth';
@@ -42,15 +41,15 @@ const UserReviews = () => {
     }
 
     return (
-        <Container>
+        <div>
             <SectionTitle title={'User Feeedback'}></SectionTitle>
-            <div className=" max-w-3xl mx-auto mb-10">
-                <Swiper className='shadow-sm' autoplay spaceBetween={16} slidesPerView={1}>
+            <div className=" max-w-3xl mx-auto mb-10 ">
+                <Swiper className='shadow-lg shadow-blue-400 rounded-md' autoplay spaceBetween={16} slidesPerView={1}>
                     {
                         newFeedbackAdded ? <>
                             {
                                 newFeedbackAdded?.map(item => <SwiperSlide key={item._id}>
-                                    <div className="bg-[#93C5FD] shadow-lg rounded-lg p-6 flex flex-col items-center justify-center">
+                                    <div className="bg-blue-300 h-full rounded-lg p-6 flex flex-col items-center justify-center">
                                         <div className="flex items-center mb-4">
                                             <img
                                                 src={item?.image}
@@ -89,7 +88,7 @@ const UserReviews = () => {
                     </> : ''
                 }
             </div>
-        </Container>
+        </div>
     );
 };
 

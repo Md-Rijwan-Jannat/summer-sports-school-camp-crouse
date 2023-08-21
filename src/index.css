@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+}
+
 .banner {
   border: 4px #8A63AC solid;
   border-top-left-radius: 60% 50%;

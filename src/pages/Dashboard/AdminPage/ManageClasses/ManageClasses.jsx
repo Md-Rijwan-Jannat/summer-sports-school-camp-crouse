@@ -9,12 +9,12 @@ const ManageClasses = () => {
         <div>
             <Helmet><title>Summer Sports Camp | All Users</title></Helmet>
             <SectionTitle title={'Our All Classes'} />
-            <div className="my-16">
-                <div className="overflow-x-hidden lg:mx-16">
+            <div className="py-16">
+                <div className="table-responsive">
                     <table className="table w-full">
                         {/* head */}
                         <thead>
-                            <tr>
+                            <tr className='border-[#8A63AC] border-b-[3px]'>
                                 <th>{'<'}</th>
                                 <th>Photo</th>
                                 <th>Class Name</th>

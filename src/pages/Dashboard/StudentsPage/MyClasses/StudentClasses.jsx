@@ -17,44 +17,46 @@ const StudentClasses = () => {
             <Helmet><title>Summer Sports Camp | My selected Classes</title></Helmet>
             <SectionTitle title="My Added Classes" />
             {
-               ! addedClass ? <div className="h-[500px] flex items-center justify-center">
+                !addedClass ? <div className="h-[500px] flex items-center justify-center">
                     <progress className="progress w-56"></progress>
                 </div> : <>
                     {
                         !user ? <NotFoundMessage message={'Please login and select your favorite crouse'} /> : ''
                     }
-                    <div className="my-16">
-                        <div className="mb-10 flex items-center justify-center gap-5">
-                            <h3 className="text-2xl w-1/3 bg-green-100 p-4 rounded-xl">Total Price: <span className="text-blue-600">{totalPrice}</span></h3>
-                            <Link to={'/dashboard/payment'} className="btn p-4 text-white bg-blue-500 hover:bg-blue-600">Pay for classes</Link>
+                    <div className="pb-16 w-full">
+                        <div className="text-start pb-5 flex items-center justify-center gap-5">
+                            <h3 className="text-2xl rounded-xl font-sans flex flex-wrap">Total Price: <span className="text-blue-600">{'' + totalPrice}</span></h3>
+                            <Link to={'/dashboard/payment'} className="px-4 py-2 rounded-md hover:bg-blue-600 text-white bg-blue-500 w-16">Pay</Link>
                         </div>
 
-                        <div className="overflow-x-hidden lg:mx-16">
-                            <table className="table w-full">
-                                {/* head */}
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>image</th>
-                                        <th>Class Name</th>
-                                        <th>Instructor</th>
-                                        <th>Students</th>
-                                        <th>Available Seats</th>
-                                        <th>Price</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        addedClass.map((cls, index) => <StudentClassTable
-                                            key={cls._id}
-                                            cls={cls}
-                                            index={index}
-                                        ></StudentClassTable>)
-                                    }
+                        <div className="w-full">
+                            <div className="table-responsive">
+                                <table className="table w-full">
+                                    {/* head */}
+                                    <thead>
+                                        <tr className="border-[#8A63AC] border-b-[3px]">
+                                            <th>#</th>
+                                            <th>image</th>
+                                            <th>Class Name</th>
+                                            <th>Instructor</th>
+                                            <th>Students</th>
+                                            <th>Available Seats</th>
+                                            <th>Price</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            addedClass.map((cls, index) => <StudentClassTable
+                                                key={cls._id}
+                                                cls={cls}
+                                                index={index}
+                                            ></StudentClassTable>)
+                                        }
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </>

@@ -65,7 +65,7 @@ const ManageClass = ({ cls, index, refetch }) => {
     }
     return (
         <>
-            <tr>
+            <tr className="border-blue-800">
                 <th>
                     {index + 1}
                 </th>
@@ -78,14 +78,14 @@ const ManageClass = ({ cls, index, refetch }) => {
                 </td>
                 <td> {className}</td>
                 <td>{instructorName}</td>
-                <td className="text-cyan-600">{instructorEmail}</td>
-                <td className="text-green-600">{availableSeats}</td>
-                <td className="text-cyan-600">{'$' + price}</td>
+                <td className="text-cyan-800">{instructorEmail}</td>
+                <td className="text-green-800">{availableSeats}</td>
+                <td className="text-cyan-800">{'$' + price}</td>
                 <td>
                     {
-                        status === 'denied' ? ' ' : <>
+                        status === 'denied' ? 'Denied' : <>
                             {
-                                status === 'approved' ? ' ' : <button className="rounded-lg px-4 py-1 low bg-cyan-300 hover:bg-cyan-300 border-0 text-white">Pending</button>
+                                status === 'approved' ? 'Approved' : <button className="rounded-lg px-4 py-1 low bg-cyan-300 hover:bg-cyan-300 border-0 text-white">Pending</button>
                             }
                         </>
                     }

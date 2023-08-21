@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import PrimaryButton from "../../components/PrimaryButton";
 import useClasses from "../../components/hooks/useClasses";
+import { Helmet } from "react-helmet-async";
 
 const Instructor = ({ instructor, role }) => {
     const [flow, setFlow] = useState(false)
@@ -21,8 +22,9 @@ const Instructor = ({ instructor, role }) => {
         <div>
             {
                 role == 'instructor' && <>
-                    <div className="bg-blue-300 rounded-lg shadow-lg pb-5 p-5">
-                        <div className="px-6 py-4 flex flex-col">
+                <Helmet title="Summer Sports camp | Instructor"></Helmet>
+                    <div className="bg-blue-300 w-full h-full rounded-lg shadow-lg shadow-blue-400 pb-5 p-5">
+                        <div className="px-3 py-4 pb-[60px] flex flex-col">
                             <div className="flex gap-4">
                                 <img className="w-20 h-20 rounded-full border-[#8A63AC] border-2" src={image} alt={image} />
                                 <div className="flex flex-col items-start ">
@@ -43,15 +45,18 @@ const Instructor = ({ instructor, role }) => {
                                     <span className="text-sm font-semibold text-gray-500"> Class:</span> {totalClass.length}
                                 </p>
                                 <p className="text-blue-600 ">
-                                    <span className="text-sm font-semibold text-gray-500"> Students:</span> {total?.students ? total?.students : 0 }
+                                    <span className="text-sm font-semibold text-gray-500"> Students:</span> {total?.students ? total?.students : 0}
                                 </p>
-                                <p className=" text-green-600">
-                                    <span className="text-sm font-semibold text-gray-500"> Email:</span> {email}
-                                </p>
+                                <div className=" text-green-600 flex gap-2 items-center">
+                                    <span className="text-sm font-semibold text-gray-500"> Email:</span> 
+                                    <span>{email}</span>
+                                </div>
                             </div>
-                            <div className="w-[80px] mt-3">
-                                <PrimaryButton text={'View Details'}></PrimaryButton>
-                            </div>
+                            
+                                <div className="mt-5 w-20">
+                                    <PrimaryButton text={'View Details'}></PrimaryButton>
+                                </div>
+                                
                         </div>
                     </div>
                 </>
