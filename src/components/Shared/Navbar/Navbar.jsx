@@ -19,7 +19,7 @@ const Navbar = () => {
     }
     const [allUsers, setAllUsers] = useState();
     useEffect(()=>{
-        fetch('http://localhost:5000/allUsers')
+        fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/allUsers')
         .then(res=> res.json())
         .then(data=> setAllUsers(data))
     },[])

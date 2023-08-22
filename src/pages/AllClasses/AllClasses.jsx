@@ -14,7 +14,7 @@ const AllClasses = () => {
     refetch();
    
     return (
-        <div className="pt-[150px] bg-[#77b6fd] allClass pb-10 my-5">
+        <div className="pt-[150px] bg-[#77b6fd] allClass pb-10 mb-5">
             <Container>
                 <Helmet><title>Summer Sports Camp | All Classes</title></Helmet>
                 <SectionTitle title="Our All Classes" />

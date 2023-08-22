@@ -14,7 +14,7 @@ const AllInstructor = () => {
 
     return (
         <Container>
-            <div className="pt-[150px] bg-[#77b6fd] allClass2 pb-10 my-5">
+            <div className="pt-[150px] bg-[#77b6fd] allClass2 pb-10 mb-5">
                 <Helmet><title>Summer Sports Camp | Home</title></Helmet>
                 <SectionTitle title="Our All Instructor" />
                 {
