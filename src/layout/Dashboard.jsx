@@ -13,8 +13,9 @@ import { useEffect, useState } from "react";
 const Dashboard = () => {
     const { user } = useAuth();
     const [allUsers, setAllUsers] = useState();
+    console.log(allUsers)
     useEffect(() => {
-        fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app')
+        fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/allUsers')
             .then(res => res.json())
             .then(data => setAllUsers(data))
     }, [])
