@@ -3,13 +3,11 @@ import Container from "../../Container/Container";
 import useAuth from "../../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
-import useAdmin from "../../hooks/useAdmin";
-import useUsers from "../../hooks/useUsers";
 import summer_camp from '../../../assets/summer-camp-removebg-preview.png'
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
-    const [users] = useUsers();
     const logOutHandler = () => {
         logOut()
             .then(() => {
@@ -19,13 +17,13 @@ const Navbar = () => {
                 console.log(error)
             })
     }
-    const currentUser = users.filter(u => u?.email === user?.email)
-    const loginUser = currentUser[0]
-    console.log(currentUser)
-    const userIs = loginUser?.role === "student"
-    const instructorIs = loginUser?.role === "instructor"
-
-    const [isAdmin] = useAdmin();
+    const [allUsers, setAllUsers] = useState();
+    useEffect(()=>{
+        fetch('http://localhost:5000/allUsers')
+        .then(res=> res.json())
+        .then(data=> setAllUsers(data))
+    },[])
+    const currentUser = allUsers?.find(u => u?.email === user?.email);
     const links = <>
         <li><Link to='/' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Instructors</Link></li>
@@ -33,14 +31,14 @@ const Navbar = () => {
         {
             user?.email && <>
                 {
-                    isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                    currentUser?.role == 'admin' && <li><Link to={'/dashboard/adminHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
                 }
                 {
-                    instructorIs && <li><Link to={'/dashboard/instructorHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                    currentUser?.role == 'instructor' && <li><Link to={'/dashboard/instructorHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
                 }
 
                 {
-                    userIs && <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                    currentUser?.role =='student' && <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
                 }
             </>
         }
@@ -76,10 +74,10 @@ const Navbar = () => {
                         <div className="p-4 rounded-xl">
                             {
                                 user ? <div className="flex flex-row items-center justify-center gap-3">
-                                    <img  onClick={() => window.my_modal_3.showModal()} className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full" src={user.photoURL} />
+                                    <img onClick={() => window.my_modal_3.showModal()} className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full" src={user.photoURL} />
                                     <button onClick={logOutHandler} className="text-[#1b92c4] hover:shadow-[#8A63AC] font-sans shadow-md shadow-[#2ca8dd] border border-blue-300 px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC]">Log out</button>
                                 </div> : <div className="flex flex-row items-center justify-center gap-3">
-                                    <FaUser  onClick={() => window.my_modal_3.showModal()} className="text-[#8A63AC]" size={30}></FaUser>
+                                    <FaUser onClick={() => window.my_modal_3.showModal()} className="text-[#8A63AC]" size={30}></FaUser>
                                     <button className="bg-[#2ca8dd] text-gray-600 sha px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC] shadow-md shadow-[#8A63AC] "><Link to='/login'>Login</Link></button>
                                 </div>
                             }

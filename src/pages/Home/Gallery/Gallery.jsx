@@ -10,7 +10,8 @@ import SecondaryButton from "../../../components/SecondaryButton";
 
 const Gallery = () => {
     const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.up("md"));
-    const [approvedClasses] = useApprovedClass();
+    const [approvedClasses, , refetch] = useApprovedClass();
+    refetch();
     console.log(approvedClasses)
     return (
         <div>

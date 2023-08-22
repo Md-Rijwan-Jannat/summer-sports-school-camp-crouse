@@ -59,7 +59,7 @@ const InstructorHome = () => {
     return (
         <Container>
             <Helmet><title>Summer Sports Camp | Instructor Home</title></Helmet>
-            <div className="lg:flex flex-col lg:flex-row gap-10 w-full">
+            <div className="lg:flex flex-col lg:flex-row gap-10 w-full bg-[#77b6fd] allClass2 pb-10">
                 <div className="w-full lg:w-1/3  mb-5">
                     <img className="w-48 h-48 mb-2 rounded-full border-4 border-green-400  " src={user?.photoURL} alt="" />
                     <Box sx={{ width: '100%' }}>

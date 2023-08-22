@@ -33,10 +33,10 @@ const AddClass = () => {
             .then(imageRes => {
                 if (imageRes.success) {
                     const imgUrl = imageRes.data.display_url;
-                    const { className, availableSeats, instructorEmail, instructorName, price, status } = data;
+                    const { className, availableSeats, instructorEmail, instructorName, price, status, students } = data;
                     const priceNumber = parseFloat(price);
                     const availableSeatsNumber = parseFloat(availableSeats);
-                    const classData = { className, availableSeats: availableSeatsNumber, instructorEmail, instructorName, price: priceNumber, status, image: imgUrl}
+                    const classData = { className, availableSeats: availableSeatsNumber, instructorEmail, instructorName, price: priceNumber, status, students , image: imgUrl }
                     console.log(classData);
                     axios.post('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/addClass', classData)
                         .then(data => {
@@ -54,7 +54,7 @@ const AddClass = () => {
         <div className="w-full px-10 mb-24">
             <Helmet><title>Summer Sports Camp | Add Classes</title></Helmet>
             <SectionTitle title={'Add a Class'}></SectionTitle>
-            <form onSubmit={handleSubmit(onSubmit)} className='bg-slate-100 p-5 rounded-lg border'>
+            <form onSubmit={handleSubmit(onSubmit)} className='bg-slate-100 bg-opacity-50 p-5 rounded-lg border'>
                 <div className='md:flex gap-5 my-4'>
                     <div className="form-control w-full mb-4">
                         <label className="label">
@@ -107,27 +107,35 @@ const AddClass = () => {
                         <input type="number" {...register("price", { required: true })} placeholder="Price" className="input input-bordered w-full " />
                     </div>
                 </div>
-                <div className="form-control w-full my-5">
-                    <label className="label">
-                        <span className="label-text font-semibold">Class Image*</span>
-                    </label>
-                    <label className="relative bg-blue-200 flex items-center px-4 py-2 rounded-lg border border-gray-300 cursor-pointer md:w-1/3">
-                        <input
-                            type="file"
-                            className="hidden"
-                            onChange={handleFileChange}
-                            {...register("image", { required: true })}
-                        />
-                        <FaImage color="blue"
-                            className="text-gray-500 mr-2"
-                        />
-                        <span className="text-blue-700">
-                            {selectedFile ? selectedFile.name : 'Choose an image'}
-                        </span>
-                    </label>
+                <div className="md:flex gap-5 my-4">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Students</span>
+                        </label>
+                        <input type="number" {...register("students", { required: true })} value={0} readOnly className="input input-bordered w-full " />
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text font-semibold">Class Image*</span>
+                        </label>
+                        <label className="relative bg-[#8A63AC] flex items-center px-4 py-2 rounded-lg border border-gray-300 cursor-pointer md:w-1/3">
+                            <input
+                                type="file"
+                                className="hidden"
+                                onChange={handleFileChange}
+                                {...register("image", { required: true })}
+                            />
+                            <FaImage color="blue"
+                                className="text-gray-500 mr-2"
+                            />
+                            <span className="text-blue-700">
+                                {selectedFile ? selectedFile.name : 'Choose an image'}
+                            </span>
+                        </label>
+                    </div>
                 </div>
                 <div>
-                    <input className="btn w-1/2 bg-cyan-500 hover:bg-cyan-600 text-white mt-4" type="submit" value="Add Item" />
+                    <input className="btn w-1/2 bg-[#68a2e6] hover:bg-[#85BCFC] border-0 text-white mt-4" type="submit" value="Add Item" />
                 </div>
             </form>
         </div>

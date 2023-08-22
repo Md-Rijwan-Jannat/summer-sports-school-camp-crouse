@@ -1,13 +1,13 @@
 import SectionTitle from "../../../components/Headers/SectionTitle";
-import { useEffect, useState } from "react";
-import PopularInstructor from "./PopularInstructor";
+import React, { Suspense, useEffect, useState } from "react";
+const PopularInstructor = React.lazy(() => import('./PopularInstructor'))
 import { CircularProgress } from "@mui/material";
-import useInstructors from "../../../components/hooks/useInstructors";
+
 
 
 const PopularInstructors = () => {
     const [instructors, setInstructors] = useState([])
-    const [, , isLoading] = useInstructors();
+
     useEffect(() => {
         fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/users/popular/instructor')
             .then(res => res.json())
@@ -19,18 +19,16 @@ const PopularInstructors = () => {
     return (
         <div className="bg-[#77b6fd] allClass2 mt-5 pb-10">
             <SectionTitle title="Our Best Instructor"></SectionTitle>
-            {
-                !isLoading ? <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {
-                            instructors.map(instr => <PopularInstructor
-                                key={instr._id}
-                                instr={instr}
-                            ></PopularInstructor>)
-                        }
-                    </div>
-                </> : <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
-            }
+            <Suspense fallback={<div className="flex justify-center my-20"><CircularProgress></CircularProgress></div>}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {
+                        instructors.map(instr => <PopularInstructor
+                            key={instr._id}
+                            instr={instr}
+                        ></PopularInstructor>)
+                    }
+                </div>
+            </Suspense>
         </div>
     );
 };

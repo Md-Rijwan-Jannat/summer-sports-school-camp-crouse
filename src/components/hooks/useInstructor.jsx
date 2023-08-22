@@ -3,7 +3,7 @@ import useAxiosSecure from "./useAxiosSecure";
 import useAuth from "./useAuth";
 
 
-const useInstructorData = () => {
+const useInstructor = () => {
     const { user } = useAuth();
     const [axiosSecure] = useAxiosSecure();
     // use axios secure with react query !
@@ -17,4 +17,4 @@ const useInstructorData = () => {
     return [isInstructor, isInstructorLoading]
 };
 
-export default useInstructorData;
+export default useInstructor;

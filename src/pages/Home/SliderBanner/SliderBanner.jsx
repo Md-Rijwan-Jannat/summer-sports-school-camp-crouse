@@ -14,7 +14,6 @@ const SliderBanner = () => {
 
     useEffect(() => {
         const autoplayInterval = setInterval(() => {
-            slider.next();
         }, 500);
 
         return () => {
