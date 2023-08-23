@@ -14,9 +14,6 @@ const UserReviews = () => {
     const [newFeedbackAdded, refetch] = useFeedback();
     const { user } = useAuth();
     console.log(newFeedbackAdded)
-    // console.log(user)
-    // console.log(userFeedback)
-    // console.log(feedbackAdd)
 
     const newFeedback = { name: user?.displayName, image: user?.photoURL, feedback: feedbackAdd }
 
@@ -46,7 +43,7 @@ const UserReviews = () => {
             <div className=" max-w-3xl mx-auto mb-10 ">
                 <Swiper className='shadow-lg shadow-blue-400 rounded-md' autoplay spaceBetween={16} slidesPerView={1}>
                     {
-                        newFeedbackAdded ? <>
+                        newFeedbackAdded?.length === 0 ? <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></> : <>
                             {
                                 newFeedbackAdded?.map(item => <SwiperSlide key={item._id}>
                                     <div className="bg-blue-300 h-full rounded-lg p-6 flex flex-col items-center justify-center">
@@ -63,7 +60,7 @@ const UserReviews = () => {
                                     </div>
                                 </SwiperSlide>)
                             }
-                        </> : <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
+                        </>
                     }
                 </Swiper>
                 {

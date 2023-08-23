@@ -18,12 +18,12 @@ const Navbar = () => {
             })
     }
     const [allUsers, setAllUsers] = useState();
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/allUsers')
-        .then(res=> res.json())
-        .then(data=> setAllUsers(data))
-    },[])
-    const currentUser = allUsers?.find(u => u?.email === user?.email);
+            .then(res => res.json())
+            .then(data => setAllUsers(data))
+    }, [])
+    const currentUser = allUsers?.length === 0 ? '' : allUsers?.find(u => u?.email === user?.email);
     const links = <>
         <li><Link to='/' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Instructors</Link></li>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 }
 
                 {
-                    currentUser?.role =='student' && <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                    currentUser?.role == 'student' && <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
                 }
             </>
         }

@@ -19,16 +19,22 @@ const PopularInstructors = () => {
     return (
         <div className="bg-[#77b6fd] allClass2 mt-5 pb-10">
             <SectionTitle title="Our Best Instructor"></SectionTitle>
-            <Suspense fallback={<div className="flex justify-center my-20"><CircularProgress></CircularProgress></div>}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {
-                        instructors.map(instr => <PopularInstructor
-                            key={instr._id}
-                            instr={instr}
-                        ></PopularInstructor>)
-                    }
-                </div>
-            </Suspense>
+            {
+                instructors?.length === 0 ? <>
+                    <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div>
+                </> : <>
+                    <Suspense fallback={<div className="flex justify-center my-20"><CircularProgress></CircularProgress></div>}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                            {
+                                instructors.map(instr => <PopularInstructor
+                                    key={instr._id}
+                                    instr={instr}
+                                ></PopularInstructor>)
+                            }
+                        </div>
+                    </Suspense>
+                </>
+            }
         </div>
     );
 };

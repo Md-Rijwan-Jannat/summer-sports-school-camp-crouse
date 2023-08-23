@@ -19,26 +19,29 @@ const PopularClasses = () => {
                 setClasses(data)
             })
     }, [])
+
     return (
         <div className="bg-[#77b6fd] allClass mt-5 pb-10">
             <SectionTitle title='Popular Classes'></SectionTitle>
-            <Suspense fallback={<div className="flex justify-center py-20"><CircularProgress></CircularProgress></div>}>
-                    {
-                        classes?.length[0] ? <>
-                        <div className="flex justify-center py-20"><CircularProgress></CircularProgress></div>
-                        </> : <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {
+                classes?.length === 0 ? <>
+                    <div className="flex justify-center py-20"><CircularProgress></CircularProgress></div>
+                </> : <>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {
-                            classes.map(cls => <Class
-                                key={cls._id}
-                                cls={cls}
-                            ></Class>)
+                            classes.map(cls => <>
+                                <Suspense fallback={<div className="flex justify-center py-20"><CircularProgress></CircularProgress></div>}>
+                                    <Class
+                                        key={cls._id}
+                                        cls={cls}
+                                    ></Class>
+                                </Suspense>
+                            </>)
                         }
                     </div>
-                        </>
-                    }
-            </Suspense>
-        </div>
+                </>
+            }
+        </div >
     );
 };
 

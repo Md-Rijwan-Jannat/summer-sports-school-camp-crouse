@@ -17,7 +17,7 @@ const Gallery = () => {
         <div>
             <SectionTitle title={'Our Gallery'}></SectionTitle>
             {
-                approvedClasses ? <>
+                approvedClasses.length === 0 ? <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></> : <>
                     <Box
                         sx={{
                             display: "flex",
@@ -84,7 +84,7 @@ const Gallery = () => {
                             </p>
                         </div>
                     </Box>
-                </> : <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></>
+                </>
             }
 
         </div>
