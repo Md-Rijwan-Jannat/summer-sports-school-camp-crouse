@@ -15,7 +15,6 @@ const SocialLogin = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 const insertUser = { name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL, role: 'student' };
                 axiosSecure.post('/users', insertUser)
                     .then(() => {

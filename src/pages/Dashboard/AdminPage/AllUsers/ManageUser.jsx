@@ -13,7 +13,6 @@ const ManageUser = ({ user, index, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     refetch();
                     toast.success('You are now admin!')
@@ -28,7 +27,6 @@ const ManageUser = ({ user, index, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount) {
                     refetch();
                     toast.success('You are now Instructor!')
@@ -54,7 +52,6 @@ const ManageUser = ({ user, index, refetch }) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire(

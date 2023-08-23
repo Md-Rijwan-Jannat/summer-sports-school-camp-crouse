@@ -6,7 +6,7 @@ import NotFoundMessage from "../../../../components/NotFoundMesage/NotFoundMessa
 const MyClass = ({ cls, myClasses }) => {
     const [feedback, setFeedback] = useState([])
     const { className, instructorName, image, price, status, students, availableSeats, _id } = cls;
-    console.log(cls)
+
     // feedback
     axios.get(`https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/feedback_for_instructor/${_id}`)
         .then(data => {

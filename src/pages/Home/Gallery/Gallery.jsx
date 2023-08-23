@@ -12,7 +12,6 @@ const Gallery = () => {
     const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.up("md"));
     const [approvedClasses, , refetch] = useApprovedClass();
     refetch();
-    console.log(approvedClasses)
     return (
         <div>
             <SectionTitle title={'Our Gallery'}></SectionTitle>
@@ -68,7 +67,7 @@ const Gallery = () => {
                                 backgroundPosition: `${isMediumScreen ? "center right" : "right top"
                                     }`,
                             }}
-                            className="py-10 baby relative mt-10 lg:mt-0 lg:mx-4 md:pl-5 text-start w-full"
+                            className="py-10 baby relative mt-10 lg:mt-0 mx-5 lg:mx-16 md:pl-8  text-start w-full"
                         >
                             <h2 className="text-xl bg-transparent md:text-2xl pl-2 mb-4 opacity-75">
                                 Summer Sports at Our Enriching School Camp.

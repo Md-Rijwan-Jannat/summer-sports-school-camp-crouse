@@ -11,9 +11,7 @@ const Instructor = ({ instructor, role }) => {
 
     const [classes] = useClasses();
     const totalClass = classes?.filter(cls => cls?.instructorEmail === email)
-    console.log(totalClass)
     const total = classes?.find(cls => cls?.instructorEmail === email)
-    console.log(total)
 
     const flowingHandler = () => {
         setFlow(!flow)

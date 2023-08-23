@@ -4,10 +4,13 @@ import useAuth from "../../hooks/useAuth";
 import { FaUser } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import summer_camp from '../../../assets/summer-camp-removebg-preview.png'
-import { useEffect, useState } from "react";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const logOutHandler = () => {
         logOut()
             .then(() => {
@@ -17,13 +20,6 @@ const Navbar = () => {
                 console.log(error)
             })
     }
-    const [allUsers, setAllUsers] = useState();
-    useEffect(() => {
-        fetch('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/allUsers')
-            .then(res => res.json())
-            .then(data => setAllUsers(data))
-    }, [])
-    const currentUser = allUsers?.length === 0 ? '' : allUsers?.find(u => u?.email === user?.email);
     const links = <>
         <li><Link to='/' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Home</Link></li>
         <li><Link to='/allInstructor' className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Instructors</Link></li>
@@ -31,15 +27,18 @@ const Navbar = () => {
         {
             user?.email && <>
                 {
-                    currentUser?.role == 'admin' && <li><Link to={'/dashboard/adminHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
-                }
-                {
-                    currentUser?.role == 'instructor' && <li><Link to={'/dashboard/instructorHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                    isAdmin || isInstructor ? <>
+                        {
+                            isAdmin && <li><Link to={'/dashboard/adminHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                        }
+                        {
+                            isInstructor && <li><Link to={'/dashboard/instructorHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
+                        }
+                    </> : <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
                 }
 
-                {
-                    currentUser?.role == 'student' && <li><Link to={'/dashboard/studentHome'} className="font-bold uppercase aria-selected:text-[#8A63AC] mr-2 text-[#1b92c4]">Dashboard </Link></li>
-                }
+
+
             </>
         }
     </>
@@ -73,7 +72,7 @@ const Navbar = () => {
                     <div className="navbar-end ">
                         <div className="p-4 rounded-xl">
                             {
-                                user ? <div className="flex flex-row items-center justify-center gap-3">
+                                user?.email ? <div className="flex flex-row items-center justify-center gap-3">
                                     <img onClick={() => window.my_modal_3.showModal()} className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] rounded-full" src={user.photoURL} />
                                     <button onClick={logOutHandler} className="text-[#1b92c4] hover:shadow-[#8A63AC] font-sans shadow-md shadow-[#2ca8dd] border border-blue-300 px-4 py-1 rounded-xl text-sm font-semibold hover:text-[#8A63AC]">Log out</button>
                                 </div> : <div className="flex flex-row items-center justify-center gap-3">

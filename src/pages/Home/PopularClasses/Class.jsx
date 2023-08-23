@@ -9,7 +9,6 @@ const Class = ({ cls }) => {
     const { className, instructorName, image, price, students, availableSeats, instructorEmail } = cls;
     const [instructors] = useInstructors();
     const instructor = instructors?.filter(ins => ins?.email === instructorEmail)
-    console.log(instructor[0]?.image);
     return (
         <div className="bg-blue-300 rounded-xl shadow-lg shadow-blue-400 pb-5">
             <img className="h-48 w-full object-cover rounded-t-xl" src={image} alt="Card Image" />

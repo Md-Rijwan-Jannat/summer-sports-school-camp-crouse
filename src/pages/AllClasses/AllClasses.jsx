@@ -11,8 +11,7 @@ import { CircularProgress } from "@mui/material";
 
 const AllClasses = () => {
     const { user } = useAuth();
-    const [approvedClass, isLoading, refetch] = useApprovedClass();
-    refetch();
+    const [approvedClass] = useApprovedClass();
 
     return (
         <div className="pt-[150px] bg-[#77b6fd] allClass pb-10 mb-5">
@@ -30,7 +29,7 @@ const AllClasses = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                                 {
                                     approvedClass.map((cls, index) => <>
-                                        <Suspense fallback={isLoading && <div className="flex justify-center pb-20"><CircularProgress></CircularProgress></div>}>
+                                        <Suspense>
                                             <Classes
                                                 key={cls._id}
                                                 cls={cls}

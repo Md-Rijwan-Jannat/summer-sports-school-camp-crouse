@@ -20,7 +20,6 @@ const CheckoutHook = ({ price, addedClass }) => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
                 .then(res => {
-                    console.log(res.data)
                     setClientSecret(res.data.clientSecret)
                 })
         }
@@ -37,12 +36,12 @@ const CheckoutHook = ({ price, addedClass }) => {
         }
 
         const card = elements.getElement(CardElement);
-        console.log(card)
+        
         if (card == null) {
             return;
         }
 
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
+        const { error, } = await stripe.createPaymentMethod({
             type: 'card',
             card
         })
@@ -51,7 +50,6 @@ const CheckoutHook = ({ price, addedClass }) => {
             setError(error.message)
         } else {
             setError(' ')
-            console.log(paymentMethod);
         }
 
         setProcessing(true)
@@ -72,7 +70,6 @@ const CheckoutHook = ({ price, addedClass }) => {
             console.log(confirmError);
         }
 
-        console.log('payment intent', paymentIntent);
         setProcessing(false)
         if (paymentIntent?.status === "succeeded") {
             setTransactionId(paymentIntent.id);
@@ -90,7 +87,6 @@ const CheckoutHook = ({ price, addedClass }) => {
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log('db',res.data);
                     if (res.data.insertedId) {
                         refetch();
                         toast.success('your payment Successfully')

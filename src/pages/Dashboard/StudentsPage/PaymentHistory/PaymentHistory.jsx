@@ -11,7 +11,6 @@ const PaymentHistory = () => {
     const [paymentInfo, setPaymentInfo] = useState([])
     const { user } = useAuth();
     const [axiosSecure] = useAxiosSecure();
-    console.log(paymentInfo)
 
     useEffect(() => {
         axiosSecure.get(`/paymentInfo/${user?.email}`)

@@ -6,7 +6,6 @@ import { useState } from 'react';
 import useAuth from '../../../components/hooks/useAuth';
 import { toast } from 'react-hot-toast';
 import useFeedback from '../../../components/hooks/useFeedback';
-import { CircularProgress } from '@mui/material';
 
 
 const UserReviews = () => {
@@ -43,28 +42,24 @@ const UserReviews = () => {
             <div className=" max-w-3xl mx-auto mb-10 ">
                 <Swiper className='shadow-lg shadow-blue-400 rounded-md' autoplay spaceBetween={16} slidesPerView={1}>
                     {
-                        newFeedbackAdded?.length === 0 ? <> <div className="flex justify-center my-20"><CircularProgress></CircularProgress></div></> : <>
-                            {
-                                newFeedbackAdded?.map(item => <SwiperSlide key={item._id}>
-                                    <div className="bg-blue-300 h-full rounded-lg p-6 flex flex-col items-center justify-center">
-                                        <div className="flex items-center mb-4">
-                                            <img
-                                                src={item?.image}
-                                                alt={item?.name}
-                                                className="w-12 h-12 rounded-full object-cover mr-4"
-                                            />
-                                            <h3 className="text-xl font-semibold">{item.name}</h3>
-                                        </div>
-                                        <p className="text-gray-600 mb-4">{item?.feedback}</p>
-                                        <p className="text-[#8863AC] text-sm">{item?.description}</p>
-                                    </div>
-                                </SwiperSlide>)
-                            }
-                        </>
+                        newFeedbackAdded?.map(item => <SwiperSlide key={item._id}>
+                            <div className="bg-blue-300 h-full rounded-lg p-6 flex flex-col items-center justify-center">
+                                <div className="flex items-center mb-4">
+                                    <img
+                                        src={item?.image}
+                                        alt={item?.name}
+                                        className="w-12 h-12 rounded-full object-cover mr-4"
+                                    />
+                                    <h3 className="text-xl font-semibold">{item.name}</h3>
+                                </div>
+                                <p className="text-gray-600 mb-4">{item?.feedback}</p>
+                                <p className="text-[#8863AC] text-sm">{item?.description}</p>
+                            </div>
+                        </SwiperSlide>)
                     }
                 </Swiper>
                 {
-                    user ? <>
+                    user?.email ? <>
                         <div className='flex items-center p-5'>
                             <label className='input-group' htmlFor="">
                                 <input

@@ -21,7 +21,6 @@ const AddClass = () => {
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_token}`
 
     const onSubmit = data => {
-        console.log(data);
         const formData = new FormData();
         formData.append('image', data.image[0])
 
@@ -37,10 +36,9 @@ const AddClass = () => {
                     const priceNumber = parseFloat(price);
                     const availableSeatsNumber = parseFloat(availableSeats);
                     const classData = { className, availableSeats: availableSeatsNumber, instructorEmail, instructorName, price: priceNumber, status, students , image: imgUrl }
-                    console.log(classData);
+             
                     axios.post('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/addClass', classData)
                         .then(data => {
-                            console.log(data.data);
                             if (data.data.insertedId) {
                                 reset()
                                 toast.success('class added successfully!')

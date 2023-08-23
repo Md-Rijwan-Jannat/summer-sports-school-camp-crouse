@@ -26,7 +26,6 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 if (loggedUser) {
                     toast.dismiss()
                     toast.success('successfully login')

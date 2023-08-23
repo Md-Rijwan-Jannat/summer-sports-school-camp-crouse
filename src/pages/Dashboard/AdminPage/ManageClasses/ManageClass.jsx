@@ -14,7 +14,6 @@ const ManageClass = ({ cls, index, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     refetch();
                     toast.success('This class is approved!')
@@ -30,7 +29,6 @@ const ManageClass = ({ cls, index, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     refetch();
                     toast.success('This class is denied!')
@@ -54,10 +52,8 @@ const ManageClass = ({ cls, index, refetch }) => {
         const form = event.target;
         const feedback = form.feedback.value;
         const adminFeedback = { feedback ,class_id: _id};
-        console.log(adminFeedback);
         axios.post('https://summer-sports-scholl-camp-server-md-rijwan-jannat.vercel.app/feedback', adminFeedback)
             .then(data => {
-                console.log(data.data);
                 if(data.data.insertedId){
                     toast.success('Feedback send successfully!')
                 }

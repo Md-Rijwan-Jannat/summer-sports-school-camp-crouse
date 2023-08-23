@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import PrimaryButton from "../../../components/PrimaryButton";
 import useClasses from "../../../components/hooks/useClasses";
+import { MdArrowOutward } from "react-icons/md";
 
 
 const PopularInstructor = ({ instr }) => {
@@ -9,9 +10,7 @@ const PopularInstructor = ({ instr }) => {
     const { name, email, image } = instr;
     const [classes] = useClasses();
     const totalClass = classes?.filter(cls => cls?.instructorEmail === email)
-    console.log(totalClass)
     const total = classes?.find(cls => cls?.instructorEmail === email)
-    console.log(total)
 
     const flowingHandler = () => {
         setFlow(!flow)
@@ -47,7 +46,7 @@ const PopularInstructor = ({ instr }) => {
                     </div>
                 </div>
                 <div className="mt-5 w-20">
-                    <PrimaryButton text={'View Details'}></PrimaryButton>
+                    <PrimaryButton text={'More'} icon={<MdArrowOutward></MdArrowOutward>} to={'allInstructor'}></PrimaryButton>
                 </div>
             </div>
         </div>
