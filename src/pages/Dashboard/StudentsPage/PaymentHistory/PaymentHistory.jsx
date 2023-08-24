@@ -4,6 +4,7 @@ import useAuth from "../../../../components/hooks/useAuth";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../../components/Headers/SectionTitle";
+import DataNotFount from "../../../../components/dataNotFount";
 
 
 const PaymentHistory = () => {
@@ -26,7 +27,12 @@ const PaymentHistory = () => {
             <div className="table-responsive">
                 <table className="table w-full">
                     {/* head */}
-                    <thead className="bg-gray-200">
+
+                    {
+                        paymentInfo?.length === 0 ? <>
+                        <DataNotFount message={'Warning: Your payment history not available!'}></DataNotFount>
+                        </> : <>
+                        <thead className="bg-gray-200">
                         <tr className="border-[#8A63AC] border-b-[3px]">
                             <th>No:</th>
                             <th>Student Name</th>
@@ -57,6 +63,9 @@ const PaymentHistory = () => {
                         {/* row 1 */}
 
                     </tbody>
+                        </>
+                    }
+                   
                 </table>
             </div>
             </div>

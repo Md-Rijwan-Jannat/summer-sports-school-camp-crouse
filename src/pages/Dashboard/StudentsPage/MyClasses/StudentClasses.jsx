@@ -6,6 +6,7 @@ import useAuth from "../../../../components/hooks/useAuth";
 import NotFoundMessage from "../../../../components/NotFoundMesage/NotFoundMessage";
 import StudentClassTable from "./StudentClassTable";
 import { Link } from "react-router-dom/dist";
+import DataNotFount from "../../../../components/dataNotFount";
 
 
 const StudentClasses = () => {
@@ -32,29 +33,37 @@ const StudentClasses = () => {
                         <div className="w-full">
                             <div className="table-responsive">
                                 <table className="table w-full">
-                                    {/* head */}
-                                    <thead>
-                                        <tr className="border-[#8A63AC] border-b-[3px]">
-                                            <th>#</th>
-                                            <th>image</th>
-                                            <th>Class Name</th>
-                                            <th>Instructor</th>
-                                            <th>Students</th>
-                                            <th>Available Seats</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            addedClass.map((cls, index) => <StudentClassTable
-                                                key={cls._id}
-                                                cls={cls}
-                                                index={index}
-                                            ></StudentClassTable>)
-                                        }
 
-                                    </tbody>
+                                    {
+                                        addedClass?.length === 0 ? <>
+                                            <DataNotFount message={'Warning: Please add some class'}></DataNotFount>
+                                        </> : <>
+                                            <thead>
+                                                <tr className="border-[#8A63AC] border-b-[3px]">
+                                                    <th>#</th>
+                                                    <th>image</th>
+                                                    <th>Class Name</th>
+                                                    <th>Instructor</th>
+                                                    <th>Students</th>
+                                                    <th>Available Seats</th>
+                                                    <th>Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    addedClass.map((cls, index) => <StudentClassTable
+                                                        key={cls._id}
+                                                        cls={cls}
+                                                        index={index}
+                                                    ></StudentClassTable>)
+                                                }
+
+                                            </tbody>
+                                        </>
+                                    }
+                                    {/* head */}
+
                                 </table>
                             </div>
                         </div>
